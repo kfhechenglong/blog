@@ -1,3 +1,8 @@
-* [设计模式](design-mode/ "设计模式")
-* [工厂模式](design-mode/factory "工厂模式")
-* [vue路由权限的控制](other/vue路由权限的控制 "vue路由权限的控制")
+- 设计模式
+
+  - [1.单列模式](design-mode/single)
+  - [策略模式](design-mode/2.策略模式/)
+
+- 其它
+
+  - [vue路由权限的控制](other/vue路由权限的控制 "vue路由权限的控制")
