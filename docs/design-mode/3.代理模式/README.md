@@ -6,7 +6,7 @@
 
 ## 代理模式的基本用法
 
-```
+```javascript
 var Flower = function(){};
 
 var xiaoming = {
@@ -42,7 +42,7 @@ xiaoming.sendFlower(B);
 
 要符合单一职责原则，开发封闭远程
 代理和本体接口的一致性
-```
+```javascript
 var myImage = (function(){
     var imgNode = document.createElement('img');
     document.body.appendChild(imgNode);
@@ -66,7 +66,7 @@ proxyImage('图片的线上地址！');
 ```
 
 ## 使用虚拟代理解决网络请求频繁问题
-```
+```javascript
 var synchronousFile =  function(id){
     console.log('开始执行网络请求');
 }
@@ -98,7 +98,7 @@ for (let i = 0; i < checkbox.length; i++) {
 }
 ```
 ## 缓存代理
-```
+```javascript
 //mult符合单一职责原则（计算结果）
 var mult = function() {
     var a = 1;

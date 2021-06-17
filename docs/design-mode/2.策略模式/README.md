@@ -6,7 +6,7 @@
 策略模式的目的是将算法的使用和算法的实现分离开来；
 
 一个基于策略模式的程序至少由两部分组成。第一个部分是一组策略类，策略类封装了具体的算法，并负责具体的计算过程。第二个部分是环境类`Context`,`Context`接受客户的请求，随后把请求委托给摸一个策略类。要做的这点，说明`Context`中要维持对某个策略对象的引用；
-```
+```javascript
 const performanceS = function(){};
 performanceS.prototype.calculate = function(salary) {
 	return salary * 4;
@@ -21,7 +21,7 @@ performanceB.prototype.calculate = function(salary) {
 };
 ```
 定义奖金类Bonus：
-```
+```javascript
 var  Bonus = function() {
 	this.salary = null;
 	this.strategy = null;
@@ -39,7 +39,7 @@ Bonus.prototype.getBonus = function() {//获取奖金金额
 ```
 
 使用如下
-```
+```javascript
 const bonus = new Bonus();
 bonus.setSalary(20000);//设置初始原始工资基数
 bonus.setStrategy(new performanceS());//设置策略对象
@@ -51,7 +51,7 @@ console.log(bonus.getBonus());//获取奖金
 
 ## 策略模式实现表单验证
 html代码如下：
-```
+```html
 <html>
 	<body>
 		<form action="" id="registerFomer" method="post">
@@ -64,7 +64,7 @@ html代码如下：
 </html>
 ```
 我们把效验逻辑都封装成策略对象：
-```
+```javascript
 var strategies = {
 	isNonEmpty:function (value,errorMsg) {//不能为空；
 		if(value === "") {
@@ -85,7 +85,7 @@ var strategies = {
 
 ```
 下面来实现Validator类，Validator类在这里作为Context，负责接收用户的请求，并委托给strategy对象；
-```
+```javascript
 var validataFunc = function() {
 	var validator = new Validator();
 	//添加效验规则
@@ -107,7 +107,7 @@ registerForm.onsubmit = function () {
 从这段代码我们可以看到，我们先创建了一个validator对象，然后通过validator.add方法，往validator对象中添加一些效验规则；
 
 最后是Validator类的实现：
-```
+```javascript
 var Validator = function () {
 	this.cache = [];
 };

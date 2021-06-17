@@ -5,7 +5,7 @@
 	需求要求，点击左侧时，右侧显示页面内容，同时右侧header增加该页面的tabs，点击tabs可以切换页面，但页面内容不刷新，点击左侧菜单时，右侧内容刷新；
 ## 初步解决
 第一想到的时利用vue的功能组件
-```
+```html
 <keep-alive>
 	<router-view/>
 </keep-alive>
@@ -13,15 +13,15 @@
 此时只能实现缓存，但是不能根据需求实现动态缓存
 ## 解决方案
 利用`include`来判断需要缓存的路由组件，在根据点击状态更新`include`
-```
+```html
 <!-- html -->
 <keep-alive :include="keepAliveList">
 	<router-view :key="$route.fullPath"/>
 </keep-alive>
 ```
 	利用计算属性和vuex获取缓存列表
-```
-<!-- vuex -->
+```javascript
+// <!-- vuex -->
 state: {
         keepAliveList:'',//保存缓存的列表
     },
@@ -32,8 +32,8 @@ state: {
         
     }
 ```
-```
-<!-- 视图组件中 -->
+视图组件中
+```javascript
 computed:{
 	keepAliveList(){
 		// 获取缓存的路由列表
@@ -42,12 +42,12 @@ computed:{
 }
 ```
 生成缓存列表，列表的值为各组件中name的值集合拼接的字符串
-```
+```javascript
 this.$store.commit('setKeepAliveLists',routerComponentNameList.join())
 ```
 点击左侧菜单栏时，更新缓存列表
-```
-<!-- 点击左侧菜单的事件函数 -->
+```javascript
+// 点击左侧菜单的事件函数
 handleSelect(name) {
 	if(this.routerNameMap.has(name)){//如果当前点击的路由已经在缓存列表中，则先清除缓存列表，再添加；
 		this.resetKeepAive(name,this.keepAliveList);//删除缓存路由
@@ -74,7 +74,7 @@ resetKeepAive(name,cacheList) {
 }
 ```
 点击右侧tabs关闭标签删除缓存
-```
+```javascript
 removeTab(name){
 	// 点击tab上的关闭按钮，清除当前路由的缓存
 	this.routerNameMap.delete(name);
@@ -83,7 +83,7 @@ removeTab(name){
 ```
 下面为主要代码，监听当前路由是否被移除缓存，如果移除缓存则需要销毁该组件，否则内容中的缓存组件会越来越来，影响使用性能；
 创建一个`mixin.js`文件，然后引入到需要被动态缓存的路由组件中即可；
-```
+```javascript
 // 路由缓存管理
 export default {
     computed: {

@@ -1,7 +1,7 @@
 # call和apply的用途
-## 改变this指向
+## 1.改变this指向
 call和apply最常见的用途是改变函数内部的this指向，如下代码：
-```
+```javascript
 var obj1 = {
 	name:'jueduilingdu'
 };
@@ -17,13 +17,13 @@ getName.call(obj1);//jueduilingdu
 getName.apply(obj2);//he
 ```
 实际开发中，经常回遇到this指向被不经意改变的场景，比如有一个div节点，div节点的onclick事件中的this指向该div
-```
+```javascript
 document.getElementById('divid').onclick = function() {
 	console.log(this);
 };
 ```
 假如该事件函数内部有一个函数func，在事件内部调用func函数时，func函数体内的this就指向了window，而非预期的div
-```
+```javascript
 document.getElementById('divid').onclick = function() {
 	console.log(this.id);//divid
 	var func = function () {
@@ -33,7 +33,7 @@ document.getElementById('divid').onclick = function() {
 };
 ```
 这时可以通过call来修复this指向，让其指向div
-```
+```javascript
 document.getElementById('divid').onclick = function() {
 	console.log(this.id);//divid
 	var func = function () {
@@ -42,9 +42,9 @@ document.getElementById('divid').onclick = function() {
 	func.call(this);
 };
 ```
-## Function.prototype.bind
+## 2.Function.prototype.bind
 大部分 浏览器都实现了内置的Function.prototype.bind,用来指定函数内部的this指向，下面模拟一个简化的bind方法：
-```
+```javascript
 /* 
  我们通过Function.prototype.bind来'包装'func函数，并且传入一个context当作参数，这个context对象就是我们要想修正的this对象；
  在bind方法内部，我们先把func函数的引用保存起来，然后返回一个新的函数，
@@ -66,7 +66,7 @@ var func = function () {
 func();//输出hcl
 ```
 复杂一点的bind代码如下：
-```
+```javascript
 Function.prototype.bind = function() {
 	var self = this,
 		context = [].shift.call(arguments),
@@ -82,9 +82,9 @@ var func = function(a,b,c,d) {
 }.bind(obj,1,2);
 func(3,4);
 ```
-## 借用其他对象的方法
+## 3.借用其他对象的方法
 
-```
+```javascript
 var A = function (name){
 	this.name = name;
 };

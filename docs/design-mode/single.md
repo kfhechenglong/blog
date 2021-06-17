@@ -1,7 +1,7 @@
 # 单例模式
 
 ## 简单的单例模式实现
-```
+```javascript
 const Singletion = function (name) {
 	this.name = name;
 	this.instance = null;
@@ -23,7 +23,7 @@ console.log(singletion_a === singletion_b);//true
 通过该方法必须用`Singletion.getInstance`来获取`Singletion`类的唯一对象，该方式增加了类的不透明性；
 ## 透明的单例模式
 使用透明的单例模式来创建一个元素节点
-```
+```javascript
 const CreateEle = (function() {
 	var instance;
 	var CreateEle = function (html) {
@@ -46,7 +46,7 @@ console.log(ele1 === ele2);
 透明的单例模式中，不能复用创建多个元素，现在改写`CreateEle`构造函数，把控制创建唯一对象的那一部分移除出来，利用代理来实现
 ## 代理实现创建单例模式
 这里先将创建节点的代码封装成一个普通函数类
-```
+```javascript
 const CreateDiv = function(context) {
 	this.context = context;
 	this.init();
@@ -58,7 +58,7 @@ CreateDiv.prototype.init = function() {
 };
 ```
 下面创建一个代理类
-```
+```javascript
 const ProxySingletionClass = (function() {
 	let instance = null;
 	return function(context) {
@@ -71,7 +71,7 @@ const ProxySingletionClass = (function() {
 ```
 ## 通用的惰性单例模式
 现在将创建单例模式的代码抽象出来，封装在一个`getSingle`函数内部，创建对象的方法`fn`被当成动态参数传入`getSingle`函数中，代码如下：
-```
+```javascript
 const getSingle = function(fn) {
 	let result = null;
 	return function (){
@@ -81,7 +81,7 @@ const getSingle = function(fn) {
 
 ```
 代码使用demo
-```
+```javascript
 var createLoginLayer = function() {
 	var div = document.createElement('div');
 	div.innerHTML = '这就是一个demo';

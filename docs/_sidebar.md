@@ -1,3 +1,10 @@
+- 面向对象
+  - [对象克隆](面向对象的javascript/对象克隆)
+  - [鸭子类型](面向对象的javascript/鸭子类型)
+  - [javascript中的对象继承](面向对象的javascript/javascript中的对象继承)
+- this-call-applay
+  - [this](this-call-applay/this)
+  - [call和apply](this-call-applay/call和apply)
 - 设计模式
 
   - [1.单列模式](design-mode/single)

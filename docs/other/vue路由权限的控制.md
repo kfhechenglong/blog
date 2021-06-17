@@ -3,7 +3,7 @@
 前端请求拿到后台返回的菜单列表后，根据前端的静态路由去匹配，生成白名单，可以在路由的`meta`属性里添加是否要进行权限判断的标识
 
 将生成可以访问的路由白名单存储在本地的session中；
-```
+```javascript
 // 配置路由拦截
 router.beforeEach((to,from,next) => {
     if(to.meta.Token) {
@@ -48,7 +48,7 @@ export default router
 ## 2.通过vue提供的addRoutes方法
 ### 1.路由的动态注入
 前端页面根据用户的权限获取菜单的权限，前端需要将路由列表做一个映射匹配；`dataCollectionRouter`是存储本地路由的数组列表；
-```
+```javascript
 interface routerMapType {
     [propName : string] : {
         path:string
@@ -97,7 +97,7 @@ export function saveRouter (menus:any[]) :any[]{
 ### 2.动态注入
 路由列表注入成功，如果退出登录，没有对已注入的列表进行清除，那么再次登录就会存在二次注入，路由重复的情况，体验不好；
 解决方法如下
-```
+```javascript
 // 默认的静态路由页面
 export const defaultPublicRouter = [
     {
