@@ -2,6 +2,7 @@
 
   - [1.单列模式](design-mode/single)
   - [2.策略模式](design-mode/2.策略模式/)
+  - [3.代理模式](design-mode/3.代理模式/)
 
 - 其它
 
