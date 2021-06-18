@@ -104,6 +104,10 @@ module.exports = {
           {
             title: '3.代理模式',
             path: '/design-mode/3.代理模式/'
+          },
+          {
+            title: '4.迭代器模式',
+            path: '/design-mode/4.迭代器模式/'
           }
         ]
       },
