@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>路由权限的配置思路 | 绝对零度随笔</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?323adbb342c132bcdae1007fda9b6068";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+        </script>
+    <meta name="description" content="JavaScript html css Vue">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.bbe4b17c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7dbd21c6.js" as="script"><link rel="preload" href="/blog/assets/js/2.bbb8724e.js" as="script"><link rel="preload" href="/blog/assets/js/20.d4d4422d.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.4e651e47.js"><link rel="prefetch" href="/blog/assets/js/11.fea83af2.js"><link rel="prefetch" href="/blog/assets/js/12.4dec0345.js"><link rel="prefetch" href="/blog/assets/js/13.668afc3a.js"><link rel="prefetch" href="/blog/assets/js/14.7bb42324.js"><link rel="prefetch" href="/blog/assets/js/15.d5382903.js"><link rel="prefetch" href="/blog/assets/js/16.76c09ee0.js"><link rel="prefetch" href="/blog/assets/js/17.1e480368.js"><link rel="prefetch" href="/blog/assets/js/18.bfdf511e.js"><link rel="prefetch" href="/blog/assets/js/19.ecef56c7.js"><link rel="prefetch" href="/blog/assets/js/21.31453974.js"><link rel="prefetch" href="/blog/assets/js/22.3d01a6a4.js"><link rel="prefetch" href="/blog/assets/js/3.52d57505.js"><link rel="prefetch" href="/blog/assets/js/4.6230b7f5.js"><link rel="prefetch" href="/blog/assets/js/5.b7462bd8.js"><link rel="prefetch" href="/blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/blog/assets/js/7.b1d6d957.js"><link rel="prefetch" href="/blog/assets/js/8.358637dd.js"><link rel="prefetch" href="/blog/assets/js/9.346ba688.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.bbe4b17c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">绝对零度随笔</span></a> <div class="links"><!----> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/blog/" aria-current="page" class="sidebar-link">主题</a></li><li><section class="sidebar-group depth-0"><a href="/blog/javascript/clone" class="sidebar-heading clickable"><span>面向对象</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/javascript/clone.html" class="sidebar-link">1.对象克隆</a></li><li><a href="/blog/javascript/duck.html" class="sidebar-link">2.鸭子类型</a></li><li><a href="/blog/javascript/javascript-inherit.html" class="sidebar-link">3.javascript中的对象继承</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/this-call-applay/this" class="sidebar-heading clickable"><span>this-call-applay</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/this-call-applay/this.html" class="sidebar-link">1.this</a></li><li><a href="/blog/this-call-applay/call-apply.html" class="sidebar-link">2.call和apply</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/design-mode/single" class="sidebar-heading clickable"><span>设计模式</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/design-mode/single.html" class="sidebar-link">1.单列模式</a></li><li><a href="/blog/design-mode/2.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="sidebar-link">2.策略模式</a></li><li><a href="/blog/design-mode/3.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="sidebar-link">3.代理模式</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/other/vue-keep-live" class="sidebar-heading clickable open"><span>其它</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/other/vue-keep-live.html" class="sidebar-link">1.vue实现动态缓存以及缓存销毁</a></li><li><a href="/blog/other/vue-router-authority.html" aria-current="page" class="active sidebar-link">2.vue路由权限的控制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/other/vue-router-authority.html#_1-从后台获取路由权限生成白名单" class="sidebar-link">1.从后台获取路由权限生成白名单</a></li><li class="sidebar-sub-header"><a href="/blog/other/vue-router-authority.html#_2-通过vue提供的addroutes方法" class="sidebar-link">2.通过vue提供的addRoutes方法</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="路由权限的配置思路"><a href="#路由权限的配置思路" class="header-anchor">#</a> 路由权限的配置思路</h1> <h2 id="_1-从后台获取路由权限生成白名单"><a href="#_1-从后台获取路由权限生成白名单" class="header-anchor">#</a> 1.从后台获取路由权限生成白名单</h2> <p>前端请求拿到后台返回的菜单列表后，根据前端的静态路由去匹配，生成白名单，可以在路由的<code>meta</code>属性里添加是否要进行权限判断的标识</p> <p>将生成可以访问的路由白名单存储在本地的session中；</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 配置路由拦截</span>
+router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">,</span>next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>Token<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 验证登录权限</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">getLocalToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 验证是否有路由权限</span>
+            <span class="token keyword">let</span> moduleList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            moduleList <span class="token operator">=</span> TestEnvironemt <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token string">'settle'</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token function">sessionStorageMothds</span><span class="token punctuation">(</span><span class="token string">'moduleList'</span><span class="token punctuation">,</span><span class="token string">'getItem'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>moduleList<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'settle'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 返回主页</span>
+                window<span class="token punctuation">.</span>location <span class="token operator">=</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>Router<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">let</span> routerList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token keyword">try</span><span class="token punctuation">{</span>
+                        routerList <span class="token operator">=</span> <span class="token function">sessionStorageMothds</span><span class="token punctuation">(</span><span class="token string">'routerList'</span><span class="token punctuation">,</span><span class="token string">'getItem'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>routerList<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>to<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// 返回主页</span>
+                        window<span class="token punctuation">.</span>location <span class="token operator">=</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 没有权限，回退到登录页面</span>
+            <span class="token function">LogOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div><p>这种方法不是很好，毕竟前端的路由已经被注入到路由列表里面；通过修改本地session还是可以访问到未授权的页面的；</p> <h2 id="_2-通过vue提供的addroutes方法"><a href="#_2-通过vue提供的addroutes方法" class="header-anchor">#</a> 2.通过vue提供的addRoutes方法</h2> <h3 id="_1-路由的动态注入"><a href="#_1-路由的动态注入" class="header-anchor">#</a> 1.路由的动态注入</h3> <p>前端页面根据用户的权限获取菜单的权限，前端需要将路由列表做一个映射匹配；<code>dataCollectionRouter</code>是存储本地路由的数组列表；</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">interface</span> <span class="token class-name">routerMapType</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>propName <span class="token operator">:</span> string<span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+        path<span class="token operator">:</span>string
+        name<span class="token operator">:</span>string
+        component<span class="token operator">:</span>any
+        meta<span class="token operator">:</span><span class="token punctuation">{</span>
+            Token<span class="token operator">?</span><span class="token operator">:</span>boolean
+            <span class="token punctuation">[</span>propName <span class="token operator">:</span> string<span class="token punctuation">]</span><span class="token operator">:</span>any
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 生产路由的映射</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">routerMap</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">routers<span class="token operator">:</span>any<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token operator">:</span>routerMapType <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> result<span class="token operator">:</span>any <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    routers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token operator">:</span>any</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">[</span>item<span class="token punctuation">.</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+<span class="token comment">// 动态生成路由结构；</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">saveRouter</span> <span class="token punctuation">(</span><span class="token parameter">menus<span class="token operator">:</span>any<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">:</span>any<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>menus <span class="token operator">&amp;&amp;</span> menus<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> routerMapResult<span class="token operator">:</span>routerMapType <span class="token operator">=</span> <span class="token function">routerMap</span><span class="token punctuation">(</span>dataCollectionRouter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> menus<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> item <span class="token operator">=</span> menus<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> route<span class="token operator">:</span>any <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>children <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>children<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                route<span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                route<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token function">saveRouter</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>url <span class="token operator">&amp;&amp;</span> routerMapResult<span class="token punctuation">[</span>item<span class="token punctuation">.</span>url<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                routerMapResult<span class="token punctuation">[</span>item<span class="token punctuation">.</span>url<span class="token punctuation">]</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title <span class="token operator">=</span> item<span class="token punctuation">.</span>menuName<span class="token punctuation">;</span>
+                result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                    <span class="token operator">...</span>route<span class="token punctuation">,</span>
+                    <span class="token operator">...</span>routerMapResult<span class="token punctuation">[</span>item<span class="token punctuation">.</span>url<span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>route<span class="token punctuation">.</span>children<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-动态注入"><a href="#_2-动态注入" class="header-anchor">#</a> 2.动态注入</h3> <p>路由列表注入成功，如果退出登录，没有对已注入的列表进行清除，那么再次登录就会存在二次注入，路由重复的情况，体验不好；
+解决方法如下</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 默认的静态路由页面</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> defaultPublicRouter <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">,</span>
+        redirect<span class="token operator">:</span> <span class="token string">&quot;/&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">&quot;/login&quot;</span><span class="token punctuation">,</span>
+        component<span class="token operator">:</span> Login
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">defaultHomeRoute</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span>
+        component<span class="token operator">:</span> Index<span class="token punctuation">,</span>
+        redirect<span class="token operator">:</span> <span class="token string">&quot;/home&quot;</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;bazk&quot;</span><span class="token punctuation">,</span>
+        meta<span class="token operator">:</span> <span class="token punctuation">{</span>
+            Token<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        children<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                path<span class="token operator">:</span> <span class="token string">&quot;home&quot;</span><span class="token punctuation">,</span>
+                name<span class="token operator">:</span> <span class="token string">&quot;home&quot;</span><span class="token punctuation">,</span>
+                component<span class="token operator">:</span> home<span class="token punctuation">,</span>
+                meta<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    title<span class="token operator">:</span> <span class="token string">&quot;首页&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">creatRouter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    mode<span class="token operator">:</span><span class="token string">'hash'</span><span class="token punctuation">,</span>
+    routes<span class="token operator">:</span>defaultPublicRouter
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">creatRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+router<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token function">defaultHomeRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 封装路由重置的函数</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">updateRouter</span> <span class="token punctuation">(</span><span class="token parameter">routerList<span class="token operator">:</span>any<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> newRouter <span class="token operator">=</span> <span class="token function">creatRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">(</span>router <span class="token keyword">as</span> any<span class="token punctuation">)</span><span class="token punctuation">.</span>matcher <span class="token operator">=</span> <span class="token punctuation">(</span>newRouter <span class="token keyword">as</span> any<span class="token punctuation">)</span><span class="token punctuation">.</span>matcher<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> addRouter <span class="token operator">=</span> <span class="token function">defaultHomeRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    addRouter<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>routerList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    router<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span>addRouter<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> router<span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/18/2021, 11:32:29 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/other/vue-keep-live.html" class="prev">
+        1.vue实现动态缓存以及缓存销毁
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.7dbd21c6.js" defer></script><script src="/blog/assets/js/2.bbb8724e.js" defer></script><script src="/blog/assets/js/20.d4d4422d.js" defer></script>
+  </body>
+</html>

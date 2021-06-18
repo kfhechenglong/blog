@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue keep-alive实现动态缓存以及缓存销毁 | 绝对零度随笔</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?323adbb342c132bcdae1007fda9b6068";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+        </script>
+    <meta name="description" content="JavaScript html css Vue">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.bbe4b17c.css" as="style"><link rel="preload" href="/blog/assets/js/app.7dbd21c6.js" as="script"><link rel="preload" href="/blog/assets/js/2.bbb8724e.js" as="script"><link rel="preload" href="/blog/assets/js/19.ecef56c7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.4e651e47.js"><link rel="prefetch" href="/blog/assets/js/11.fea83af2.js"><link rel="prefetch" href="/blog/assets/js/12.4dec0345.js"><link rel="prefetch" href="/blog/assets/js/13.668afc3a.js"><link rel="prefetch" href="/blog/assets/js/14.7bb42324.js"><link rel="prefetch" href="/blog/assets/js/15.d5382903.js"><link rel="prefetch" href="/blog/assets/js/16.76c09ee0.js"><link rel="prefetch" href="/blog/assets/js/17.1e480368.js"><link rel="prefetch" href="/blog/assets/js/18.bfdf511e.js"><link rel="prefetch" href="/blog/assets/js/20.d4d4422d.js"><link rel="prefetch" href="/blog/assets/js/21.31453974.js"><link rel="prefetch" href="/blog/assets/js/22.3d01a6a4.js"><link rel="prefetch" href="/blog/assets/js/3.52d57505.js"><link rel="prefetch" href="/blog/assets/js/4.6230b7f5.js"><link rel="prefetch" href="/blog/assets/js/5.b7462bd8.js"><link rel="prefetch" href="/blog/assets/js/6.0377ba0c.js"><link rel="prefetch" href="/blog/assets/js/7.b1d6d957.js"><link rel="prefetch" href="/blog/assets/js/8.358637dd.js"><link rel="prefetch" href="/blog/assets/js/9.346ba688.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.bbe4b17c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">绝对零度随笔</span></a> <div class="links"><!----> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/blog/" aria-current="page" class="sidebar-link">主题</a></li><li><section class="sidebar-group depth-0"><a href="/blog/javascript/clone" class="sidebar-heading clickable"><span>面向对象</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/javascript/clone.html" class="sidebar-link">1.对象克隆</a></li><li><a href="/blog/javascript/duck.html" class="sidebar-link">2.鸭子类型</a></li><li><a href="/blog/javascript/javascript-inherit.html" class="sidebar-link">3.javascript中的对象继承</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/this-call-applay/this" class="sidebar-heading clickable"><span>this-call-applay</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/this-call-applay/this.html" class="sidebar-link">1.this</a></li><li><a href="/blog/this-call-applay/call-apply.html" class="sidebar-link">2.call和apply</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/design-mode/single" class="sidebar-heading clickable"><span>设计模式</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/design-mode/single.html" class="sidebar-link">1.单列模式</a></li><li><a href="/blog/design-mode/2.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="sidebar-link">2.策略模式</a></li><li><a href="/blog/design-mode/3.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="sidebar-link">3.代理模式</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/other/vue-keep-live" class="sidebar-heading clickable open active"><span>其它</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/other/vue-keep-live.html" aria-current="page" class="active sidebar-link">1.vue实现动态缓存以及缓存销毁</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/other/vue-keep-live.html#需求来源及描述" class="sidebar-link">需求来源及描述</a></li><li class="sidebar-sub-header"><a href="/blog/other/vue-keep-live.html#初步解决" class="sidebar-link">初步解决</a></li><li class="sidebar-sub-header"><a href="/blog/other/vue-keep-live.html#解决方案" class="sidebar-link">解决方案</a></li></ul></li><li><a href="/blog/other/vue-router-authority.html" class="sidebar-link">2.vue路由权限的控制</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-keep-alive实现动态缓存以及缓存销毁"><a href="#vue-keep-alive实现动态缓存以及缓存销毁" class="header-anchor">#</a> vue keep-alive实现动态缓存以及缓存销毁</h1> <h2 id="需求来源及描述"><a href="#需求来源及描述" class="header-anchor">#</a> 需求来源及描述</h2> <p>后台管理系统中，左侧为功能菜单栏，点击菜单列表，右侧显示该菜单的功能页面，本来是一个非常简单的后台管理系统布局，现在增加了tabs菜单按钮；
+点击左侧菜单栏时，右侧页面头部header显示当前的页面标题，形成一个tabs列表，点击可切换页面内容和关闭tabs；
+需求要求，点击左侧时，右侧显示页面内容，同时右侧header增加该页面的tabs，点击tabs可以切换页面，但页面内容不刷新，点击左侧菜单时，右侧内容刷新；</p> <h2 id="初步解决"><a href="#初步解决" class="header-anchor">#</a> 初步解决</h2> <p>第一想到的时利用vue的功能组件</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keep-alive</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keep-alive</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>此时只能实现缓存，但是不能根据需求实现动态缓存</p> <h2 id="解决方案"><a href="#解决方案" class="header-anchor">#</a> 解决方案</h2> <p>利用<code>include</code>来判断需要缓存的路由组件，在根据点击状态更新<code>include</code></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- html --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keep-alive</span> <span class="token attr-name">:include</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>keepAliveList<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>$route.fullPath<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keep-alive</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language- extra-class"><pre><code>利用计算属性和vuex获取缓存列表
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// &lt;!-- vuex --&gt;</span>
+state<span class="token operator">:</span> <span class="token punctuation">{</span>
+        keepAliveList<span class="token operator">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token comment">//保存缓存的列表</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    mutations<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token function">setKeepAliveLists</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span>arrListString</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            state<span class="token punctuation">.</span>keepAliveList <span class="token operator">=</span> arrListString<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+    <span class="token punctuation">}</span>
+</code></pre></div><p>视图组件中</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>computed<span class="token operator">:</span><span class="token punctuation">{</span>
+	<span class="token function">keepAliveList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token comment">// 获取缓存的路由列表</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>keepAliveList<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>生成缓存列表，列表的值为各组件中name的值集合拼接的字符串</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setKeepAliveLists'</span><span class="token punctuation">,</span>routerComponentNameList<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>点击左侧菜单栏时，更新缓存列表</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 点击左侧菜单的事件函数</span>
+<span class="token function">handleSelect</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>routerNameMap<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//如果当前点击的路由已经在缓存列表中，则先清除缓存列表，再添加；</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">resetKeepAive</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>keepAliveList<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//删除缓存路由</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tabChangeRoute</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//切换路由</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>routerNameMap<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tabChangeRoute</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">// 更新要缓存的路由列表</span>
+<span class="token function">resetKeepAive</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>cacheList</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> conf <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>keepAliveList<span class="token punctuation">;</span>
+	<span class="token keyword">let</span> arr <span class="token operator">=</span> cacheList<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>name <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> name <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">let</span> i <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setKeepAliveLists'</span><span class="token punctuation">,</span>arr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token comment">//添加缓存路由</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'setKeepAliveLists'</span><span class="token punctuation">,</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>点击右侧tabs关闭标签删除缓存</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">removeTab</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">// 点击tab上的关闭按钮，清除当前路由的缓存</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>routerNameMap<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">resetKeepAive</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>keepAliveList<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//删除缓存路由</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>下面为主要代码，监听当前路由是否被移除缓存，如果移除缓存则需要销毁该组件，否则内容中的缓存组件会越来越来，影响使用性能；
+创建一个<code>mixin.js</code>文件，然后引入到需要被动态缓存的路由组件中即可；</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 路由缓存管理</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token function">keepAliveConf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>keepAliveList<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    watch<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token function">keepAliveConf</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// 监听缓存列表的变化，如果缓存列表中没有当前的路由或组件则在缓存中销毁该实例</span>
+            <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/18/2021, 11:32:29 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/design-mode/3.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="prev">
+        3.代理模式
+      </a></span> <span class="next"><a href="/blog/other/vue-router-authority.html">
+        2.vue路由权限的控制
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.7dbd21c6.js" defer></script><script src="/blog/assets/js/2.bbb8724e.js" defer></script><script src="/blog/assets/js/19.ecef56c7.js" defer></script>
+  </body>
+</html>
