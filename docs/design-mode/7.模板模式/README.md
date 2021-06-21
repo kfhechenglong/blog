@@ -2,8 +2,8 @@
 ## 模板方法模式的定义和组成
     模板方法模式是一种只需使用继承就可以实现的简单模式。
     通过模板方法模式，我们在父类中封装了子类的算法框架，这些算法框架在正常状态下是适用于大多数子类，如果有一些特别个性的子类，我们就需要加入hook来解决这个问题；
-	抽象类的实现
-```
+## 抽象类的实现
+```js
 var Beverage = function(){};
 Beverage.prototype.boilWater = function(){
 	console.log('把水烧开！')
@@ -29,8 +29,8 @@ Beverage.prototype.init = function () {
 	}
 }
 ```
-	具体方法的实现
-```
+## 具体方法的实现
+```js
 var CoffeeWithHook = function(){};
 CoffeeWithHook.prototype.brew = function(){
 	console.log('冲咖啡！')
@@ -48,8 +48,8 @@ var coffeeWithHook = new CoffeeWithHook();
 coffeeWithHook.init();
 ```
 
-	不使用继承来实现模板模式
-```
+## 不使用继承来实现模板模式
+```js
 var Beverage = function (params) {
 	var boilWater = function(){
 		console.log('把水煮沸！');

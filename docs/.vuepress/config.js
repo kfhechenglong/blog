@@ -25,7 +25,7 @@ module.exports = {
   themeConfig: {
     search: true,
     searchMaxSuggestions: 10,
-    displayAllHeaders: true, // 默认值：false
+    displayAllHeaders: false, // 默认值：false
     lastUpdated: '上次更新时间', // string | boolean
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
     repo: 'kfhechenglong/blog',
@@ -94,7 +94,7 @@ module.exports = {
         path: '/design-mode/single',
         children: [
           {
-            title: '1.单列模式',
+            title: '1.单例模式',
             path: '/design-mode/single'
           },
           {
@@ -108,7 +108,28 @@ module.exports = {
           {
             title: '4.迭代器模式',
             path: '/design-mode/4.迭代器模式/'
-          }
+          },
+          {
+            title: '5.发布订阅模式',
+            path: '/design-mode/5.发布订阅模式/'
+          },
+          {
+            title: '6.命令模式',
+            children: [
+              {
+                title: '6.1.命令模式实现菜单管理',
+                path: '/design-mode/6.命令模式/1.命令模式实现菜单管理'
+              },
+              {
+                title: '6.2.撤销操作',
+                path: 'design-mode/6.命令模式/2.撤销操作'
+              }
+            ]
+          },
+          {
+            title: '7.模板模式',
+            path: '/design-mode/7.模板模式/'
+          },
         ]
       },
       {
