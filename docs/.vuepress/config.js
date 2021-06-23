@@ -133,6 +133,27 @@ module.exports = {
         ]
       },
       {
+        title: '算法',
+        sidebarDepth: 1,
+        collapsable: false,
+        children: [
+          {
+            title: '1.队列',
+            path: '/算法/queue'
+          },
+          {
+            title: '3.字典',
+            path: '/算法/3.字典/'
+          }
+        ]
+      },
+      {
+        title: '工具函数',
+        sidebarDepth: 1,
+        collapsable: false,
+        path: '/uitls/',
+      },
+      {
         title: '其它',
         sidebarDepth: 1,
         collapsable: false,
