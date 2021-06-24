@@ -166,6 +166,10 @@ module.exports = {
           {
             title: '2.vue路由权限的控制',
             path: '/other/vue-router-authority'
+          },
+          {
+            title: '3.文件下载',
+            path: '/other/exportFiles'
           }
         ]
       }
