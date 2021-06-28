@@ -142,8 +142,8 @@ module.exports = {
             path: '/算法/queue'
           },
           {
-            title: '3.字典',
-            path: '/算法/3.字典/'
+            title: '4.字典',
+            path: '/算法/4.字典/'
           }
         ]
       },

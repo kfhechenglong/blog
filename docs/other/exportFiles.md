@@ -5,7 +5,7 @@
 例如使用`axios`进行`http`请求下载
 ## axios下载
 ```js
-axios.post('api/merchant/contacts/exportMerchantContactLogList', _data, {
+axios.post('api/xxx/exportFiles', _data, {
   responseType: 'blob',
   needHeader: true
 }).then((res) => {
