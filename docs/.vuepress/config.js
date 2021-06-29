@@ -185,6 +185,10 @@ module.exports = {
           {
             title: '3.文件下载',
             path: '/other/exportFiles'
+          },
+          {
+            title: '4.数字添加千分位',
+            path: '/other/千分位'
           }
         ]
       }
