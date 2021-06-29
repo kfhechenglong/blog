@@ -1,17 +1,17 @@
 // 链表
-
-export function defaultEquals(a, b){
+const defaultEquals = function (a, b){
   return a === b;
 }
+exports.defaultEquals = defaultEquals;
 
-export class Node {
+class Node {
   constructor(element) {
     this.element = element;
     this.next = undefined;
   }
 }
-
-export default class LinkedList {
+exports.Node = Node
+exports.LinkedList = class {
   constructor(equalsFn = defaultEquals) {
     this.count = 0;
     this.head = undefined;

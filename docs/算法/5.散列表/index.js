@@ -1,3 +1,6 @@
+const linked = require("../3.链表/链表.js");
+console.log(linked)
+const LinkedList = linked.LinkedList
 function defaultToString(item) {
   if (item === null) {
     return 'NULL';
@@ -91,3 +94,44 @@ console.log(hash.get(hash.hashCode('Jack')), 'Jack')
 console.log(hash.hashCode('Athelstan'), 'Athelstan')
 
 // console.log(hash.table)
+
+// 分离链接
+
+class HashTableSeparateChaining extends HashTable {
+  constructor(toStrFn = defaultToString) {
+    super()
+    this.toStrFn = toStrFn;
+    this.table = {};
+  }
+  put(key,value) {
+    if(key != null && value != null) {
+      const position = this.hashCode(key);
+      if (this.table[position] == null) {
+        this.table[position] = new LinkedList()
+        // LinkedList为链表
+      }
+      this.table[position].push(new valuePair(key, value));
+      return true;
+    }
+    return false;
+  }
+  get(key) {
+    const position = this.hashCode(key);
+    const linkedList = this.table[position];
+    if(linkedList != null && !linkedList.isEmpty()) {
+      let current = linkedList.getHead();
+      while(current != null) {
+        if(current.element.key === key) {
+          return current.element.value;
+        }
+        current = current.next;
+      }
+    }
+    return undefined;
+  }
+}
+
+const hashTable = new HashTableSeparateChaining();
+
+hashTable.put('he', 'laohe')
+console.log(hashTable.get('he'), 'HashTableSeparateChaining')
