@@ -144,6 +144,10 @@ module.exports = {
           {
             title: '4.字典',
             path: '/算法/4.字典/'
+          },
+          {
+            title: '5.散列',
+            path: '/算法/5.散列表/'
           }
         ]
       },
@@ -152,6 +156,17 @@ module.exports = {
         sidebarDepth: 1,
         collapsable: false,
         path: '/uitls/',
+      },
+      {
+        title: '面试',
+        sidebarDepth: 1,
+        collapsable: false,
+        children: [
+          {
+            title: '1.真值相等',
+            path: '/面试/truth-value/'
+          },
+        ]
       },
       {
         title: '其它',
