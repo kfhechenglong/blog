@@ -184,6 +184,17 @@ module.exports = {
           },
         ]
       },
+      {
+        title: 'git篇',
+        sidebarDepth: 1,
+        collapsable: false,
+        children: [
+          {
+            title: 'git emoji指南',
+            path: '/git篇/git emoji指南'
+          },
+        ]
+      },
       ...other
     ]
   }
