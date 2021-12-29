@@ -179,7 +179,7 @@ module.exports = {
         collapsable: false,
         children: [
           {
-            title: '1.真值相等',
+            title: '插槽slot及v-model',
             path: '/vue3.0/vue3.0+tsx+v-slots'
           },
         ]
