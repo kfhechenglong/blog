@@ -182,6 +182,10 @@ module.exports = {
             title: '插槽slot及v-model',
             path: '/vue3.0/vue3.0+tsx+v-slots'
           },
+          {
+            title: 'table内容超出自动tooltip',
+            path: '/vue3.0/antd实现table内容超出自动tooltip'
+          },
         ]
       },
       {
