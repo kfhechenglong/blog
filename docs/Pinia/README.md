@@ -167,3 +167,41 @@ export const todos = defineStore('todos', {
 - 不需要动态添加`stores`， 因为他们默认是动态的
 - 不再有嵌套的模块结构。您仍然可以通过在另一个`stores`中隐式导入和使用`stores`，但是Pinia在设计上提供了一个扁平的结构，同时仍然支持商`stores`之间的交叉组合。你甚至可以拥有`stores`的循环依赖关系；
 - 不需要命名空间。考虑到`stores`的扁平化结构，`namespacing`是在`stores`被定义的时候与生具有的，所以可以视为所有的`stores`都具有命名空间；
+
+## 安装使用
+
+### install
+
+使用本地的命令行工具安装`Pinia`包：
+
+```sh
+yarn add pinia
+# 或者使用npm
+npm install pinia
+```
+
+> Tip
+
+> 如果使用的是`Vue2`版本， 您需要另外安装`composition api`：`@vue/composition-api`。如果您使用的是`Nuxt`，则需要另外参考[这些信息](https://pinia.vuejs.org/ssr/nuxt.html)
+
+创建`Pinia`根store然后导入应用程序中：
+
+```js
+import { createPinia } from 'pinia'
+
+app.use(createPinia())
+```
+但是，如果使用的是Vue2.则需要安装额外的插件然后注入创建好的`Pinia`到应用程序中：
+```js
+import { createPinia, PiniaVuePlugin } from 'pinia'
+Vue.use(PiniaVuePlugin)
+const pinia = createPinia()
+
+new Vue({
+    el: '#app',
+    // 其它的Vue配置项
+    pinia
+})
+```
+
+`Pinia`也将添加`devtools`支持。在`Vue 3`中，像时间旅行和编辑这样的功能仍然不被支持，因为`Vue-devtools`还没有公开必要的api，但`devtools`有更多的功能，总体上来说，开发人员的体验要优越得多。在`Vue 2`中，`Pinia`使用了`Vuex`的现有接口(因此两者不能一起使用)。
