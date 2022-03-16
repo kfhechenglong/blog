@@ -6,3 +6,5 @@
 
 [2. 鸭子类型](https://kfhechenglong.github.io/blog/javascript/duck.html)
 
+[Pinia](https://github.com/kfhechenglong/blog/docs/Pinia/README.md)
+<a href="https://github.com/kfhechenglong/blog/docs/Pinia/核心概念/README.md">核心概念</a>
