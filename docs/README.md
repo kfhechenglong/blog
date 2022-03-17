@@ -13,12 +13,12 @@
 ## JavaScript设计模式与开发实践
 
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/single.md">单例模式</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/策略模式/README.md">策略模式</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/代理模式/README.md">代理模式</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/迭代器模式/README.md">迭代器模式</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/发布订阅模式/README.md">发布订阅模式</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/命令模式/1.命令模式实现菜单管理.md">命令模式</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/模板模式/README.md">模板模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/2.策略模式/README.md">策略模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/3.代理模式/README.md">代理模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/4.迭代器模式/README.md">迭代器模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/5.发布订阅模式/README.md">发布订阅模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/6.命令模式/1.命令模式实现菜单管理.md">命令模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/7.模板模式/README.md">模板模式</a>
 
 ## 算法
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/算法/queue.md">队列</a>
