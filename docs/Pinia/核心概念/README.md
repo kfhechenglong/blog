@@ -177,3 +177,100 @@ export default {
 ### 可修改的state
 
 如果您希望能够修改这些状态属性（例如，如果您有一个表单），您可以使用`mapWritableState()`代替。请注意，您不能像`mapState()`那样传递函数：
+
+```js
+import { mapWritableState } from 'pinia'
+import { useCounterStore } from '../store/counterStore'
+
+export default {
+    computed: {
+        ...mapWritableState(useCounterStore, ['counter'])
+        ...mapWritableState(useCounterStore, {
+            myOwnName: 'counter',
+        })
+    }
+}
+```
+
+>TIP
+
+>您不需要`mapWritableState()`来处理像数组这样的集合，除非你用`cartItems = []`来替换整个数组，`mapState()`仍然允许你在你的集合上调用方法。
+
+### 改变state
+
+除了直接使用`store.counter++`来修改`store`之外，你还可以使用`$patch`方法，它允许你同时修改多个改变：
+```js
+store.$patch({
+    counter: store.counter + 1,
+    name: 'Abalam',
+})
+```
+
+然而，使用这种语法应用某些改变确实很难或代价高昂：任何集合的修改(例如，从数组中添加、删除、修改元素）都需要您创建一个新集合。正因为如此，`$patch`方法也接受一个函数来对这种难以应用于`patch`对象的改变进行分组:
+
+```js
+cartStore.$patch((state) => {
+    state.items.push({ name: 'shoes', quantity: 1 })
+    state.hasChanged = true
+})
+```
+
+这里的主要区别是`$patch()`允许您在`devtools`中将多个改变分组到一个条目中。注意，直接对`state`和`$patch()`的更改将呈现在devtools中，并且需要花费些时间(在`Vue 3`中还没出现)。
+
+### 更换state
+您可以通过将`store`的`$state`属性设置一个新对象来替换整个`store`的状态:
+```js
+store.$state = { counter: 666, name: 'Paimon' }
+```
+你也可以通过`pinia`实例的`state`来更换整体的state状态，这通常被用在`SSR`
+
+```js
+pinia.state.value = {}
+```
+
+### 订阅state
+
+您可以通过`store`的`$subscribe()`方法查看状态及其变化，这与`Vuex`的`subscribe`方法类似。与常规的`watch()`相比，使用`$subscribe()`的优势在于，订阅只会在补丁之后触发一次(例如，当使用上面的函数版本时)。
+
+```js
+cartStore.$subscribe((mutation, state) => {
+  // import { MutationType } from 'pinia'
+  mutation.type // 'direct' | 'patch object' | 'patch function'
+  // same as cartStore.$id
+  mutation.storeId // 'cart'
+  // only available with mutation.type === 'patch object'
+  mutation.payload // patch object passed to cartStore.$patch()
+
+  // persist the whole state to the local storage whenever it changes
+  localStorage.setItem('cart', JSON.stringify(state))
+})
+```
+
+默认情况下，状态订阅被绑定到添加它们的组件上(如果`store`在组件的`setup()`中)。这意味着，当组件被卸载时，它们将被自动删除。如果你想在组件卸载后保留它们，传递`{ detached: true }` 作为第二个参数来从当前组件中分离状态订阅:
+
+```js
+export default {
+  setup() {
+    const someStore = useSomeStore()
+
+    // 在组件卸载后，将保留订阅
+    someStore.$subscribe(callback, { detached: true })
+
+    // ...
+  },
+}
+```
+
+>TIP
+
+>可以在`pinia`实例上观察完整的状态
+>```js
+>watch(
+>  pinia.state,
+>  (state) => {
+>    // 当状态变化时，把它保存在本地
+>    localStorage.setItem('piniaState', JSON.stringify(state))
+>  },
+>  { deep: true }
+>)
+>```
