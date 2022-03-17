@@ -1,11 +1,33 @@
-# 绝对零度
 
-一. 面向对象
+
+## 一. 面向对象
 
 [1. 对象克隆](https://kfhechenglong.github.io/blog/javascript/clone.html)
 
 [2. 鸭子类型](https://kfhechenglong.github.io/blog/javascript/duck.html)
 
+[3. call-apply](https://github.com/kfhechenglong/blog/tree/master/docs/this-call-applay/call-applay.md)
+
+[4. this详解](https://github.com/kfhechenglong/blog/tree/master/docs/this-call-applay/this.md)
+
+## JavaScript设计模式与开发实践
+
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/single.md">单例模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/策略模式/README.md">策略模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/代理模式/README.md">代理模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/迭代器模式/README.md">迭代器模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/发布订阅模式/README.md">发布订阅模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/命令模式/1.命令模式实现菜单管理.md">命令模式</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/模板模式/README.md">模板模式</a>
+
+## 算法
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/算法/queue.md">队列</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/算法/2.Set/README.md">Set</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/算法/3.链表/README.md">链表</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/算法/4.字典/README.md">字典</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/算法/5.散列表/README.md">散列</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/算法/命令模式/6.命令模递归式实现菜单管理.md">递归</a>
+
 ## [Pinia](https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/README.md)
 
-<a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/README.md">核心概念</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/README.md">核心概念</a>
