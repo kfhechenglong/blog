@@ -1,6 +1,6 @@
 
 
-## 一. 面向对象
+## 一. `JavaScript`基础
 
 [1. 对象克隆](https://kfhechenglong.github.io/blog/javascript/clone.html)
 
@@ -10,7 +10,7 @@
 
 [4. this详解](https://github.com/kfhechenglong/blog/tree/master/docs/this-call-applay/this.md)
 
-## JavaScript设计模式与开发实践
+## `JavaScript`设计模式与开发实践
 
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/single.md">单例模式</a>
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/design-mode/2.策略模式/README.md">策略模式</a>
