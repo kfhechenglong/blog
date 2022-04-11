@@ -6,9 +6,9 @@
 
 [2. 鸭子类型](https://kfhechenglong.github.io/blog/javascript/duck.html)
 
-[3. call-apply](https://github.com/kfhechenglong/blog/tree/master/docs/this-call-applay/call-applay.md)
+[3. call-apply](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/call-applay.md)
 
-[4. this详解](https://github.com/kfhechenglong/blog/tree/master/docs/this-call-applay/this.md)
+[4. this详解](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/this.md)
 
 ## `JavaScript`设计模式与开发实践
 

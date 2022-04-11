@@ -69,22 +69,14 @@ module.exports = {
           {
             title: '3.javascript中的对象继承',
             path: '/javascript/javascript-inherit'
-          }
-        ]
-      },
-      {
-        title: 'this-call-applay',
-        sidebarDepth: 1,
-        collapsable: false,
-        path: '/this-call-applay/this',
-        children: [
-          {
-            title: '1.this',
-            path: '/this-call-applay/this'
           },
           {
-            title: '2.call和apply',
-            path: '/this-call-applay/call-apply'
+            title: '4.this',
+            path: '/javascript/this'
+          },
+          {
+            title: '5.call and apply',
+            path: '/javascript/call-apply'
           }
         ]
       },
