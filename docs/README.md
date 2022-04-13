@@ -31,6 +31,6 @@
 ## [Pinia](https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/README.md)
 
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/README.md">核心概念-States</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/README.md">核心概念-Getters</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/README.md">核心概念-Actions</a>
-- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/README.md">核心概念-Plugins</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/Getters.md">核心概念-Getters</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/Actions.md">核心概念-Actions</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/Plugins.md">核心概念-Plugins</a>
