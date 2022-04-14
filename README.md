@@ -8,7 +8,7 @@
 
 - [call-apply](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/call-apply.md)
 
-- [this详解](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/this.md)
+- [this详解](./docs/javascript/this.md)
 
 ## `JavaScript`设计模式与开发实践
 
