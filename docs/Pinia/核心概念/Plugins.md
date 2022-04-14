@@ -81,3 +81,135 @@ pinia.use(({ store }) => {
 ```
 这就是为什么你可以接收所有的计算属性而不用`.value`和为什么他们是响应式的。
 ## 添加新的状态
+可以在定义`store`时创建新的选项，以便以后从插件中使用它们。例如，你可以创建一个`debounce`选项，允许你对任何操作进行`debounce`:
+```js
+defineStore('search', {
+    actions: {
+        searchContacts() {
+            // ...
+        },
+    },
+    // 在后续的插件中可以被读取
+    debounce: {
+        // 防抖函数可以将searchContacts延迟300ms
+        searchContacts: 300
+    }
+})
+```
+插件可以读取这个选项，重新包装替代原始的值：
+```js
+// 使用第三方库
+import debounce from 'lodash/debunce'
+pinia.use(({ options, store }) => {
+    if (options.debounce) {
+        // 可以重写actions
+        return Object.keys(options.debounce).reduce((debouncedActions, action) => {
+            debouncedActions[action] = debounce(
+                store[action],
+                options.debounce[action]
+            )
+            return debouncedActions
+        }, {})
+    }
+})
+```
+请注意，当使用`setup`语法时，自定义参数作为第三个参数被传入：
+```js
+defineStore(
+    'search',
+    () => {
+        // ...
+    },
+    {
+        // 在后续的插件中可以被读取
+        debounce: {
+            // 防抖函数可以将searchContacts延迟300ms
+            searchContacts: 300
+        }
+    }
+)
+```
+## TypeScript
+上面展示的一切都可以被类型支持，所以你不需要使用`any`或者`@ts-ignore`
+### Typing plugins
+`Pinia`插件的类型如下:
+```ts
+import { PiniaPluginContext } from 'pinia'
+export function myPiniaPlugin(context: PiniaPluginContext) {
+    // ...
+}
+```
+### 新属性类型
+当你为`stores`增加一个新属性时，你也应该为`PiniaCustomProperties`拓展一个接口类型。
+```ts
+import 'pinia'
+declare module 'pinia' {
+    export interface PiniaCustomProperties {
+        // 通过使用setter，我们可以同时允许string和refs
+        set hello(value: string | Ref<string>)
+        get hello(): string
+        // 也可以定义简单值
+        simpleNumber: number
+    }
+}
+```
+它可以被重写和安全读取
+```ts
+pinia.use(({ store }) => {
+    store.hello = 'Hola'
+    store.hello = ref('Hola')
+    store.simpleNumber = Math.random()
+    // 错误的类型，报错
+    store.simpleNumber = ref(Math.random())
+})
+```
+`PiniaCustomProperties`是一个泛型类型，允许您引用`store`的属性。想象一下下面的例子，我们将初始选项复制为`$options`(这只适用于选项`stores`):
+```ts
+pinia.use(({ options }) => ({ $options: options }))
+```
+我们可以通过使用`PiniaCustomProperties`的4个泛型类型来正确地输入它:
+```ts
+import 'pinia'
+
+declare module 'pinia' {
+  export interface PiniaCustomProperties<Id, S, G, A> {
+    $options: {
+      id: Id
+      state?: () => S
+      getters?: G
+      actions?: A
+    }
+  }
+}
+```
+>Tip
+
+>当在泛型中扩展类型时，它们的命名必须与源代码中的名称完全一致。`Id`不能命名为`id`或`I`，`S`不能命名为`State`。以下是每个字母所代表的含义:
+> - S: State
+> - G: Getters
+> - A: Actions
+> - SS: Setup Store / Store
+### 新状态类型
+当添加新的状态属性时(同时添加到`store`和`store.$state`)，您需要将类型添加到`PiniaCustomStateProperties`。与`PiniaCustomProperties`不同的是，它只接收`State`泛型:
+```ts
+import 'pinia'
+declare module 'pinia' {
+    export interface PiniaCustomStateProperties<S> {
+        hello: string
+    }
+}
+```
+### 创建新options的类型
+当为`defineStore()`创建新选项时，您应该扩展`DefineStoreOptionsBase`。与`PiniaCustomProperties`不同的是，它只公开两种泛型:`State`和`Store`类型，允许您限制可以定义的类型。例如，你可以使用`action`的名称:
+```ts
+import 'pinia'
+
+declare module 'pinia' {
+  export interface DefineStoreOptionsBase<S, Store> {
+    // allow defining a number of ms for any of the actions
+    debounce?: Partial<Record<keyof StoreActions<Store>, number>>
+  }
+}
+```
+>Tip
+>还有一个`StoreGetters`类型用于从`Store`类型中提取`getter`。您还可以通过分别扩展`DefineStoreOptions`和`DefineSetupStoreOptions`类型来扩展`setup stores`或`option stores`的选项。
