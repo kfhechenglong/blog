@@ -1,4 +1,4 @@
-# Pinia学习笔记
+# Pinia
 
 ## Why Pinia
 

@@ -2,13 +2,13 @@
 
 ## 一. `JavaScript`基础
 
-[1. 对象克隆](https://kfhechenglong.github.io/blog/javascript/clone.html)
+- [对象克隆](https://kfhechenglong.github.io/blog/javascript/clone.html)
 
-[2. 鸭子类型](https://kfhechenglong.github.io/blog/javascript/duck.html)
+- [鸭子类型](https://kfhechenglong.github.io/blog/javascript/duck.html)
 
-[3. call-apply](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/call-apply.md)
+- [call-apply](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/call-apply.md)
 
-[4. this详解](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/this.md)
+- [this详解](https://github.com/kfhechenglong/blog/tree/master/docs/javascript/this.md)
 
 ## `JavaScript`设计模式与开发实践
 
@@ -34,3 +34,4 @@
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/Getters.md">核心概念-Getters</a>
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/Actions.md">核心概念-Actions</a>
 - <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/核心概念/Plugins.md">核心概念-Plugins</a>
+- <a href="https://github.com/kfhechenglong/blog/tree/master/docs/Pinia/操作指引/README.md">操作指引</a>
