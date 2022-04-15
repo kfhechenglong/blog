@@ -164,10 +164,110 @@ export const useAuthUserStore = defineStore('auth/user', {
   }
 })
 ```
+## 组件内使用
+现在你的`Vuex`模块已经被`Pinia store`替代，任何使用这些模块的组件和其它文件应当被更新。
+
+如果你以前使用过`Vuex`的地图帮助器，那么值得看看不使用 `setup()`指南，因为大多数的帮助器都可以重用。
+
+如果您使用的是`useStore`，则直接导入新`store`并访问其状态。例如:
+
+```js
+// Vuex
+import { defineComponent, computed } from 'vue'
+import { useStore } from 'vuex'
+
+export default defineComponent({
+  setup () {
+    const store = useStore()
+
+    const firstName = computed(() => store.state.auth.user.firstName)
+    const fullName = computed(() => store.getters['auth/user/firstName'])
+
+    return {
+      firstName,
+      fullName
+    }
+  }
+})
+```
+
+```js
+// Pinia
+import { defineComponent, computed } from 'vue'
+import { useAuthUserStore } from '@/stores/auth-user'
+
+export default defineComponent({
+  setup () {
+    const authUserStore = useAuthUserStore()
+
+    const firstName = computed(() => authUserStore.firstName)
+    const fullName = computed(() => authUserStore.fullName)
+
+    return {
+      // 您还可以通过返回它来访问组件中的整个`store`
+      authUserStore,
+      firstName,
+      fullName
+    }
+  }
+})
+```
+
+## 组件外使用
+只要注意不要在函数之外使用存储，更新组件之外的使用应该是很简单的。下面是一个在`Vue Router`导航守卫中使用`store`的例子:
+
+```js
+// Vuex
+import vuexStore from '@/store'
+
+router.beforeEach((to, from, next) => {
+    if (vuexStore/getters['auth/user/loggedIn']) next()
+    else next('/login')
+})
+```
+```js
+// Pinia
+import { useAuthUserStore } from '@/stores/auth-user'
+
+router.beforeEach((to, from, next) => {
+    // 必须在函数内部使用
+    const authUserStore = useAuthUserStore()
+    if (authUserStore.loggedIn) next()
+    else next('/login')
+})
+```
+更多细节可以在这里找到。
+## 高级Vuex用法
+
+在这种情况下，你的`Vuex store`使用它提供的一些更高级的功能，这里是一些如何在`Pinia`中实现相同目标的指导。其中一些要点已在[比较摘要中介绍](./../README.md#与vuex3xvuex4x相对比)。
+## 动态模块
+在`Pinia`中不需要动态注册模块。`store`在设计上是动态的，只有在需要时才进行注册。如果一个`store`从未被使用，它将永远不会被“注册”。
+## 模块热更新
+模块热更新也是被支持的，但需要更换，请参阅HMR指南。
+## 插件
+如果你使用一个公共的`Vuex`插件，那么检查是否有`Pinia`的替代品。如果没有，你将需要自己编写或评估插件是否仍然必要。
+
+如果您已经编写了自己的插件，那么很可能会对其进行更新，以便能够使用`Pinia`。参见[插件指南](./../%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/Plugins.md)
 # 模块热更新
+`Pinia`支持热模块替换，所以你可以编辑你的`stores`，并与他们直接在你的应用程序中交互，而不需要重新加载页面，允许你保持现有的状态，添加，甚至删除`state`，`actions`，和`getter`。
 
+目前，官方只支持`Vite`，但任何实现`import.meta.hot`规范的绑定器都应该可以工作(例如，`webpack`似乎使用`import.meta.webpackHot`而不是`import.meta.hot`)。您需要将此代码片段添加到任何存储声明的旁边。假设你有三个`stores`:`auth.js`、`cart.js`和`chat.js`，你必须在创建`store`定义之后添加(并调整)这个:
+```js
+// auth.js
+import { defineStore, acceptHMRUpdate } from 'pinia'
+
+const useAuth = defineStore('auth', {
+  // options...
+})
+
+// make sure to pass the right store definition, `useAuth` in this case.
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useAuth, import.meta.hot))
+}
+```
 # 测试
-
+s
 # 不使用`setup()`
-
+s
 # 组合`Stores`
+s
