@@ -20,6 +20,8 @@
 - <a href="./docs/design-mode/6.命令模式/1.命令模式实现菜单管理.md">命令模式</a>
 - <a href="./docs/design-mode/7.模板模式/README.md">模板模式</a>
 
+## 工具
+- <a href="./docs/工具/wx-pc-dev.md">微信、企微PC端页面调试</a>
 ## 算法
 - <a href="./docs/算法/queue.md">队列</a>
 - <a href="./docs/算法/2.Set/README.md">Set</a>
