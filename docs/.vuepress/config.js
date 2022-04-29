@@ -149,10 +149,55 @@ module.exports = {
         ]
       },
       {
-        title: '工具函数',
+        title: 'Pinia',
         sidebarDepth: 1,
         collapsable: false,
-        path: '/uitls/',
+        path: '/Pinia/',
+        children: [
+          {
+            title: '1.核心概念',
+            path: '/Pinia/核心概念/'
+          },
+          {
+            title: '2.Getters',
+            path: '/Pinia/核心概念/Getters'
+          },
+          {
+            title: '3.Actions',
+            path: '/Pinia/核心概念/Actions'
+          },
+          {
+            title: '4.Plugins',
+            path: '/Pinia/核心概念/Plugins'
+          },
+          {
+            title: '5.操作指引',
+            path: '/Pinia/操作指引/'
+          }
+        ]
+      },
+      {
+        title: '工具',
+        sidebarDepth: 1,
+        collapsable: false,
+        children: [
+          {
+            title: '1.生日年龄转换',
+            path: '/uitls/format-date/'
+          },
+          {
+            title: '2.数字添加千分位',
+            path: '/uitls/千分位'
+          },
+          {
+            title: '3.文件下载',
+            path: '/uitls/exportFiles'
+          },
+          {
+            title: '4.微信、企微PC端页面调试',
+            path: '/工具/wx-pc-dev'
+          }
+        ]
       },
       {
         title: '面试',
