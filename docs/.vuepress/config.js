@@ -53,7 +53,7 @@ module.exports = {
         path: '/'
       },
       {
-        title: '面向对象',
+        title: 'JavaScript基础',
         sidebarDepth: 1,
         collapsable: false,
         path: '/javascript/clone',
@@ -196,6 +196,10 @@ module.exports = {
           {
             title: '4.微信、企微PC端页面调试',
             path: '/工具/wx-pc-dev'
+          },
+          {
+            title: '5.日程组件',
+            path: '/other/fullCalendar/'
           }
         ]
       },

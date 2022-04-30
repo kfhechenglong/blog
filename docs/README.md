@@ -1,6 +1,6 @@
 
 
-## 一. `JavaScript`基础
+## `JavaScript`基础
 
 - [对象克隆](https://kfhechenglong.github.io/blog/javascript/clone.html)
 
@@ -22,6 +22,7 @@
 
 ## 工具
 - <a href="./工具/wx-pc-dev.md">微信、企微PC端页面调试</a>
+- <a href="./other/fullCalendar/README.md">日程组件</a>
 - <a href="./uitls/format-date/README.md">生日年龄转换</a>
 - <a href="./uitls/千分位.md">千分位</a>
 - <a href="./uitls/exportFiles.md">文件导出</a>
