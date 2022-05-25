@@ -287,7 +287,7 @@ const code = generate(jsAst)
 - 用来将模板`AST`解析成`JavaScript AST`的转换器（`transformer`）；
 - 用来根据`JavaScript AST`生成渲染函数代码的生成器（`generator`）；
 
-本文章主要讨论了`parser`的实现原理，以及如何使用有限状态自动机来构造一个词法分析器，其过程就是状态机在不同的状态之间进行迁移的过程，并生成一个`Token`列表集合。然后使用`Token`列表集合和顶节点元素栈来构造一个可以用来描述模板的`AST`，最后使用模板`AST`来解析成`JavaScript AST`和渲染函数。
+本文章主要讨论了`parser`的基本实现原理（实际上`Vue.js`的真正实现要复杂的多，比如正则解析、`Vue`语法解析`v-if`、`v-show`、内插值`{{}}`等等），以及如何使用有限状态自动机来构造一个词法分析器，其过程就是状态机在不同的状态之间进行迁移的过程，并生成一个`Token`列表集合。然后使用`Token`列表集合和顶节点元素栈来构造一个可以用来描述模板的`AST`，最后使用模板`AST`来解析成`JavaScript AST`和渲染函数。
 
 ![在这里插入图片描述](./imges/compiler2.png)
 
