@@ -227,6 +227,10 @@ module.exports = {
             title: 'table内容超出自动tooltip',
             path: '/vue3.0/antd实现table内容超出自动tooltip'
           },
+          {
+            title: '图解vue3.0编译器核心原理',
+            path: '/vue核心原理/图解vue3.0编译器核心原理'
+          },
         ]
       },
       {

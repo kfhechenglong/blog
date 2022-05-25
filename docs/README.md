@@ -41,3 +41,6 @@
 - <a href="./Pinia/核心概念/Actions.md">核心概念-Actions</a>
 - <a href="./Pinia/核心概念/Plugins.md">核心概念-Plugins</a>
 - <a href="./Pinia/操作指引/README.md">操作指引</a>
+
+## [Vue核心原理](./vue核心原理/README.md)
+- <a href="./vue核心原理/图解vue3.0编译器核心原理.md">图解vue3.0编译器核心原理</a>
