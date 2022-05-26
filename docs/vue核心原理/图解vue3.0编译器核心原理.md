@@ -3,7 +3,7 @@
 ## 概览
 Vue.js作为目前最流行的前端框架之一，一些概念和原理还是需要我们前端开发人员了解与深入理解的。
 
-Vue.js涉及的知识点很多，一些重要概念，例如：如何使用`proxy`实现响应式`effect`，虚拟`DOM`的`Diff`算法及演变过程，渲染器原理的实现、编译器、解析器的工资原理及末班编辑的优化过程等等；
+Vue.js涉及的知识点很多，一些重要概念，例如：如何使用`proxy`实现响应式`effect`，虚拟`DOM`的`Diff`算法及演变过程，渲染器原理的实现，编译器、解析器的工作原理，动态节点、静态提升等等；
 
 现在重点采用图解步骤分析一下编译器的简单工作原理；
 ## 编译器概念
@@ -223,7 +223,7 @@ function parse(str) {
     // 创建节点栈,root节点作为栈的根节点
     const stack = [root];
     while(tokens.length) {
-        const parent = stack[stack.lenth - 1];
+        const parent = stack[stack.length - 1];
         const token = tokens[0] // 从第一个点开始
         switch(t.type) {
             case 'tag':
