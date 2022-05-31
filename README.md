@@ -22,6 +22,7 @@
 
 ## 工具
 - <a href="./docs/工具/wx-pc-dev.md">微信、企微PC端页面调试</a>
+- <a href="./docs/cli/README.md">脚手架开发</a>
 - <a href="./docs/other/fullCalendar/README.md">日程组件</a>
 - <a href="./docs/uitls/format-date/README.md">生日年龄转换</a>
 - <a href="./docs/uitls/千分位.md">千分位</a>
@@ -41,3 +42,6 @@
 - <a href="./docs/Pinia/核心概念/Actions.md">核心概念-Actions</a>
 - <a href="./docs/Pinia/核心概念/Plugins.md">核心概念-Plugins</a>
 - <a href="./docs/Pinia/操作指引/README.md">操作指引</a>
+## [Vue核心原理](./docs/vue核心原理/README.md)
+
+- <a href="./docs/vue核心原理/图解vue3.0编译器核心原理.md">图解vue3.0编译器核心原理</a>

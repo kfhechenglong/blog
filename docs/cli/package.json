@@ -1,0 +1,16 @@
+{
+  "name": "cli-demo",
+  "version": "1.0.0",
+  "description": "开发个人cli工具脚手架",
+  "main": "./bin/index.js",
+  "bin": "./bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "脚手架"
+  ],
+  "author": "绝对零度",
+  "license": "ISC"
+}

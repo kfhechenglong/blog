@@ -22,6 +22,7 @@
 
 ## 工具
 - [微信、企微PC端页面调试](./工具/wx-pc-dev.md)
+- [脚手架开发](./cli/README.md)
 - [日程组件](./other/fullCalendar/README.md)
 - [生日年龄转换](./uitls/format-date/README.md)
 - [千分位](./uitls/千分位.md)
@@ -36,11 +37,11 @@
 
 ## [Pinia](./Pinia/README.md)
 
-- <a href="./Pinia/核心概念/README.md">核心概念-States</a>
-- <a href="./Pinia/核心概念/Getters.md">核心概念-Getters</a>
-- <a href="./Pinia/核心概念/Actions.md">核心概念-Actions</a>
-- <a href="./Pinia/核心概念/Plugins.md">核心概念-Plugins</a>
-- <a href="./Pinia/操作指引/README.md">操作指引</a>
+- [核心概念-States](./Pinia/核心概念/README.md)
+- [核心概念-Getters](./Pinia/核心概念/Getters.md)
+- [核心概念-Actions](./Pinia/核心概念/Actions.md)
+- [核心概念-Plugins](./Pinia/核心概念/Plugins.md)
+- [操作指引](./Pinia/操作指引/README.md)
 
 ## [Vue核心原理](./vue核心原理/README.md)
-- <a href="./vue核心原理/图解vue3.0编译器核心原理.md">图解vue3.0编译器核心原理</a>
+- [图解vue3.0编译器核心原理](./vue核心原理/图解vue3.0编译器核心原理.md)

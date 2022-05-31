@@ -200,6 +200,10 @@ module.exports = {
           {
             title: '5.日程组件',
             path: '/other/fullCalendar/'
+          },
+          {
+            title: '6.脚手架开发',
+            path: '/cli/'
           }
         ]
       },
