@@ -69,3 +69,29 @@ $ cli-demo
 index.js
 ```
 说明`link`成功！！
+
+## 常用工具
+
+### 说明
+一个脚手架的搭建，需要很多额外的工具库，比如命令行指令的`commander`，命令问答的` inquirer`等等，本次重点介绍一些常用的node工具库：
+
+|序号|库名|主要作用
+|--|--|--
+|1|`commander`| `node.js`命令行工具
+|2|`inquirer`|命令行交互工具
+
+### `commander`使用
+
+安装`commander`工具，相关Api中文文档请移至>>>[这里](https://github.com/tj/commander.js/blob/master/Readme_zh-CN.md)
+
+```sh
+npm install commander
+```
+安装成功package.json增加以下信息
+```json
+"dependencies": {
+    "commander": "^9.3.0"
+}
+```
+#### 测试`commander`命令
+
