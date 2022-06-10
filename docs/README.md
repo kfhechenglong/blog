@@ -22,7 +22,7 @@
 
 ## 工具
 - [微信、企微PC端页面调试](./工具/wx-pc-dev.md)
-- [脚手架开发](./cli/README.md)
+- [脚手架搭建](./cli/README.md)
 - [日程组件](./other/fullCalendar/README.md)
 - [生日年龄转换](./uitls/format-date/README.md)
 - [千分位](./uitls/千分位.md)

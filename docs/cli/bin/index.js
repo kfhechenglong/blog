@@ -3,10 +3,12 @@ console.log('index.js')
 const { program } = require('commander');
 
 program
-.option('--first')
+.command('create <my-app>')
+.description('create a new project')
+.option('-f, --force', 'overwrite target directory if it exist')
 .action((name, options) => {
-    console.log('name', name)
+    // 打印执行结果
+    console.log('name', name, 'options', options);
+    require('../bin/create.js')(name, options)
 })
 program.parse();
-console.log(program.opts())
-console.log(program.args)

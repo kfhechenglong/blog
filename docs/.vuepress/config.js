@@ -202,7 +202,7 @@ module.exports = {
             path: '/other/fullCalendar/'
           },
           {
-            title: '6.脚手架开发',
+            title: '6.脚手架搭建',
             path: '/cli/'
           }
         ]

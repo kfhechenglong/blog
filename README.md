@@ -22,7 +22,7 @@
 
 ## 工具
 - <a href="./docs/工具/wx-pc-dev.md">微信、企微PC端页面调试</a>
-- <a href="./docs/cli/README.md">脚手架开发</a>
+- <a href="./docs/cli/README.md">脚手架搭建</a>
 - <a href="./docs/other/fullCalendar/README.md">日程组件</a>
 - <a href="./docs/uitls/format-date/README.md">生日年龄转换</a>
 - <a href="./docs/uitls/千分位.md">千分位</a>
