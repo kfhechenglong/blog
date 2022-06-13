@@ -1,8 +1,9 @@
-const path = require('path');
-const fs = require('fs-extra');
-const inquirer = require('inquirer')
+import path from 'path';
+import fs from 'fs-extra';
+import inquirer from 'inquirer';
+import chalk from 'chalk';
 // const Generator = require('./generator.js')
-module.exports = async function (name, options) {
+export async function create (name, options) {
     const cwd = process.cwd();
     const targetPath = path.join(cwd, name);
     console.log(targetPath)
@@ -11,8 +12,9 @@ module.exports = async function (name, options) {
         // 是否强制创建目录
         if (options.force) {
             // 移除旧目录
-            console.log(`\r\nRemoving....`)
-            // await fs.remove(targetPath)
+            console.log(chalk.redBright(`\r\nRemoving....`))
+            await fs.remove(targetPath)
+            console.log(chalk.bgBlue(`\r\n旧文件夹移除成功`))
         } else {
             // 是否要覆盖目录
             let { action } = await inquirer.prompt([
@@ -36,11 +38,16 @@ module.exports = async function (name, options) {
                 return;
             } else if (action === 'overwrite') {
                 // 如果选择重写目录
-                console.log(`\r\nRemoving....`)
-                // await fs.remove(targetPath)
+                console.log(chalk.redBright(`\r\nRemoving....`))
+                await fs.remove(targetPath)
+                console.log(chalk.bgBlue(`\r\n旧文件夹移除成功`))
             }
         }
     }
     // 创建目录
-    console.log('创建目录文件夹成功')
+    fs.mkdir(targetPath, (err) => {
+        if (!err) {
+            console.log(chalk.green(`\r\n创建目录文件--${chalk.yellow(name)}--夹成功`))
+        }
+    })
 }

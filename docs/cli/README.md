@@ -285,7 +285,11 @@ module.exports = async function (name, options) {
     }
   }
   // 创建目录
-  console.log("创建目录文件夹成功");
+  fs.mkdir(targetPath, (err) => {
+    if (!err) {
+      console.log("创建目录文件夹成功");
+    }
+  });
 };
 ```
 
@@ -304,4 +308,72 @@ $ ****\cli\template
 Removing....
 创建目录文件夹成功
 ```
+
 此时，逻辑代码完全按照预想的预案执行
+
+### 美化信息
+
+安装插件[`chalk`](https://www.npmjs.com/package/chalk)
+
+```sh
+$ npm install chalk
+```
+
+安装成功后，这个地方发现一个坑需要填平。因为前面的代码我们都是采用`CommonJs`规范，例如采用`require`的方式引入插件`const inquirer = require("inquirer");`，但是新版的`chalk`已经不支持这种方式，需要采用`module`模式，所以需要先修改`package.json`,增加以下配置
+
+```json
+"type": "module"
+```
+
+然后将项目中相关引用改为`import from `方式,例如：
+
+```js
+import { Command } from "commander";
+import { create } from "./create.js";
+// 其它代码省略
+```
+
+言归正传，我们接着使用`chalk`来美化命名输入样式
+
+```js
+import chalk from "chalk";
+export async function create(name, options) {
+  const cwd = process.cwd();
+  const targetPath = path.join(cwd, name);
+  console.log(targetPath);
+  // 判断目标是否存在
+  if (fs.existsSync(targetPath)) {
+    // 是否强制创建目录
+    if (options.force) {
+      // 移除旧目录
+      console.log(chalk.redBright(`\r\nRemoving....`));
+      await fs.remove(targetPath);
+      console.log(chalk.bgBlue(`\r\n旧文件夹移除成功`));
+    } else {
+      // 原始逻辑
+      if (!action) {
+        return;
+      } else if (action === "overwrite") {
+        // 如果选择重写目录
+        console.log(chalk.redBright(`\r\nRemoving....`));
+        await fs.remove(targetPath);
+        console.log(chalk.bgBlue(`\r\n旧文件夹移除成功`));
+      }
+    }
+  }
+  // 创建目录
+  fs.mkdir(targetPath, (err) => {
+    if (!err) {
+      console.log(
+        chalk.green(`\r\n创建目录文件--${chalk.yellow(name)}--夹成功`)
+      );
+    }
+  });
+}
+```
+再次执行命令`cli-demo create template -f`，此处输出：
+
+![在这里插入图片描述](./imgs/chalk.png)
+
+这样命令行消息就显得醒目一些，更加方便查看。
+
