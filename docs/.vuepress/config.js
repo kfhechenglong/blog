@@ -204,6 +204,10 @@ module.exports = {
           {
             title: '6.脚手架搭建',
             path: '/cli/'
+          },
+          {
+            title: '7.文件上传到腾讯云',
+            path: '/other/upload-files/'
           }
         ]
       },

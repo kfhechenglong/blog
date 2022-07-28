@@ -27,6 +27,7 @@
 - [生日年龄转换](./uitls/format-date/README.md)
 - [千分位](./uitls/千分位.md)
 - [文件导出](./uitls/exportFiles.md)
+- [文件上传到腾旭云](./other/upload-files/README.md)
 ## 算法
 - [队列](./算法/queue.md)
 - [Set](./算法/2.Set/README.md)

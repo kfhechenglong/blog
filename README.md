@@ -27,6 +27,7 @@
 - <a href="./docs/uitls/format-date/README.md">生日年龄转换</a>
 - <a href="./docs/uitls/千分位.md">千分位</a>
 - <a href="./docs/uitls/exportFiles.md">文件导出</a>
+- <a href="./docs/other/upload-files/README.md">文件上传到腾讯云</a>
 ## 算法
 - <a href="./docs/算法/queue.md">队列</a>
 - <a href="./docs/算法/2.Set/README.md">Set</a>
