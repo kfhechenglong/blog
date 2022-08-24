@@ -35,6 +35,7 @@
 - <a href="./docs/算法/4.字典/README.md">字典</a>
 - <a href="./docs/算法/5.散列表/README.md">散列</a>
 - <a href="./docs/算法/命令模式/6.命令模递归式实现菜单管理.md">递归</a>
+- <a href="./docs/算法/指针思想/README.md">指针思想</a>
 
 ## [Pinia](./docs/Pinia/README.md)
 
