@@ -131,24 +131,28 @@ module.exports = {
         collapsable: false,
         children: [
           {
-            title: '1.队列',
-            path: '/算法/queue'
+            title: '栈',
+            path: '/算法/1.栈/'
           },
           {
-            title: '4.字典',
+            title: '队列',
+            path: '/算法/7.队列/queue'
+          },
+          {
+            title: '字典',
             path: '/算法/4.字典/'
           },
           {
-            title: '5.散列',
+            title: '散列',
             path: '/算法/5.散列表/'
           },
           {
-            title: '6.递归',
+            title: '递归',
             path: '/算法/6.递归/'
           },
           {
-            title: '7.指针思想',
-            path: '/算法/指针思想/'
+            title: '指针思想',
+            path: '/算法/8.指针思想/'
           }
         ]
       },

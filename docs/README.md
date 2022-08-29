@@ -29,13 +29,14 @@
 - [文件导出](./uitls/exportFiles.md)
 - [文件上传到腾旭云](./other/upload-files/README.md)
 ## 算法
-- [队列](./算法/queue.md)
+- [栈](./算法/1.栈/README.md)
 - [Set](./算法/2.Set/README.md)
 - [链表](./算法/3.链表/README.md)
 - [字典](./算法/4.字典/README.md)
 - [散列](./算法/5.散列表/README.md)
-- [递归](./算法/命令模式/6.命令模递归式实现菜单管理.md)
-- [指针思想](./算法/指针思想/README.md)
+- [递归](./算法/6.递归/6.README.md)
+- [队列](./算法/7.队列/queue.md)
+- [指针思想](./算法/8.指针思想/README.md)
 
 ## [Pinia](./Pinia/README.md)
 

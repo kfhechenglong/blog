@@ -29,13 +29,14 @@
 - <a href="./docs/uitls/exportFiles.md">文件导出</a>
 - <a href="./docs/other/upload-files/README.md">文件上传到腾讯云</a>
 ## 算法
-- <a href="./docs/算法/queue.md">队列</a>
+- <a href="./docs/算法/1.栈/README.md">栈</a>
 - <a href="./docs/算法/2.Set/README.md">Set</a>
 - <a href="./docs/算法/3.链表/README.md">链表</a>
 - <a href="./docs/算法/4.字典/README.md">字典</a>
 - <a href="./docs/算法/5.散列表/README.md">散列</a>
-- <a href="./docs/算法/命令模式/6.命令模递归式实现菜单管理.md">递归</a>
-- <a href="./docs/算法/指针思想/README.md">指针思想</a>
+- <a href="./docs/算法/6.递归/README.md">递归</a>
+- <a href="./docs/算法/7.队列/queue.md">队列</a>
+- <a href="./docs/算法/8.指针思想/README.md">指针思想</a>
 
 ## [Pinia](./docs/Pinia/README.md)
 

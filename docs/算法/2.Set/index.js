@@ -66,6 +66,7 @@ class Set {
       biggerSet = otherValues;
       smallerSet = values;
     }
+    console.log(biggerSet)
     smallerSet.forEach(value => {
       if (biggerSet.has(value)) {
         intersectionSet.add(value)
@@ -100,4 +101,21 @@ class Set {
   }
 }
 
+const set = new Set();
 
+set.add(12);
+set.add(2);
+set.add(3);
+set.add(4);
+console.log(set.values())
+// 设置另外一个集合
+
+const setOther = new Set();
+setOther.add(3)
+setOther.add(4)
+setOther.add(6)
+console.log(setOther.values())
+// 获取交集
+
+const union = set.union(setOther)
+console.log(union)

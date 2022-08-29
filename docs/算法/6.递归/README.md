@@ -39,6 +39,27 @@ function fibonacciMemoization (n) {
   }
   return fibonacci(n, memo);
 }
+
+// 或者
+// 增加缓存优化，减少计算次数
+// 优化斐波那契数列---增加缓存
+
+const cache = {}
+function fibCache (n) {
+  count+= 1
+  if (n in cache) {
+    return cache[n]
+  }
+  const v = n === 0 || n === 1 ? 1 : fibCache(n - 1) + fibCache(n - 2);
+  cache[n] = v;
+  return v
+}
+
+// 获取10以内的斐波那契数列值
+for (let i = 1; i < 10; i++) {
+  console.log(fibCache(i))
+}
+
 ```
 
 ## 两者的区别
