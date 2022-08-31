@@ -228,6 +228,10 @@ module.exports = {
             title: '1.真值相等',
             path: '/面试/truth-value/'
           },
+          {
+            title: '2.Vue类',
+            path: '/面试/vue/'
+          },
         ]
       },
       {

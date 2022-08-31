@@ -9,6 +9,10 @@
 - [call-apply](./javascript/call-apply.md)
 
 - [this详解](./javascript/this.md)
+## 面试相关
+
+- [基础类](./面试/truth-value/README.md)
+- [vue类](./面试/vue/README.md)
 
 ## `JavaScript`设计模式与开发实践
 
