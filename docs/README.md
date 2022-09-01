@@ -24,14 +24,10 @@
 - [命令模式](./design-mode/6.命令模式/1.命令模式实现菜单管理.md)
 - [模板模式](./design-mode/7.模板模式/README.md)
 
-## 工具
-- [微信、企微PC端页面调试](./工具/wx-pc-dev.md)
+## Node
+- [inquirer](./node/inquirer/README.md)
+- [commander](./node/node-commander/README.md)
 - [脚手架搭建](./cli/README.md)
-- [日程组件](./other/fullCalendar/README.md)
-- [生日年龄转换](./uitls/format-date/README.md)
-- [千分位](./uitls/千分位.md)
-- [文件导出](./uitls/exportFiles.md)
-- [文件上传到腾旭云](./other/upload-files/README.md)
 ## 算法
 - [栈](./算法/1.栈/README.md)
 - [Set](./算法/2.Set/README.md)
@@ -52,3 +48,10 @@
 
 ## [Vue核心原理](./vue核心原理/README.md)
 - [图解vue3.0编译器核心原理](./vue核心原理/图解vue3.0编译器核心原理.md)
+## 杂项
+- [微信、企微PC端页面调试](./工具/wx-pc-dev.md)
+- [日程组件](./other/fullCalendar/README.md)
+- [生日年龄转换](./uitls/format-date/README.md)
+- [千分位](./uitls/千分位.md)
+- [文件导出](./uitls/exportFiles.md)
+- [文件上传到腾讯云](./other/upload-files/README.md)

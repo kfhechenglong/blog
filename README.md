@@ -24,14 +24,10 @@
 - <a href="./docs/design-mode/6.命令模式/1.命令模式实现菜单管理.md">命令模式</a>
 - <a href="./docs/design-mode/7.模板模式/README.md">模板模式</a>
 
-## 工具
-- <a href="./docs/工具/wx-pc-dev.md">微信、企微PC端页面调试</a>
+## Node
+- <a href="./docs/node/inquirer/README.md">inquirer</a>
+- <a href="./docs/node/node-commander/README.md">commander</a>
 - <a href="./docs/cli/README.md">脚手架搭建</a>
-- <a href="./docs/other/fullCalendar/README.md">日程组件</a>
-- <a href="./docs/uitls/format-date/README.md">生日年龄转换</a>
-- <a href="./docs/uitls/千分位.md">千分位</a>
-- <a href="./docs/uitls/exportFiles.md">文件导出</a>
-- <a href="./docs/other/upload-files/README.md">文件上传到腾讯云</a>
 ## 算法
 - <a href="./docs/算法/1.栈/README.md">栈</a>
 - <a href="./docs/算法/2.Set/README.md">Set</a>
@@ -52,3 +48,10 @@
 ## [Vue核心原理](./docs/vue核心原理/README.md)
 
 - <a href="./docs/vue核心原理/图解vue3.0编译器核心原理.md">图解vue3.0编译器核心原理</a>
+## 杂项
+- <a href="./docs/工具/wx-pc-dev.md">微信、企微PC端页面调试</a>
+- <a href="./docs/other/fullCalendar/README.md">日程组件</a>
+- <a href="./docs/uitls/format-date/README.md">生日年龄转换</a>
+- <a href="./docs/uitls/千分位.md">千分位</a>
+- <a href="./docs/uitls/exportFiles.md">文件导出</a>
+- <a href="./docs/other/upload-files/README.md">文件上传到腾讯云</a>

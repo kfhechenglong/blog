@@ -185,37 +185,21 @@ module.exports = {
         ]
       },
       {
-        title: '工具',
+        title: 'node',
         sidebarDepth: 1,
         collapsable: false,
         children: [
           {
-            title: '1.生日年龄转换',
-            path: '/uitls/format-date/'
+            title: 'inquirer',
+            path: '/node/inquirer/'
           },
           {
-            title: '2.数字添加千分位',
-            path: '/uitls/千分位'
+            title: 'commander',
+            path: '/node/node-commander/'
           },
           {
-            title: '3.文件下载',
-            path: '/uitls/exportFiles'
-          },
-          {
-            title: '4.微信、企微PC端页面调试',
-            path: '/工具/wx-pc-dev'
-          },
-          {
-            title: '5.日程组件',
-            path: '/other/fullCalendar/'
-          },
-          {
-            title: '6.脚手架搭建',
+            title: '脚手架搭建',
             path: '/cli/'
-          },
-          {
-            title: '7.文件上传到腾讯云',
-            path: '/other/upload-files/'
           }
         ]
       },

@@ -1,0 +1,18 @@
+{
+  "name": "commander-demo",
+  "version": "1.0.0",
+  "description": "commander-demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "commander"
+  ],
+  "author": "绝对零度",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^9.3.0"
+  }
+}
