@@ -5,7 +5,7 @@
   "main": "./bin/index.js",
   "bin": "./bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cli-test": "rimraf ./test && node bin/test.js test"
   },
   "keywords": [
     "cli",
@@ -17,7 +17,13 @@
   "dependencies": {
     "chalk": "^5.0.1",
     "commander": "^9.3.0",
+    "ejs": "^3.1.8",
+    "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }
