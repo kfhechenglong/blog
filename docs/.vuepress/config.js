@@ -219,6 +219,17 @@ module.exports = {
         ]
       },
       {
+        title: 'Web前端安全',
+        sidebarDepth: 1,
+        collapsable: false,
+        children: [
+          {
+            title: '1.XSS',
+            path: '/前端安全/xss/'
+          }
+        ]
+      },
+      {
         title: 'vue3.0',
         sidebarDepth: 1,
         collapsable: false,
