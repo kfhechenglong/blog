@@ -2,8 +2,10 @@
   "name": "cli-demo",
   "version": "1.0.0",
   "description": "开发个人cli工具脚手架",
-  "main": "./bin/index.js",
-  "bin": "./bin/index.js",
+  "main": "./bin/src/index.js",
+  "bin": {
+    "cli-demo": "./bin/www.js"
+  },
   "scripts": {
     "cli-test": "rimraf ./test && node bin/test.js test"
   },

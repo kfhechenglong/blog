@@ -36,8 +36,9 @@ await execa(`git`, ['add', './'], { cwd: getProjectPath(), })
 await execa(`git`, ['commit', '-m', 'init'], { cwd: getProjectPath(), })
 
 // 6. 拉取远程仓库代码作为代码模板
-// await execa(`git`, ['clone', 'https://gitee.com/yanhuakang/my-first-npm-lib.git'], { cwd: './', })
-// await execa(`mv`, ['my-first-npm-lib', config.packageName], { cwd: './', })
-// await execa(`rm`, ['-rf', `${getProjectPath()}/.git`], { cwd: './', })
-// await execa(`cd`, [config.packageName], { cwd: './', })
-// await execa(`npm`, ['init'], { cwd: './', })
+await execa(`git`, ['clone', 'https://gitee.com/yanhuakang/my-first-npm-lib.git'], { cwd: './', })
+// 修改远程模版文件夹名称
+await execa(`mv`, ['my-first-npm-lib', config.packageName], { cwd: './', })
+await execa(`rm`, ['-rf', `${getProjectPath()}/.git`], { cwd: './', })
+await execa(`cd`, [config.packageName], { cwd: './', })
+await execa(`npm`, ['init'], { cwd: './', })
