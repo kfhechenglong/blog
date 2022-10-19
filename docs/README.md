@@ -48,7 +48,7 @@
 
 ## [Vue核心原理](./vue核心原理/README.md)
 - [图解vue3.0编译器核心原理](./vue核心原理/图解vue3.0编译器核心原理.md)
-## ## `Web`安全
+## `Web`安全
 - [Web前端安全系列之：XSS攻防](./前端安全/xss/README.md)
 ## 杂项
 - [微信、企微PC端页面调试](./工具/wx-pc-dev.md)

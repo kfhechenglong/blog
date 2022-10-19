@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS攻防演练</title>
+</head>
+<body>
+    <h3>基于DOM的XSS</h3>
+    <input type="text" id="input">
+    <button id="btn">提交内容</button>
+    <div id="div"></div>
+</body>
+<script>
+    const input = document.getElementById('input');
+    const btn = document.getElementById('btn');
+    const div = document.getElementById('div');
+
+    let val;
+     
+    input.addEventListener('change', (e) => {
+        val = e.target.value;
+    }, false);
+
+    btn.addEventListener('click', () => {
+        div.innerHTML = `<a href=${val}>链接地址</a>`
+    }, false);
+</script>
+</html>

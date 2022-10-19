@@ -76,13 +76,73 @@ Web 攻击技术的发展也可以分为几个阶段。在 `Web 1.0` 时代，�
 
 以上就是一个典型的**存储型**攻击。
 ### 基于`DOM XSS`
-实际上，这种类型的`XSS`并非按照“数据是否保存在服务器端”来划分，`DOM Based XSS`从效果上来说也是反射型`XSS`。单独划分出来，是因为`DOM Based XSS` 的形成原因比较特别，发现它的安全专家专门提出了这种类型的 `XSS`。出于历史原因，也就把它单独作为一个分类了。
+实际上，这种类型的`XSS`并非按照“数据是否保存在服务器端”来划分，`DOM Based XSS`从效果上来说也是反射型`XSS`。单独划分出来，是因为`DOM Based XSS` 的形成原因比较特别，发现它的安全专家专门提出了这种类型的`XSS`。`DOM 型 XSS`跟前两种`XSS`的区别：`DOM 型 XSS`攻击中，取出和执行恶意代码由浏览器端完成，属于前端`JavaScript`自身的安全漏洞，而其他两种`XSS`都属于服务端的安全漏洞。
+
+接下来我们来看一个简单的示例：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS攻防演练</title>
+</head>
+<body>
+    <h3>基于DOM的XSS</h3>
+    <input type="text" id="input">
+    <button id="btn">提交内容</button>
+    <div id="div"></div>
+</body>
+<script>
+    const input = document.getElementById('input');
+    const btn = document.getElementById('btn');
+    const div = document.getElementById('div');
+
+    let inputValue;
+     
+    input.addEventListener('change', (e) => {
+        inputValue = e.target.value;
+    }, false);
+
+    btn.addEventListener('click', () => {
+        div.innerHTML = `<a href=${inputValue}>链接地址</a>`
+    }, false);
+</script>
+</html>
+```
+
+我们再页面输入框中输入以下文本`'' onclick=alert(/xss/)`，这里的`''`引号是为了关闭掉`href`属性，给它赋予了一个空值。然后点击`提交内容`按钮，则页面中的`<div id="div"></div>`标签包含了一下`html`内容
+```html
+<a href onlick="alert(/xss/)">链接地址</a>
+```
+![页面输入](./examples//imgs/6.png)
+![页面输入](./examples//imgs/7.png)
 ## `XSS`攻击防御
-
+关于`XSS`的防御是非常复杂的，值得幸运的是现代浏览器、前端框架/库已经帮我们做了相当大的一部分工作。
 ### `HttpOnly`
+`HttpOnly` 最早是由微软提出，并在`IE 6`中最先实现的，至今已经逐渐成为一个标准。浏览器将禁止页面的`JavaScript`访问带有`HttpOnly`属性的`Cookie`。所以我们需要在`http`的响应头`set-cookie`时设置`httpOnly`，让浏览器知道不能通过`document.cookie`的方式获取到`cookie`内容。
 
+严格地说，`HttpOnly` 并非为了对抗 `XSS——HttpOnly` 解决的是`XSS`后的 `Cookie` 劫持攻击。所以说使用`HttpOnly`有助于缓解`XSS`攻击，但仍然需要其他能够解决`XSS`漏洞的方案；
 ### 输入检查
+对于用户的输入内容我们需要持怀疑态度。在对输入不做任何过滤检查的情况下用户可能输入任何字符串。比如我们期望输入的内容是：`hello word`, 也许我们收到的内容是`onclick=alert(/xss/)`。
 
+在`XSS`的防御上，输入检查一般是检查用户输入的数据中是否包含一些特殊字符，如`＜、＞、’、”`等。如果发现存在特殊字符，则将这些字符过滤或者编码。这种输入检查的方式，可以称为`“XSS Filter”`。互联网上有很多开源的`“XSS Filter”`的实现。比如一个简单的`htmlencode`转义：
+```js
+const htmlEncode = function (handleString){
+    return handleString
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/ /g,"&nbsp;")
+    .replace(/\'/g,"&#39;")
+    .replace(/\"/g,"&quot;");
+}
+```
+但是**输入检查**也有弊端，比如
+- 攻击者绕过前端页面直接使用接口就可以提交恶意代码到远程库中。
+- 输入数据，还可能会被展示在多个地方，每个地方的语境可能各不相同，如果使用单一的替换操作，则可能会出现问题。输入检查也需要有针对性，如果我们想表达的意思是一个数小于另一个数（ `3 < 4`）,前端转义后的字符就变成`3 &lt; 4`，当这个值被存到远端时后，再通过`AJAX`获取使用就会造成不必要的麻烦，比如我就进行数值计算等等。
 ### 输出检查
 
 ### 防御 DOM Based XSS
