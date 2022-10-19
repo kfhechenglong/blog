@@ -23,11 +23,60 @@ Web 攻击技术的发展也可以分为几个阶段。在 `Web 1.0` 时代，�
 ## `XSS`攻击类型分类
 `XSS`攻击可以分为3类：反射型（非持久型）、存储型（持久型）、基于`DOM XSS`；
 ### 反射型
+反射型`XSS`只是简单地把用户输入的数据“反射”给浏览器。也就是说，黑客往往需要诱使用户“点击”一个恶意链接，才能攻击成功。反射型`XSS`也叫做 **“非持久型 `XSS`”（`Non-persistent XSS`）**。
 
+通常反射型`XSS`的恶意代码存在`URL`里，通过`URL`传递参数的功能，如网站搜索、跳转等。由于需要用户主动打开恶意的`URL`才能生效，攻击者往往会结合多种手段诱导用户点击。
+
+一个最初级的反射型攻击是：我们对网页数据进行获取:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS攻防演练</title>
+</head>
+<body>
+    <div id="t"></div>
+    <input id="s" type="button" value="这是一个按钮" onclick="test()">
+</body>
+<script>
+    function test() {
+        const arr = ['自定义的数据1', '自定义的数据2', '自定义的数据3', '<img src="11" onerror="console.log(window.localStorage)" />']
+        const t = document.querySelector('#t')
+            arr.forEach(item => {
+            const p = document.createElement('p')
+            p.innerHTML = item
+            t.append(p)
+        })
+    }
+</script>
+</html>
+```
+当黑客点击`这是一个按钮`时，即可轻松获取本地`localStorage`数据，从而获取关键信息。
 ### 存储型
+存储型 `XSS` 会把用户输入的数据“存储”在服务器端。这种 `XSS` 具有很强的稳定性。
 
+比较常见的一个场景就是，黑客写下一篇包含有恶意 `JavaScript` 代码的博客文章，文章发表后，所有访问该博客文章的用户，都会在他们的浏览器中执行这段恶意的 `JavaScript` 代码。黑客把恶意的脚本保存到服务器端，所以这种 `XSS` 攻击就叫做 **“存储型 `XSS`”**。
+```html
+<!-- 例如我们分别在网站中的输入框中输入以下信息，并保存到远程数据库 -->
+<img src="11" onerror="console.log(window.localStorage)" />
+<img src="11" onerror="alert(111)" />
+```
+页面输入
+
+![页面输入](./examples//imgs/1.png)
+![页面输入](./examples//imgs/2.png)
+
+使用者浏览页面，分别先后触发了`alert`弹框和`localStorage`获取本地数据：
+
+![页面输入](./examples//imgs/3.png)
+![页面输入](./examples//imgs/4.png)
+
+以上就是一个典型的**存储型**攻击。
 ### 基于`DOM XSS`
-
+实际上，这种类型的`XSS`并非按照“数据是否保存在服务器端”来划分，`DOM Based XSS`从效果上来说也是反射型`XSS`。单独划分出来，是因为`DOM Based XSS` 的形成原因比较特别，发现它的安全专家专门提出了这种类型的 `XSS`。出于历史原因，也就把它单独作为一个分类了。
 ## `XSS`攻击防御
 
 ### `HttpOnly`
@@ -124,9 +173,7 @@ const escape = function(str){
 ## 安全问题“没有银弹”
 >在解决安全问题的过程中，不可能一劳永逸，也就是说“没有银弹”。
 
->一般来说，人们都会讨厌麻烦的事情，在潜意识里希望能够让麻烦越远越好。而安全，正
-是一件麻烦的事情，而且是无法逃避的麻烦。任何人想要一劳永逸地解决安全问题，都属于一
-相情愿，是“自己骗自己”，是不现实的。
+>一般来说，人们都会讨厌麻烦的事情，在潜意识里希望能够让麻烦越远越好。而安全，正是一件麻烦的事情，而且是无法逃避的麻烦。任何人想要一劳永逸地解决安全问题，都属于一相情愿，是“自己骗自己”，是不现实的。
 
 ## 最佳实践
 
