@@ -9,6 +9,9 @@
 <body>
     <div id="t"></div>
     <input id="s" type="button" value="获取数据" onclick="test()">
+    <div><script>alert('我是一个XSS攻击者')</script></div>
+    <a href="#"><img href="" onclick="alert('我是另外一个XSS攻击者')"></a>
+    <div id="testXSS" data-name=""><script>alert('我是一个XSS攻击者')</script><""></div>
 </body>
 <script>
     function test() {
@@ -20,5 +23,9 @@
             t.append(p)
         })
     }
+</script>
+<script>
+    // 假设userData是攻击者注入的数据
+    let xssVar = "";alert('我是一个script XSS攻击者');
 </script>
 </html>

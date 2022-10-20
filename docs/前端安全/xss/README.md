@@ -144,9 +144,67 @@ const htmlEncode = function (handleString){
 - 攻击者绕过前端页面直接使用接口就可以提交恶意代码到远程库中。
 - 输入数据，还可能会被展示在多个地方，每个地方的语境可能各不相同，如果使用单一的替换操作，则可能会出现问题。输入检查也需要有针对性，如果我们想表达的意思是一个数小于另一个数（ `3 < 4`）,前端转义后的字符就变成`3 &lt; 4`，当这个值被存到远端时后，再通过`AJAX`获取使用就会造成不必要的麻烦，比如我就进行数值计算等等。
 ### 输出检查
+一般来说，除富文本的输出外，在变量输出到`HTML`页面时，可以使用编码或转义的方式来防御`XSS`攻击。
 
-### 防御 DOM Based XSS
+XSS的本质还是一种“HTML 注入”，用户的数据被当成了HTML代码一部分来执行，从而混淆了原本的语义，产生了新的语义。
 
+如同输入检查一样，我们可以对输出进行编码转义。
+#### 1.在`HTML`中输出
+比如我们的html代码中有这样一段代码：
+```html
+<div>$htmlVar</div>
+<a href="">$htmlVar</a>
+```
+如果输出的变量没有进行安全处理，直接使用并渲染在页面中，都能导致直接产生`XSS`。最终的结果可能生成一下代码：
+```html
+<div><script>alert('我是一个XSS攻击者')</script></div>
+<a href="#"><img href="" onclick="alert('我是另外一个XSS攻击者')"></a>
+```
+这个预防的方法就是对html进行转义检查
+
+#### 2. 在`HTML`属性中输出
+如果我们的html属性时动态值，那么利用属性也可以被攻击；
+```html
+<div id="testXSS" data-name=""></div>
+```
+现在往`data-name`属性中插入一段未转义的代码`"><script>alert('我是一个XSS攻击者')</script><"`,结果如下：
+```html
+<div id="testXSS" data-name=""><script>alert('我是一个XSS攻击者')</script><""></div>
+```
+#### 3. 在`<script>`标签中输出
+在`<script>`标签中输出时，首先应该确保输出的变量在引号中。
+```javascript
+<script>
+    // 假设userData是攻击者注入的数据
+    let xssVar = userData;
+</script>
+```
+攻击者需要先闭合引号才能实施XSS攻击：
+```js
+<script>
+    // 假设userData是攻击者注入的数据
+    let xssVar = "";alert('我是一个script XSS攻击者');
+</script>
+```
+#### 4. 在`CSS`中输出
+在 `CSS` 和 `style`、`style attribute` 中形成 `XSS` 的方式非常多样化，所以，一般来说，尽可能禁止用户可控制的变量在“`<style>`标签”、“`HTML`标签的`style`属性”以及“`CSS` 文件”中输出。如果一定有这样的需求，则推荐使用一个关于CSS转义库。
+### 防御`DOM Based XSS`
+`DOM Based XSS`是一种比较特别的`XSS`漏洞，前文提到的几种防御方法都不太适用，需要特别对待。这个本质上，实际上就是网站前端JavaScript代码本身不够严谨，把不可信的数据当作代码执行了。
+
+如果用 `Vue/React` 技术栈，并且不使用 `v-html`/`dangerouslySetInnerHTML`功能，就在前端`render`阶段避免`innerHTML`、`outerHTML`的 `XSS`隐患。稍后会有专门的`Vue`关于`XSS`的防御段落。
+
+会触发`DOM Based XSS`的地方有很多，以下几个地方是`JavaScript`输出到`HTML`页面的必经之路。
+- `document.write()`;
+- `document.writeln()`;
+- `xxx.innerHTML()`;
+- `xxx.outerHTML()`;
+- `xxx.innerHTML.replace()`;
+- `document.attachEvent()`;
+- `window.attachEvent()`;
+- `window.location()`;
+- `window.name()`;
+
+所以开发者需要重点关注这几个地方的参数是否可以被用户控制。如果项目中有用到这些的话，一定要避免在字符串中拼接不可信数据。
 ## `Vue`中的`XSS`防御
 
 如果你在项目中使用了`Vue`作为前端开发框架，恭喜你，`Vue`将为你解决绝大多数的`XSS`攻击问题，但是`Vue`不是一个预防`XSS`攻击的框架，在开发使用的时候还是有被攻击的漏洞存在；
@@ -221,15 +279,6 @@ const escape = function(str){
   click me
 </a>
 ```
-
-
-
-
-
-
-
-
-
 ## 安全问题“没有银弹”
 >在解决安全问题的过程中，不可能一劳永逸，也就是说“没有银弹”。
 
