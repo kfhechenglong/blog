@@ -3,7 +3,7 @@ name: pushDocs
 on:
   push:
     branches: 
-     - main
+     - master
 
 
 jobs:
