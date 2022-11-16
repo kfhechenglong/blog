@@ -129,7 +129,7 @@ $ node .\command.js clone args otherArgs
 # called
 ```
 #### 多参数命令
-在`Command`对象上使用`.argument()`来按次序指定命令参数。该方法接受参数名称和参数描述。参数可为必选的（尖括号表示，例如<required>）或可选的（方括号表示，例如[optional]）
+在`Command`对象上使用`.argument()`来按次序指定命令参数。该方法接受参数名称和参数描述。参数可为必选的（尖括号表示，例如`<required>`）或可选的（方括号表示，例如[optional]）
 
 ```js
 program

@@ -57,7 +57,8 @@ export default defineComponent({
 })
 ```
 
-# 访问其它`stores`的`actions`
+## 访问其它`stores`的`actions`
+
 要使用另一个`store`，你可以直接在`action`中使用它:
 
 ```js
@@ -82,7 +83,8 @@ export const useSettingStore = defineStore('settings', {
 
 ```
 
-# 在`setup()`中使用
+## 在`setup()`中使用
+
 你可以直接调用任何`action`作为`store`的方法:
 
 ```js
@@ -94,7 +96,7 @@ export default {
 }
 ```
 
-# 使用选项API
+## 使用选项API
 
 对于以下示例，您可以假设创建了以下存储:
 
@@ -116,6 +118,7 @@ const useCounterStore = defineStore('counterStore', {
 })
 ```
 ## 使用`setup()`
+
 虽然`Composition API`并不适合所有人，但是`setup()`钩子可以让`Pinia`更容易在`Options API`中使用。不需要额外的帮助函数!
 ```js
 import { useCounterStore } from '../stores/counterStore'
@@ -135,6 +138,7 @@ export default {
 }
 ```
 ## 不使用`setup()`
+
 如果你根本不想使用`Composition API`，你可以使用`mapActions()`助手来将`actions`属性映射为组件中的方法:
 
 ```js
@@ -152,7 +156,7 @@ export default {
 }
 ```
 
-# 订阅`actions`
+## 订阅`actions`
 
 可以使用`store.$onAction()`来观察操作及其结果。传递给它的回调函数在动作本身之前执行。`after`允许您在动作执行成功或`resolves`之后执行一个函数。类似地，`onError`允许你在动作抛出或拒绝时执行一个函数。这在运行时跟踪错误是非常有用的。
 

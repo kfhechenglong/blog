@@ -1,5 +1,5 @@
-# 1、命令模式
-## 1.1 命令模式实现菜单程序
+# 命令模式
+## 命令模式实现菜单程序
 ```html
 	<body>
         <button id="botton1">点击按钮1</button>
@@ -69,7 +69,7 @@ setCommand(button1,refreshMenuBarCommand);
 setCommand(button2,addMenuCommand);
 setCommand(button3,delMenuCommand);
 ```
-## 1.2 Javascript中的命令模式
+## Javascript中的命令模式
 
 命令模式的由来，其实就是回调函数的一个面向对象的替代品。
 利用JavaScript实现命令模式的：
@@ -131,4 +131,79 @@ var setCommand = function (button ,command) {
 };
 var refreshMenuBarCommand = RefreshMenuBarCommand(MenuBar);
 setCommand(button1,refreshMenuBarCommand);
+```
+
+## 命令模式的撤销操作
+撤销操作的实现一般是给命令对象增加一个名为`unexecude`或者`undo`的方法，在该方法里执行execute的反向操作，代码如下：
+```js
+var MoveCommand = function (receiver,pos) {
+	this.receiver = receiver;
+	this.pos = pos;
+	this.oldPos = null;
+};
+MoveCommand.prototype.execute = function () {
+	this.receiver.start('left',this.pos,1000,'strongEaseOut');
+	this.oldPos = this.receiver.dom.getBoundingClienRect()[this.receiver.propertyName];//记录初始位置
+};
+MoverCommand.prototype.undo = function () {
+	this.receiver.start('left',this.oldPos,1000,'strongEaseOut');
+	//撤销操作，回到之前运动的位置
+};
+var moveCommand;
+moveBtn.onclick = function() {
+	var animate = new Animate(ball);
+	moveCommand = new MoveCommand(animate,pos.value);
+	moveCommand.execute();
+};
+cancelBtn.onclick = function () {
+	moveCommand.undo();
+}
+```
+## 撤销和重做
+
+下面代码将讲述如何撤销一系列的命令
+
+```js
+var Ryu = {
+	attack :function () {
+		console.log('攻击')
+	},
+	defense:function() {
+		console.log('防御')
+	},
+	jump:function() {
+		conosle.log('跳跃')
+	},
+	crouch:function () {
+		console.log('蹲下')
+	}
+};
+
+var makeCommand = function (receiver,state) {
+	return function () {
+		receiver[state]();
+	}
+};
+var commands = {
+	"119":"jump",
+	"115":"crouch",
+	"97":"defense",
+	"100":"attack"
+};
+var commandStack = [];
+doccument.onkeypress = function (ev) {
+	var keyCode = ev.keyCode,
+		command = makCommand(Ryu,commands[keyCode]);
+	if(command) {
+		cammand();
+		commandStack.push(command);//保存刚才执行的动作
+	}
+};
+//撤销的操作
+document.getElementById('replay').onclick = function () {
+	var command;
+	while(command = commandStack.shift()) {
+		command();
+	}
+}
 ```

@@ -49,7 +49,7 @@ export const useStore = defineStore('mian', {
 </script>
 ```
 
-### 访问其它的getters
+## 访问其它的getters
 
 与计算属性一样，您可以组合多个`getters`。通过`this`访问任何其他的`getters`。即使您不使用`TypeScript`，您也可以使用`JSDoc`提示IDE输入的类型
 
@@ -76,7 +76,7 @@ export const useStore = defineStore('main', {
 })
 ```
 
-### 给getters传参数
+## 给getters传参数
 
 `Getter`只是后台的计算属性，所以不可能向它们传递任何参数。但是，你可以从`getter`返回一个函数来接受任何参数:
 
@@ -120,7 +120,8 @@ export const useStore = defineStore('main', {
 })
 ```
 
-### 访问其它实例的getters
+## 访问其它实例的getters
+
 要使用另一个`store`中的 `getter`，你可以直接在`getter`中使用它:
 
 ```js
@@ -139,7 +140,8 @@ export const useStore = defineStore('main', {
 })
 ```
 
-### 在setup()中的用法
+## 在setup()中的用法
+
 你可以直接访问任何`getter`作为存储的属性(完全像`state`属性):
 
 ```js
@@ -153,7 +155,8 @@ export default {
 }
 ```
 
-### Options API 中的用法
+## Options API 中的用法
+
 对于以下示例，您可以假设创建了以下`store`:
 ```js
 // Example File Path:
@@ -173,7 +176,7 @@ const useCounterStore = defineStore('counterStore', {
 })
 ```
 
-### 使用 setup()
+## 使用 setup()
 
 虽然`Composition API`并不适合所有人，但是`setup()`钩子可以让`Pinia`更容易在`Options API`中使用。不需要额外的帮助函数!
 
@@ -194,7 +197,8 @@ export default {
 }
 ```
 
-### 不使用 setup() 
+## 不使用 setup()
+
 你可以使用在前一节中使用的`mapState()`函数来映射到`getter`:
 
 ```js

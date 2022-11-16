@@ -16,27 +16,27 @@
 
 ## `JavaScript`设计模式与开发实践
 
-- [单例模式](./design-mode/single.md)
-- [策略模式](./design-mode/2.策略模式/README.md)
-- [代理模式](./design-mode/3.代理模式/README.md)
-- [迭代器模式](./design-mode/4.迭代器模式/README.md)
-- [发布订阅模式](./design-mode/5.发布订阅模式/README.md)
-- [命令模式](./design-mode/6.命令模式/1.命令模式实现菜单管理.md)
-- [模板模式](./design-mode/7.模板模式/README.md)
+- [单例模式](./front-concept/design-mode/single.md)
+- [策略模式](./front-concept/design-mode/2.策略模式/README.md)
+- [代理模式](./front-concept/design-mode/3.代理模式/README.md)
+- [迭代器模式](./front-concept/design-mode/4.迭代器模式/README.md)
+- [发布订阅模式](./front-concept/design-mode/5.发布订阅模式/README.md)
+- [命令模式](./front-concept/design-mode/6.命令模式/1.命令模式实现菜单管理.md)
+- [模板模式](./front-concept/design-mode/7.模板模式/README.md)
 
 ## Node
 - [inquirer](./node/inquirer/README.md)
 - [commander](./node/node-commander/README.md)
-- [脚手架搭建](./cli/README.md)
+- [脚手架搭建](./node/cli/README.md)
 ## 算法
-- [栈](./算法/1.栈/README.md)
-- [Set](./算法/2.Set/README.md)
-- [链表](./算法/3.链表/README.md)
-- [字典](./算法/4.字典/README.md)
-- [散列](./算法/5.散列表/README.md)
-- [递归](./算法/6.递归/6.README.md)
-- [队列](./算法/7.队列/queue.md)
-- [指针思想](./算法/8.指针思想/README.md)
+- [栈](./front-concept/algorithm/1.stack/README.md)
+- [Set](./front-concept/algorithm/2.Set/README.md)
+- [链表](./front-concept/algorithm/3.链表/README.md)
+- [字典](./front-concept/algorithm/4.字典/README.md)
+- [散列](./front-concept/algorithm/5.散列表/README.md)
+- [递归](./front-concept/algorithm/6.递归/6.README.md)
+- [队列](./front-concept/algorithm/7.队列/queue.md)
+- [指针思想](./front-concept/algorithm/8.指针思想/README.md)
 
 ## [Pinia](./Pinia/README.md)
 
@@ -46,12 +46,12 @@
 - [核心概念-Plugins](./Pinia/核心概念/Plugins.md)
 - [操作指引](./Pinia/操作指引/README.md)
 
-## [Vue核心原理](./vue核心原理/README.md)
-- [图解vue3.0编译器核心原理](./vue核心原理/图解vue3.0编译器核心原理.md)
+## [Vue](./vue/vue3/vue核心原理/README.md)
+- [图解vue3.0编译器核心原理](./vue/vue3/vue核心原理/图解vue3.0编译器核心原理.md)
 ## `Web`安全
-- [Web前端安全系列之：XSS攻防](./前端安全/xss/README.md)
+- [Web前端安全系列之：XSS攻防](./other/前端安全/xss/README.md)
 ## 杂项
-- [微信、企微PC端页面调试](./工具/wx-pc-dev.md)
+- [微信、企微PC端页面调试](./other/工具/wx-pc-dev.md)
 - [日程组件](./other/fullCalendar/README.md)
 - [生日年龄转换](./uitls/format-date/README.md)
 - [千分位](./uitls/千分位.md)

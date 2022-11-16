@@ -1,4 +1,4 @@
-# 所有的数据都是对象
+# new的理解
 ## base
   JavaScript在设计的时候，模仿Java引入了两套类型机制：基本类型和对象类型。基本类型包括`undefined`、`number`、`Boolean`、`string`、`function`、`object`。从现在看，这并不是一个好的想法；
 

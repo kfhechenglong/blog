@@ -34,8 +34,21 @@ module.exports = {
     // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
     repoLabel: '查看源码',
 
-    // 以下为可选的编辑链接选项
-
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Vue', link: '/vue/vue2/vue-keep-live' },
+      { text: 'Pinia', link: '/Pinia/' },
+      { text: 'JavaScript', link: '/javascript/clone' },
+      {
+        text: '更多',
+        ariaLabel: '更多内容',
+        items: [
+          { text: '设计模式与算法', link: '/front-concept/design-mode/single' },
+          { text: 'node', link: '/node/inquirer/' },
+          { text: '杂项', link: '/other/前端安全/xss/' }
+        ]
+      }
+    ],
     // 假如你的文档仓库和项目本身不在一个仓库：
     docsRepo: 'kfhechenglong/blog',
     // 假如文档不是放在仓库的根目录下：
@@ -46,220 +59,136 @@ module.exports = {
     editLinks: true,
     // 默认为 "Edit this page"
     editLinkText: '帮助我们改善此页面！',
-    sidebar: [
-      {
-        title: '介绍',
-        sidebarDepth: 1,
-        path: '/'
-      },
-      {
-        title: 'JavaScript基础',
-        sidebarDepth: 1,
-        collapsable: false,
-        path: '/javascript/clone',
-        children: [
-          {
-            title: '1.对象克隆',
-            path: '/javascript/clone'
-          },
-          {
-            title: '2.鸭子类型',
-            path: '/javascript/duck'
-          },
-          {
-            title: '3.javascript中的对象继承',
-            path: '/javascript/javascript-inherit'
-          },
-          {
-            title: '4.this',
-            path: '/javascript/this'
-          },
-          {
-            title: '5.call and apply',
-            path: '/javascript/call-apply'
-          }
-        ]
-      },
-      {
-        title: '设计模式',
-        sidebarDepth: 1,
-        collapsable: false,
-        path: '/design-mode/single',
-        children: [
-          {
-            title: '1.单例模式',
-            path: '/design-mode/single'
-          },
-          {
-            title: '2.策略模式',
-            path: '/design-mode/2.策略模式/'
-          },
-          {
-            title: '3.代理模式',
-            path: '/design-mode/3.代理模式/'
-          },
-          {
-            title: '4.迭代器模式',
-            path: '/design-mode/4.迭代器模式/'
-          },
-          {
-            title: '5.发布订阅模式',
-            path: '/design-mode/5.发布订阅模式/'
-          },
-          {
-            title: '6.命令模式',
-            children: [
-              {
-                title: '6.1.命令模式实现菜单管理',
-                path: '/design-mode/6.命令模式/1.命令模式实现菜单管理'
-              },
-              {
-                title: '6.2.撤销操作',
-                path: 'design-mode/6.命令模式/2.撤销操作'
-              }
-            ]
-          },
-          {
-            title: '7.模板模式',
-            path: '/design-mode/7.模板模式/'
-          },
-        ]
-      },
-      {
-        title: '算法',
-        sidebarDepth: 1,
-        collapsable: false,
-        children: [
-          {
-            title: '栈',
-            path: '/算法/1.栈/'
-          },
-          {
-            title: '队列',
-            path: '/算法/7.队列/queue'
-          },
-          {
-            title: '字典',
-            path: '/算法/4.字典/'
-          },
-          {
-            title: '散列',
-            path: '/算法/5.散列表/'
-          },
-          {
-            title: '递归',
-            path: '/算法/6.递归/'
-          },
-          {
-            title: '指针思想',
-            path: '/算法/8.指针思想/'
-          }
-        ]
-      },
-      {
-        title: 'Pinia',
-        sidebarDepth: 1,
-        collapsable: false,
-        path: '/Pinia/',
-        children: [
-          {
-            title: '1.核心概念',
-            path: '/Pinia/核心概念/'
-          },
-          {
-            title: '2.Getters',
-            path: '/Pinia/核心概念/Getters'
-          },
-          {
-            title: '3.Actions',
-            path: '/Pinia/核心概念/Actions'
-          },
-          {
-            title: '4.Plugins',
-            path: '/Pinia/核心概念/Plugins'
-          },
-          {
-            title: '5.操作指引',
-            path: '/Pinia/操作指引/'
-          }
-        ]
-      },
-      {
-        title: 'node',
-        sidebarDepth: 1,
-        collapsable: false,
-        children: [
-          {
-            title: 'inquirer',
-            path: '/node/inquirer/'
-          },
-          {
-            title: 'commander',
-            path: '/node/node-commander/'
-          },
-          {
-            title: '脚手架搭建',
-            path: '/cli/'
-          }
-        ]
-      },
-      {
-        title: '面试',
-        sidebarDepth: 1,
-        collapsable: false,
-        children: [
-          {
-            title: '1.真值相等',
-            path: '/面试/truth-value/'
-          },
-          {
-            title: '2.Vue类',
-            path: '/面试/vue/'
-          },
-        ]
-      },
-      {
-        title: 'Web前端安全',
-        sidebarDepth: 1,
-        collapsable: false,
-        children: [
-          {
-            title: '1.XSS',
-            path: '/前端安全/xss/'
-          }
-        ]
-      },
-      {
-        title: 'vue3.0',
-        sidebarDepth: 1,
-        collapsable: false,
-        children: [
-          {
-            title: '插槽slot及v-model',
-            path: '/vue3.0/vue3.0+tsx+v-slots'
-          },
-          {
-            title: 'table内容超出自动tooltip',
-            path: '/vue3.0/antd实现table内容超出自动tooltip'
-          },
-          {
-            title: '图解vue3.0编译器核心原理',
-            path: '/vue核心原理/图解vue3.0编译器核心原理'
-          },
-        ]
-      },
-      {
-        title: 'git篇',
-        sidebarDepth: 1,
-        collapsable: false,
-        children: [
-          {
-            title: 'git emoji指南',
-            path: '/git篇/git emoji指南'
-          },
-        ]
-      },
-      ...other
-    ]
+    sidebar: {
+      '/javascript/': [
+        {
+          title: 'JavaScript基础',
+          sidebarDepth: 1,
+          collapsable: false,
+          children: [
+            'clone',
+            'duck',
+            'javascript-inherit',
+            'this',
+            'call-apply'
+          ]
+        }
+      ],
+      '/front-concept/': [
+        {
+          title: '设计模式开发与实践',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            'design-mode/single',
+            'design-mode/2.策略模式/',
+            'design-mode/3.代理模式/',
+            'design-mode/4.迭代器模式/',
+            'design-mode/5.发布订阅模式/',
+            'design-mode/6.命令模式/',
+            'design-mode/7.模板模式/',
+          ]
+        },
+        {
+          title: '前端算法',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            'algorithm/1.stack/',
+            'algorithm/7.队列/queue',
+            'algorithm/4.字典/',
+            'algorithm/5.散列表/',
+            'algorithm/6.递归/',
+            'algorithm/8.指针思想/'
+          ]
+        }
+      ],
+      '/Pinia/': [
+        {
+          title: 'Pinia',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            '核心概念/',
+            '核心概念/Getters',
+            '核心概念/Actions',
+            '核心概念/Plugins',
+            '操作指引/'
+          ]
+        }
+      ],
+      '/node/': [
+        {
+          title: 'node',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            'inquirer/',
+            'node-commander/',
+            'cli/'
+          ]
+        }
+      ],
+      '/vue/': [
+        {
+          title: 'Vue2',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            'vue2/vue-keep-live',
+            'vue2/vue-router-authority'
+          ]
+        },
+        {
+          title: 'Vue3',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            'vue3/vue核心原理/图解vue3.0编译器核心原理',
+            'vue3/antd实现table内容超出自动tooltip',
+            'vue3/vue3.0+tsx+v-slots'
+          ]
+        }
+      ],
+      '/other/': [
+        {
+          title: '杂项',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            '前端安全/xss/',
+            'fullCalendar/',
+            'upload-files/',
+            '工具/wx-pc-dev'
+          ]
+        }
+      ]
+      // {
+      //   title: '面试',
+      //   sidebarDepth: 1,
+      //   collapsable: false,
+      //   children: [
+      //     {
+      //       title: '1.真值相等',
+      //       path: '/面试/truth-value/'
+      //     },
+      //     {
+      //       title: '2.Vue类',
+      //       path: '/面试/vue/'
+      //     },
+      //   ]
+      // },
+      // {
+      //   title: 'git篇',
+      //   sidebarDepth: 1,
+      //   collapsable: false,
+      //   children: [
+      //     {
+      //       title: 'git emoji指南',
+      //       path: '/git篇/git emoji指南'
+      //     },
+      //   ]
+      // },
+    }
   }
 }
