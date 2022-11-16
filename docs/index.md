@@ -3,7 +3,7 @@ home: true
 heroImage: /logo.png
 heroText: 前端知识集合
 tagline: 绝对零度知识笔记
-actionText: 开始 →
+actionText: 开 始 →
 actionLink: /vue/vue2/vue-keep-live
 features:
 - title: JavaScript/TypeScript
