@@ -16,10 +16,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@master
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@main
+        uses: actions/setup-node@master
         with:
           node-version:  ${{ matrix.node }}
       
@@ -35,6 +35,5 @@ jobs:
           # 密匙
           github_token: ${{ secrets.ACCESS_TOKEN }}
           # The branch the action should deploy to.
-          BRANCH: gh-pages
           publish_dir: docs/.vitepress/dist
 
