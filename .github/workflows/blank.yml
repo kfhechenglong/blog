@@ -34,6 +34,8 @@ jobs:
         with:
           # 密匙
           github_token: ${{ secrets.ACCESS_TOKEN }}
+          # The branch the action should deploy to.
+          BRANCH: gh-pages
           # publish_dir:这里填写打包后的路径地址
           publish_dir: docs/.vitepress/dist
 
