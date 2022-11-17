@@ -36,6 +36,5 @@ jobs:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           # The branch the action should deploy to.
           BRANCH: gh-pages
-          # The folder the action should deploy.
-          FOLDER: docs/.vitepress/dist
+          publish_dir: docs/.vitepress/dist
 
