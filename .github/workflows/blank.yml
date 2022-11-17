@@ -32,7 +32,9 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          # 密匙
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          # publish_dir:这里填写打包后的路径地址
-          publish_dir: ./docs/.vitepress/dist
+          # The branch the action should deploy to.
+          BRANCH: gh-pages
+          publish_dir: docs/.vitepress/dist
 
