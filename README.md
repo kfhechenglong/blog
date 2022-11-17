@@ -49,7 +49,7 @@
 
 - <a href="./docs/vue/vue3/vue核心原理/图解vue3.0编译器核心原理.md">图解vue3.0编译器核心原理</a>
 
-## `Web`安全
+## Web安全
 - <a href="./docs/other/前端安全/xss/README.md">Web前端安全系列之：XSS攻防</a>
 ## 杂项
 - <a href="./docs/other/工具/wx-pc-dev.md">微信、企微PC端页面调试</a>
