@@ -35,5 +35,5 @@ jobs:
           # 密匙
           github_token: ${{ secrets.ACCESS_TOKEN }}
           # publish_dir:这里填写打包后的路径地址
-          publish_dir: ./docs/.vitepress/dist
+          publish_dir: docs/.vitepress/dist
 
