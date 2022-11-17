@@ -1,7 +1,7 @@
-const other = require('./config-router/other')
+// const other = require('./config-router/other')
 module.exports = {
   title: '绝对零度随笔',
-  description: 'JavaScript html css Vue',
+  description: 'JavaScript html css Vue 前端开发 知识库',
   base: '/blog/',
   head: [
     // 添加百度统计
@@ -18,11 +18,32 @@ module.exports = {
       })();
         `
     ],
+    ['meta', { name: '前端开发', content: '前端开发知识库'}],
+    ['meta', { name: 'JavaScript', content: 'JavaScript Vue'}],
     [
       'link',
       { rel: 'icon', href: 'logo.png' }
     ]
   ],
+  markdown: {
+    lineNumbers: true
+  },
+  plugins: {
+    '@vssue/vuepress-plugin-vssue': {
+      // 设置 `platform` 而不是 `api`
+      platform: 'github',
+
+      // 其他的 Vssue 配置l
+      locale: 'zh',
+      // autoCreateIssue: true,
+      owner: 'kfhechenglong',
+      repo: 'blog',
+      clientId: 'ec756780613db3fdc14c',
+      // 767266aecbcbdfe394d61e063f6e1854b4e53ffa
+      // a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7
+      clientSecret: 'a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7',
+    },
+  },
   themeConfig: {
     search: true,
     searchMaxSuggestions: 10,
@@ -47,6 +68,13 @@ module.exports = {
           { text: 'node', link: '/node/inquirer/' },
           { text: '杂项', link: '/other/前端安全/xss/' }
         ]
+      },
+      { 
+        text: '外网链接', 
+        items: [
+          { text: 'CSDN', link: 'https://blog.csdn.net/cheng521521' },
+          { text: '掘金', link: 'https://juejin.cn/user/1750078239821454' }
+        ]
       }
     ],
     // 假如你的文档仓库和项目本身不在一个仓库：
@@ -58,7 +86,7 @@ module.exports = {
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"
-    editLinkText: '帮助我们改善此页面！',
+    editLinkText: '帮助改善此页面！',
     sidebar: {
       '/javascript/': [
         {

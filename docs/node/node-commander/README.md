@@ -1,6 +1,8 @@
 # commander
+[[toc]]
+## 小试牛刀
 
-## [小试牛刀](./examples/first-attqact.js)
+<<< ./docs/node/node-commander/examples/first-attqact.js
 
 简单使用一下commander的指令
 ```js
@@ -175,5 +177,7 @@ $ node .\command.js rdir dir1 dir2 dir3
 # rmdir dir2
 # rmdir dir3
 ```
-### [帮助信息](./examples/help.js)
+### 帮助信息
+
+<<< ./docs/node/node-commander/examples/help.js
 帮助信息是 `Commander` 基于你的程序自动生成的，默认的帮助选项是`-h`,`--help`。
