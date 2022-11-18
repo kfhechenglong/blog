@@ -38,13 +38,13 @@
 - [队列](./front-concept/algorithm/7.队列/queue.md)
 - [指针思想](./front-concept/algorithm/8.指针思想/README.md)
 
-## [Pinia](./Pinia/README.md)
+## [Pinia](./vue/Pinia/README.md)
 
-- [核心概念-States](./Pinia/核心概念/README.md)
-- [核心概念-Getters](./Pinia/核心概念/Getters.md)
-- [核心概念-Actions](./Pinia/核心概念/Actions.md)
-- [核心概念-Plugins](./Pinia/核心概念/Plugins.md)
-- [操作指引](./Pinia/操作指引/README.md)
+- [核心概念-States](./vue/Pinia/核心概念/README.md)
+- [核心概念-Getters](./vue/Pinia/核心概念/Getters.md)
+- [核心概念-Actions](./vue/Pinia/核心概念/Actions.md)
+- [核心概念-Plugins](./vue/Pinia/核心概念/Plugins.md)
+- [操作指引](./vue/Pinia/操作指引/README.md)
 
 ## [Vue](./vue/vue3/vue核心原理/README.md)
 - [图解vue3.0编译器核心原理](./vue/vue3/vue核心原理/图解vue3.0编译器核心原理.md)

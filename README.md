@@ -38,13 +38,13 @@
 - <a href="./docs/front-concept/algorithm/7.队列/queue.md">队列</a>
 - <a href="./docs/front-concept/algorithm/8.指针思想/README.md">指针思想</a>
 
-## [Pinia](./docs/Pinia/README.md)
+## [Pinia](./docs/vue/Pinia/README.md)
 
-- <a href="./docs/Pinia/核心概念/README.md">核心概念-States</a>
-- <a href="./docs/Pinia/核心概念/Getters.md">核心概念-Getters</a>
-- <a href="./docs/Pinia/核心概念/Actions.md">核心概念-Actions</a>
-- <a href="./docs/Pinia/核心概念/Plugins.md">核心概念-Plugins</a>
-- <a href="./docs/Pinia/操作指引/README.md">操作指引</a>
+- <a href="./docs/vue/Pinia/核心概念/README.md">核心概念-States</a>
+- <a href="./docs/vue/Pinia/核心概念/Getters.md">核心概念-Getters</a>
+- <a href="./docs/vue/Pinia/核心概念/Actions.md">核心概念-Actions</a>
+- <a href="./docs/vue/Pinia/核心概念/Plugins.md">核心概念-Plugins</a>
+- <a href="./docs/vue/Pinia/操作指引/README.md">操作指引</a>
 ## [Vue核心原理](./docs/vue/vue3/vue核心原理/README.md)
 
 - <a href="./docs/vue/vue3/vue核心原理/图解vue3.0编译器核心原理.md">图解vue3.0编译器核心原理</a>

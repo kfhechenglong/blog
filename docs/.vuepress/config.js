@@ -25,6 +25,12 @@ module.exports = {
       { rel: 'icon', href: 'logo.png' }
     ]
   ],
+  theme: 'reco',
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
   markdown: {
     lineNumbers: true
   },
@@ -39,8 +45,6 @@ module.exports = {
       owner: 'kfhechenglong',
       repo: 'blog',
       clientId: 'ec756780613db3fdc14c',
-      // 767266aecbcbdfe394d61e063f6e1854b4e53ffa
-      // a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7
       clientSecret: 'a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7',
     },
   },
@@ -58,7 +62,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Vue', link: '/vue/vue2/vue-keep-live' },
-      { text: 'Pinia', link: '/Pinia/' },
+      // { text: 'Pinia', link: '/Pinia/' },
       { text: 'JavaScript', link: '/javascript/clone' },
       {
         text: '更多',
@@ -131,20 +135,20 @@ module.exports = {
           ]
         }
       ],
-      '/Pinia/': [
-        {
-          title: 'Pinia',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            '核心概念/',
-            '核心概念/Getters',
-            '核心概念/Actions',
-            '核心概念/Plugins',
-            '操作指引/'
-          ]
-        }
-      ],
+      // '/Pinia/': [
+      //   {
+      //     title: 'Pinia',
+      //     sidebarDepth: 2,
+      //     collapsable: false,
+      //     children: [
+      //       '核心概念/',
+      //       '核心概念/Getters',
+      //       '核心概念/Actions',
+      //       '核心概念/Plugins',
+      //       '操作指引/'
+      //     ]
+      //   }
+      // ],
       '/node/': [
         {
           title: 'node',
@@ -175,6 +179,33 @@ module.exports = {
             'vue3/vue核心原理/图解vue3.0编译器核心原理',
             'vue3/antd实现table内容超出自动tooltip',
             'vue3/vue3.0+tsx+v-slots'
+          ]
+        },
+        {
+          title: 'Pinia',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            {
+              title: '核心概念',
+              path: '/vue/Pinia/核心概念/'
+            },
+            {
+              title: 'Getters',
+              path: '/vue/Pinia/核心概念/Getters'
+            },
+            {
+              title: 'Actions',
+              path: '/vue/Pinia/核心概念/Actions'
+            },
+            {
+              title: 'Plugins',
+              path: '/vue/Pinia/核心概念/Plugins'
+            },
+            {
+              title: '操作指引',
+              path: '/vue/Pinia/操作指引/'
+            }
           ]
         }
       ],
