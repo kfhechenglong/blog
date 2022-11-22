@@ -102,7 +102,11 @@ module.exports = {
             'duck',
             'javascript-inherit',
             'this',
-            'call-apply'
+            'call-apply',
+            {
+              title: '理解JavaScript的执行上下文',
+              path: '/javascript/理解JavaScript的执行上下文'
+            },
           ]
         }
       ],
