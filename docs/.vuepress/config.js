@@ -95,7 +95,7 @@ module.exports = {
       '/javascript/': [
         {
           title: 'JavaScript基础',
-          sidebarDepth: 1,
+          sidebarDepth: 3,
           collapsable: false,
           children: [
             'clone',
