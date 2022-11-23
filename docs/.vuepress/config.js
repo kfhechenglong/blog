@@ -98,6 +98,10 @@ module.exports = {
           sidebarDepth: 3,
           collapsable: false,
           children: [
+            {
+              title: '变量声明',
+              path: '/javascript/var-let-const'
+            },
             'clone',
             'duck',
             'javascript-inherit',
