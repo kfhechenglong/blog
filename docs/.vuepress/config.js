@@ -63,7 +63,7 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Vue', link: '/vue/vue2/vue-keep-live' },
       // { text: 'Pinia', link: '/Pinia/' },
-      { text: 'JavaScript', link: '/javascript/clone' },
+      { text: 'JavaScript', link: '/javascript/var-let-const' },
       {
         text: '更多',
         ariaLabel: '更多内容',
@@ -102,14 +102,18 @@ module.exports = {
               title: '变量声明',
               path: '/javascript/var-let-const'
             },
-            'clone',
+            {
+              title: '原型链',
+              path: '/javascript/prototype'
+            },
+            'extend',
             'duck',
             'javascript-inherit',
             'this',
             'call-apply',
             {
               title: '理解JavaScript的执行上下文',
-              path: '/javascript/理解JavaScript的执行上下文'
+              path: '/javascript/context'
             },
           ]
         }

@@ -1,4 +1,4 @@
-# javascript克隆
+# JavaScript中的继承
 通过ECMAScript5提供的Object.create方法，来创建克隆对象
 ```javascript
 var Plane = function () {
