@@ -70,7 +70,8 @@ module.exports = {
         items: [
           { text: '设计模式与算法', link: '/front-concept/design-mode/single' },
           { text: 'node', link: '/node/inquirer/' },
-          { text: '杂项', link: '/other/前端安全/xss/' }
+          { text: '杂项', link: '/other/前端安全/xss/' },
+          { text: '2022', link: '/2022' }
         ]
       },
       { 
