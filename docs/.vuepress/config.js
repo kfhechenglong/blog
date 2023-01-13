@@ -189,6 +189,7 @@ module.exports = {
           sidebarDepth: 2,
           collapsable: false,
           children: [
+            'vue3/formatter/',
             'vue3/vue核心原理/图解vue3.0编译器核心原理',
             'vue3/antd实现table内容超出自动tooltip',
             'vue3/vue3.0+tsx+v-slots'
