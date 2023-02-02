@@ -47,6 +47,9 @@
 - [操作指引](./vue/Pinia/操作指引/README.md)
 
 ## [Vue](./vue/vue3/vue核心原理/README.md)
+- [为什么使用虚拟DOM](./vue/vue3/vue核心原理/为什么使用虚拟DOM.md)
+- [理解Vue中的Tree-Shaking](./vue/vue3/vue核心原理/理解Vue中的Tree-Shaking.md)
+- [理解框架的编译时与运行时](./vue/vue3/vue核心原理/理解框架的编译时与运行时.md)
 - [图解vue3.0编译器核心原理](./vue/vue3/vue核心原理/图解vue3.0编译器核心原理.md)
 ## `Web`安全
 - [Web前端安全系列之：XSS攻防](./other/前端安全/xss/README.md)

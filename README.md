@@ -47,6 +47,9 @@
 - <a href="./docs/vue/Pinia/操作指引/README.md">操作指引</a>
 ## [Vue核心原理](./docs/vue/vue3/vue核心原理/README.md)
 
+- <a href="./docs/vue/vue3/vue核心原理/为什么使用虚拟DOM.md">为什么使用虚拟DOM</a>
+- <a href="./docs/vue/vue3/vue核心原理/理解Vue中的Tree-Shaking.md">理解Vue中的Tree-Shaking</a>
+- <a href="./docs/vue/vue3/vue核心原理/理解框架的编译时与运行时.md">理解框架的编译时与运行时</a>
 - <a href="./docs/vue/vue3/vue核心原理/图解vue3.0编译器核心原理.md">图解vue3.0编译器核心原理</a>
 
 ## Web安全
