@@ -189,8 +189,10 @@ module.exports = {
           sidebarDepth: 2,
           collapsable: false,
           children: [
-            'vue3/formatter/',
+            'vue3/vue核心原理/为什么使用虚拟DOM',
+            'vue3/vue核心原理/理解框架的编译时与运行时',
             'vue3/vue核心原理/图解vue3.0编译器核心原理',
+            'vue3/formatter/',
             'vue3/antd实现table内容超出自动tooltip',
             'vue3/vue3.0+tsx+v-slots'
           ]
