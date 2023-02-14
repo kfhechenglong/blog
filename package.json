@@ -6,6 +6,7 @@
   "repository": "https://kfhechenglong.github.io/blog/",
   "author": "绝对零度",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
