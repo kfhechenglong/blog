@@ -64,6 +64,7 @@ module.exports = {
       { text: 'Vue', link: '/vue/vue2/vue-keep-live' },
       // { text: 'Pinia', link: '/Pinia/' },
       { text: 'JavaScript', link: '/javascript/var-let-const' },
+      { text: '面试', link: '/面试/vue/' },
       {
         text: '更多',
         ariaLabel: '更多内容',
@@ -116,6 +117,30 @@ module.exports = {
               title: '理解JavaScript的执行上下文',
               path: '/javascript/context'
             },
+          ]
+        }
+      ],
+      '/面试/': [
+        {
+          title: 'JavaScript',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            {
+              title: 'JavaScript',
+              path: 'JavaScript/'
+            }
+          ]
+        },
+        {
+          title: 'Vue',
+          sidebarDepth: 2,
+          collapsable: false,
+          children: [
+            {
+              title: 'Vue',
+              path: 'vue/'
+            }
           ]
         }
       ],
