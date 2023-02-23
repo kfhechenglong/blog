@@ -122,21 +122,14 @@ module.exports = {
       ],
       '/面试/': [
         {
-          title: 'JavaScript',
+          title: '面试集合',
           sidebarDepth: 2,
           collapsable: false,
           children: [
             {
               title: 'JavaScript',
               path: 'JavaScript/'
-            }
-          ]
-        },
-        {
-          title: 'Vue',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
+            },
             {
               title: 'Vue',
               path: 'vue/'
