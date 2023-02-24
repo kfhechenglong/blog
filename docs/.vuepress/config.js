@@ -127,6 +127,10 @@ module.exports = {
           collapsable: false,
           children: [
             {
+              title: 'HTML',
+              path: 'html/'
+            },
+            {
               title: 'JavaScript',
               path: 'JavaScript/'
             },
