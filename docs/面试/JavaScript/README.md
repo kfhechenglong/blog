@@ -35,7 +35,83 @@ LTS版本，全程Long Time Support即长期维护版本。每个LTS版本大概
 
 ## 把一个url拆解成origin、文件名、hash拆解成示例的格式
 
+首先需要明白一个URL的组成分为几部分，以这个`http://localhost:8080/article/details/109065450/?id=14d76037-6462-445a-8d64-00c6b517db11&openType=new_blank#/client_info/client_info_page`为例
+
+- 协议： 常见的协议有两种，一种是`http://` 一种是`https(http+ssh)://`
+- 域名：`localhost`
+- 端口： 一般范围在0-65535之间，默认端口http是80，https为443
+- 文件路径：`/article/details/109065450`
+- hash：一般以#开头`#/client_info/client_info_page`
+- 参数： 一般以?开头以=连接的键值对，多个键值对采用&分割`?id=14d76037-6462-445a-8d64-00c6b517db11&openType=new_blank`
+
+解析一个URL，这里利用创建一个a标签解析
+
+```js
+const url = 'http://localhost:8080/article/details/109065450/?id=14d76037-6462-445a-8d64-00c6b517db11&openType=new_blank#/client_info/client_info_page'
+const parse = (path) => {
+    let data = {
+        path:'',
+        query:{},
+        origin:'',
+        hash:''
+    }
+    const tag = window.document.createElement('a')
+    tag.href = path
+    data.origin = tag.origin
+    data.hash = tag.hash
+    data.path = tag.pathname
+    let pathList = tag.search.split('?')
+    //获取query
+    if(pathList[1]){
+        let queryList = pathList[1].split('&')
+        queryList.map((item)=> {
+            let queryData = item.split('=')
+            data.query[queryData[0]] = queryData[1]
+        })
+    }
+    return data
+}
+console.log(parse(url))
+```
+最后输出的值
+```js
+{
+    hash: "#/client_info/client_info_page"
+    origin: "http://localhost:8080"
+    path: "/article/details/109065450/"
+    query: {
+        id: "14d76037-6462-445a-8d64-00c6b517db11"
+        openType: "new_blank"
+    }
+}
+```
+
 ## 两个数组合并成一个数组，并进行算法优化
+
+现在需要将两个数组arr1和arr2合并成一个新的newArr
+
+1.es6的解构
+```js
+const newArr = [...arr1, ...arr2]
+// 该操作会生成一个新的数组，而不改变原来的数组
+```
+2.使用`concat`方法
+
+```js
+const newArr = []
+newArr.concat(arr1,arr2)
+```
+3.使用`push`或`unshift`方法添加
+
+```js
+newArr.push(...arr1)
+newArr.push(...arr2)
+// 或者
+newArr.unshift(...arr1)
+newArr.unshift(...arr2)
+```
+
+关于算法优化的问题
 
 ## 设置值的时候是小驼峰，输出的时候变成大驼峰的格式
 
