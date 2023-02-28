@@ -123,8 +123,8 @@ module.exports = {
       '/面试/': [
         {
           title: '面试集合',
-          sidebarDepth: 2,
-          collapsable: false,
+          sidebarDepth: 3,
+          collapsable: true,
           children: [
             {
               title: 'HTML',
