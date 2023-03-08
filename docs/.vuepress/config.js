@@ -64,7 +64,7 @@ module.exports = {
       { text: 'Vue', link: '/vue/vue2/vue-keep-live' },
       // { text: 'Pinia', link: '/Pinia/' },
       { text: 'JavaScript', link: '/javascript/var-let-const' },
-      { text: '面试', link: '/面试/vue/' },
+      { text: '面试', link: '/面试/JavaScript/' },
       {
         text: '更多',
         ariaLabel: '更多内容',
@@ -133,6 +133,10 @@ module.exports = {
             {
               title: 'JavaScript',
               path: 'JavaScript/'
+            },
+            {
+              title: 'Node',
+              path: 'Node/'
             },
             {
               title: 'Vue',
