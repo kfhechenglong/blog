@@ -123,24 +123,34 @@ module.exports = {
       '/面试/': [
         {
           title: '面试集合',
-          sidebarDepth: 3,
-          collapsable: true,
+          sidebarDepth: 2,
+          collapsable: false,
           children: [
             {
-              title: 'HTML',
-              path: 'html/'
+              title: 'HTML篇',
+              collapsable: true,
+              path: '/面试/html/',
+              children: [
+                'html/SEO中的TKD三要素',
+                'html/多页面应用与单页面应用的优缺点'
+              ]
             },
             {
-              title: 'JavaScript',
+              title: 'JavaScript篇',
               path: 'JavaScript/'
             },
             {
-              title: 'Node',
+              title: 'Node篇',
               path: 'Node/'
             },
             {
-              title: 'Vue',
-              path: 'vue/'
+              title: 'Vue篇',
+              collapsable: true,
+              path: '/面试/vue/',
+              children: [
+                'vue/vue响应式理解',
+                'vue/vue中的diff算法'
+              ]
             }
           ]
         }
