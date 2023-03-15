@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
+    "build": "node createReadme.js && vuepress build docs",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {

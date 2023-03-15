@@ -1,4 +1,4 @@
-// const other = require('./config-router/other')
+const sidebarItem = require('./sidebar')
 module.exports = {
   title: '绝对零度随笔',
   description: 'JavaScript html css Vue 前端开发 知识库',
@@ -61,15 +61,15 @@ module.exports = {
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Vue', link: '/vue/vue2/vue-keep-live' },
+      { text: 'Vue', link: '/vue/vue2/keep-alive实现动态缓存以及缓存销毁' },
       // { text: 'Pinia', link: '/Pinia/' },
-      { text: 'JavaScript', link: '/javascript/var-let-const' },
-      { text: '面试', link: '/面试/JavaScript/' },
+      { text: 'JavaScript', link: '/javascript/var-let-const变量声明' },
+      { text: '面试', link: '/面试/JavaScript篇/' },
       {
         text: '更多',
         ariaLabel: '更多内容',
         items: [
-          { text: '设计模式与算法', link: '/front-concept/design-mode/single' },
+          { text: '设计模式与算法', link: '/front-concept/设计模式/1.单例模式/' },
           { text: 'node', link: '/node/inquirer/' },
           { text: '杂项', link: '/other/前端安全/xss/' },
           { text: '2022', link: '/2022/' }
@@ -93,226 +93,187 @@ module.exports = {
     editLinks: true,
     // 默认为 "Edit this page"
     editLinkText: '帮助改善此页面！',
-    sidebar: {
-      '/javascript/': [
-        {
-          title: 'JavaScript基础',
-          sidebarDepth: 3,
-          collapsable: false,
-          children: [
-            {
-              title: '变量声明',
-              path: '/javascript/var-let-const'
-            },
-            {
-              title: '原型链',
-              path: '/javascript/prototype'
-            },
-            'extend',
-            'duck',
-            'javascript-inherit',
-            'this',
-            'call-apply',
-            {
-              title: '理解JavaScript的执行上下文',
-              path: '/javascript/context'
-            },
-          ]
-        }
-      ],
-      '/面试/': [
-        {
-          title: '面试集合',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            {
-              title: 'HTML篇',
-              collapsable: true,
-              path: '/面试/html/',
-              children: [
-                'html/SEO中的TKD三要素',
-                'html/多页面应用与单页面应用的优缺点'
-              ]
-            },
-            {
-              title: 'JavaScript篇',
-              path: 'JavaScript/'
-            },
-            {
-              title: 'Node篇',
-              path: 'Node/'
-            },
-            {
-              title: 'Vue篇',
-              collapsable: true,
-              path: '/面试/vue/',
-              children: [
-                'vue/vue响应式理解',
-                'vue/vue中的diff算法'
-              ]
-            }
-          ]
-        }
-      ],
-      '/front-concept/': [
-        {
-          title: '设计模式开发与实践',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            'design-mode/single',
-            'design-mode/2.策略模式/',
-            'design-mode/3.代理模式/',
-            'design-mode/4.迭代器模式/',
-            'design-mode/5.发布订阅模式/',
-            'design-mode/6.命令模式/',
-            'design-mode/7.模板模式/',
-          ]
-        },
-        {
-          title: '前端算法',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            'algorithm/1.stack/',
-            'algorithm/7.队列/queue',
-            'algorithm/4.字典/',
-            'algorithm/5.散列表/',
-            'algorithm/6.递归/',
-            'algorithm/8.指针思想/'
-          ]
-        }
-      ],
-      // '/Pinia/': [
-      //   {
-      //     title: 'Pinia',
-      //     sidebarDepth: 2,
-      //     collapsable: false,
-      //     children: [
-      //       '核心概念/',
-      //       '核心概念/Getters',
-      //       '核心概念/Actions',
-      //       '核心概念/Plugins',
-      //       '操作指引/'
-      //     ]
-      //   }
-      // ],
-      '/node/': [
-        {
-          title: 'node',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            'inquirer/',
-            'node-commander/',
-            'cli/'
-          ]
-        }
-      ],
-      '/vue/': [
-        {
-          title: 'Vue2',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            'vue2/vue-keep-live',
-            'vue2/vue-router-authority'
-          ]
-        },
-        {
-          title: 'Vue3',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            {
-              title: '1.理解框架的编译时与运行时',
-              path: 'vue3/vue核心原理/理解框架的编译时与运行时'
-            },
-            {
-              title: '2.理解Tree-Shaking',
-              path: 'vue3/vue核心原理/理解Vue中的Tree-Shaking'
-            },
-            {
-              title: '3.为什么使用虚拟DOM',
-              path: 'vue3/vue核心原理/为什么使用虚拟DOM'
-            },
-            {
-              title: '4.图解vue3.0编译器核心原理',
-              path: 'vue3/vue核心原理/图解vue3.0编译器核心原理'
-            },
-            'vue3/formatter/',
-            'vue3/antd实现table内容超出自动tooltip',
-            'vue3/vue3.0+tsx+v-slots'
-          ]
-        },
-        {
-          title: 'Pinia',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            {
-              title: '核心概念',
-              path: '/vue/Pinia/核心概念/'
-            },
-            {
-              title: 'Getters',
-              path: '/vue/Pinia/核心概念/Getters'
-            },
-            {
-              title: 'Actions',
-              path: '/vue/Pinia/核心概念/Actions'
-            },
-            {
-              title: 'Plugins',
-              path: '/vue/Pinia/核心概念/Plugins'
-            },
-            {
-              title: '操作指引',
-              path: '/vue/Pinia/操作指引/'
-            }
-          ]
-        }
-      ],
-      '/other/': [
-        {
-          title: '杂项',
-          sidebarDepth: 2,
-          collapsable: false,
-          children: [
-            '前端安全/xss/',
-            'fullCalendar/',
-            'upload-files/',
-            '工具/wx-pc-dev'
-          ]
-        }
-      ]
-      // {
-      //   title: '面试',
-      //   sidebarDepth: 1,
-      //   collapsable: false,
-      //   children: [
-      //     {
-      //       title: '1.真值相等',
-      //       path: '/面试/truth-value/'
-      //     },
-      //     {
-      //       title: '2.Vue类',
-      //       path: '/面试/vue/'
-      //     },
-      //   ]
-      // },
-      // {
-      //   title: 'git篇',
-      //   sidebarDepth: 1,
-      //   collapsable: false,
-      //   children: [
-      //     {
-      //       title: 'git emoji指南',
-      //       path: '/git篇/git emoji指南'
-      //     },
-      //   ]
-      // },
-    }
+    sidebar: sidebarItem
+    // {
+    //   '/javascript/': [
+    //     {
+    //       title: 'JavaScript基础',
+    //       sidebarDepth: 3,
+    //       collapsable: false,
+    //       children: [
+    //         {
+    //           title: '变量声明',
+    //           path: '/javascript/var-let-const'
+    //         },
+    //         {
+    //           title: '原型链',
+    //           path: '/javascript/prototype'
+    //         },
+    //         'extend',
+    //         'duck',
+    //         'javascript-inherit',
+    //         'this',
+    //         'call-apply',
+    //         {
+    //           title: '理解JavaScript的执行上下文',
+    //           path: '/javascript/context'
+    //         },
+    //       ]
+    //     }
+    //   ],
+    //   '/面试/': [
+    //     {
+    //       title: '面试集合',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         {
+    //           title: 'HTML篇',
+    //           collapsable: true,
+    //           path: '/面试/html/',
+    //           children: [
+    //             'html/SEO中的TKD三要素',
+    //             'html/多页面应用与单页面应用的优缺点'
+    //           ]
+    //         },
+    //         {
+    //           title: 'JavaScript篇',
+    //           path: 'JavaScript/'
+    //         },
+    //         {
+    //           title: 'Node篇',
+    //           path: 'Node/'
+    //         },
+    //         {
+    //           title: 'Vue篇',
+    //           collapsable: true,
+    //           path: '/面试/vue/',
+    //           children: [
+    //             'vue/vue响应式理解',
+    //             'vue/vue中的diff算法'
+    //           ]
+    //         }
+    //       ]
+    //     }
+    //   ],
+    //   '/front-concept/': [
+    //     {
+    //       title: '设计模式开发与实践',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         'design-mode/single',
+    //         'design-mode/2.策略模式/',
+    //         'design-mode/3.代理模式/',
+    //         'design-mode/4.迭代器模式/',
+    //         'design-mode/5.发布订阅模式/',
+    //         'design-mode/6.命令模式/',
+    //         'design-mode/7.模板模式/',
+    //       ]
+    //     },
+    //     {
+    //       title: '前端算法',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         'algorithm/1.stack/',
+    //         'algorithm/7.队列/queue',
+    //         'algorithm/4.字典/',
+    //         'algorithm/5.散列表/',
+    //         'algorithm/6.递归/',
+    //         'algorithm/8.指针思想/'
+    //       ]
+    //     }
+    //   ],
+    //   '/node/': [
+    //     {
+    //       title: 'node',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         'inquirer/',
+    //         'node-commander/',
+    //         'cli/'
+    //       ]
+    //     }
+    //   ],
+    //   '/vue/': [
+    //     {
+    //       title: 'Vue2',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         'vue2/vue-keep-live',
+    //         'vue2/vue-router-authority'
+    //       ]
+    //     },
+    //     {
+    //       title: 'Vue3',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         {
+    //           title: '1.理解框架的编译时与运行时',
+    //           path: 'vue3/vue核心原理/理解框架的编译时与运行时'
+    //         },
+    //         {
+    //           title: '2.理解Tree-Shaking',
+    //           path: 'vue3/vue核心原理/理解Vue中的Tree-Shaking'
+    //         },
+    //         {
+    //           title: '3.为什么使用虚拟DOM',
+    //           path: 'vue3/vue核心原理/为什么使用虚拟DOM'
+    //         },
+    //         {
+    //           title: '4.图解vue3.0编译器核心原理',
+    //           path: 'vue3/vue核心原理/图解vue3.0编译器核心原理'
+    //         },
+    //         'vue3/formatter/',
+    //         'vue3/antd实现table内容超出自动tooltip',
+    //         'vue3/vue3.0+tsx+v-slots'
+    //       ]
+    //     },
+    //     {
+    //       title: 'Pinia',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         {
+    //           title: '核心概念',
+    //           path: '/vue/Pinia/核心概念/'
+    //         },
+    //         {
+    //           title: 'Getters',
+    //           path: '/vue/Pinia/核心概念/Getters'
+    //         },
+    //         {
+    //           title: 'Actions',
+    //           path: '/vue/Pinia/核心概念/Actions'
+    //         },
+    //         {
+    //           title: 'Plugins',
+    //           path: '/vue/Pinia/核心概念/Plugins'
+    //         },
+    //         {
+    //           title: '操作指引',
+    //           path: '/vue/Pinia/操作指引/'
+    //         }
+    //       ]
+    //     }
+    //   ],
+    //   '/other/': [
+    //     {
+    //       title: '杂项',
+    //       sidebarDepth: 2,
+    //       collapsable: false,
+    //       children: [
+    //         '前端安全/xss/',
+    //         'fullCalendar/',
+    //         'upload-files/',
+    //         '工具/wx-pc-dev'
+    //       ]
+    //     }
+    //   ]
+    // }
   }
 }
