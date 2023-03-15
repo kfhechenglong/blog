@@ -38,7 +38,7 @@
 
 理解如下示例代码：
 
-<<< ./docs/javascript/examples/js-stack.js
+<<< ./docs/javascript/JavaScript基础/examples/js-stack.js
 
 上述代码在浏览器引擎执行时
 

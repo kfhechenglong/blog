@@ -61,17 +61,16 @@ module.exports = {
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Vue', link: '/vue/vue2/keep-alive实现动态缓存以及缓存销毁' },
+      { text: 'Vue', link: '/vue/Pinia/操作指引/' },
       // { text: 'Pinia', link: '/Pinia/' },
-      { text: 'JavaScript', link: '/javascript/var-let-const变量声明' },
+      { text: 'JavaScript', link: '/javascript/JavaScript基础/var-let-const变量声明' },
       { text: '面试', link: '/面试/JavaScript篇/' },
       {
         text: '更多',
         ariaLabel: '更多内容',
         items: [
-          { text: '设计模式与算法', link: '/front-concept/设计模式/1.单例模式/' },
           { text: 'node', link: '/node/inquirer/' },
-          { text: '杂项', link: '/other/前端安全/xss/' },
+          { text: '杂项', link: '/other/fullCalendar日程表/' },
           { text: '2022', link: '/2022/' }
         ]
       },

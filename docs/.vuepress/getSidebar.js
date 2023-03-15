@@ -69,6 +69,8 @@ function wirteJs(data, filePath) {
           // 判断一下当前目录文件夹中是否有README文件，如果有，则根目录则填写path，否则不填写
           obj = {
             title: name,
+            sidebarDepth: 2,
+            collapsable: item.collapsable,
             path: item.path + '/'
           }
         } else {

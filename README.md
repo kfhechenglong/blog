@@ -1,29 +1,29 @@
 # docs
-## front-concept
-### 算法
-#### [1.stack](./docs/front-concept/算法/1.stack/README.md)
-#### [4.字典](./docs/front-concept/算法/4.字典/README.md)
-#### [5.散列表](./docs/front-concept/算法/5.散列表/README.md)
-#### [6.递归](./docs/front-concept/算法/6.递归/README.md)
-#### [7.队列](./docs/front-concept/算法/7.队列/README.md)
-#### [8.指针思想](./docs/front-concept/算法/8.指针思想/README.md)
-### 设计模式
-#### [1.单例模式](./docs/front-concept/设计模式/1.单例模式/README.md)
-#### [2.策略模式](./docs/front-concept/设计模式/2.策略模式/README.md)
-#### [3.代理模式](./docs/front-concept/设计模式/3.代理模式/README.md)
-#### [4.迭代器模式](./docs/front-concept/设计模式/4.迭代器模式/README.md)
-#### [5.发布订阅模式](./docs/front-concept/设计模式/5.发布订阅模式/README.md)
-#### [6.命令模式](./docs/front-concept/设计模式/6.命令模式/README.md)
-#### [7.模板模式](./docs/front-concept/设计模式/7.模板模式/README.md)
 ## javascript
-### [call和apply的用途](./docs/javascript/call和apply的用途.md)
-### [JavaScript中的继承](./docs/javascript/JavaScript中的继承.md)
-### [JavaScript的原型链](./docs/javascript/JavaScript的原型链.md)
-### [new的理解](./docs/javascript/new的理解.md)
-### [this指向](./docs/javascript/this指向.md)
-### [var-let-const变量声明](./docs/javascript/var-let-const变量声明.md)
-### [理解JavaScript的执行上下文](./docs/javascript/理解JavaScript的执行上下文.md)
-### [鸭子类型](./docs/javascript/鸭子类型.md)
+### JavaScript基础
+#### [call和apply的用途](./docs/javascript/JavaScript基础/call和apply的用途.md)
+#### [JavaScript中的继承](./docs/javascript/JavaScript基础/JavaScript中的继承.md)
+#### [JavaScript的原型链](./docs/javascript/JavaScript基础/JavaScript的原型链.md)
+#### [new的理解](./docs/javascript/JavaScript基础/new的理解.md)
+#### [this指向](./docs/javascript/JavaScript基础/this指向.md)
+#### [var-let-const变量声明](./docs/javascript/JavaScript基础/var-let-const变量声明.md)
+#### [理解JavaScript的执行上下文](./docs/javascript/JavaScript基础/理解JavaScript的执行上下文.md)
+#### [鸭子类型](./docs/javascript/JavaScript基础/鸭子类型.md)
+### 算法
+#### [1.stack](./docs/javascript/算法/1.stack/README.md)
+#### [4.字典](./docs/javascript/算法/4.字典/README.md)
+#### [5.散列表](./docs/javascript/算法/5.散列表/README.md)
+#### [6.递归](./docs/javascript/算法/6.递归/README.md)
+#### [7.队列](./docs/javascript/算法/7.队列/README.md)
+#### [8.指针思想](./docs/javascript/算法/8.指针思想/README.md)
+### 设计模式
+#### [1.单例模式](./docs/javascript/设计模式/1.单例模式/README.md)
+#### [2.策略模式](./docs/javascript/设计模式/2.策略模式/README.md)
+#### [3.代理模式](./docs/javascript/设计模式/3.代理模式/README.md)
+#### [4.迭代器模式](./docs/javascript/设计模式/4.迭代器模式/README.md)
+#### [5.发布订阅模式](./docs/javascript/设计模式/5.发布订阅模式/README.md)
+#### [6.命令模式](./docs/javascript/设计模式/6.命令模式/README.md)
+#### [7.模板模式](./docs/javascript/设计模式/7.模板模式/README.md)
 ## node
 ### [cli](./docs/node/cli/README.md)
 ### [inquirer](./docs/node/inquirer/README.md)
