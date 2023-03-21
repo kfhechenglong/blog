@@ -7,8 +7,10 @@
   "author": "绝对零度",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "dev": "node ./docs/.vuepress/getSidebar.js && vuepress dev docs",
     "build": "node createReadme.js && vuepress build docs",
+    "side": "node ./docs/.vuepress/getSidebar.js",
+    "md": "node createReadme.js",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {

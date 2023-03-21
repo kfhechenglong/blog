@@ -56,6 +56,7 @@
 ##### [图解vue3.0编译器核心原理](./docs/vue/vue3/vue核心原理/图解vue3.0编译器核心原理.md)
 ##### [理解Vue中的Tree-Shaking](./docs/vue/vue3/vue核心原理/理解Vue中的Tree-Shaking.md)
 ##### [理解框架的编译时与运行时](./docs/vue/vue3/vue核心原理/理解框架的编译时与运行时.md)
+#### [Vue获取Dom元素与子组件](./docs/vue/vue3/Vue获取Dom元素与子组件.md)
 ## 面试
 ### [html篇](./docs/面试/html篇/README.md)
 #### [SEO中的TKD三要素](./docs/面试/html篇/SEO中的TKD三要素.md)
