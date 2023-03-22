@@ -59,13 +59,17 @@ function wirteJs(data, filePath) {
       if (item.children && item.children.length) {
         if (item.children.some(child => child.name === README)) {
           // 判断一下当前目录文件夹中是否有README文件，如果有，则根目录则填写path，否则不填写
-          content += `${'#'.repeat(item.level)} [${name}](./${path}/${README})\n\r`
+          if (item.children.length === 1) {
+            content += `[${name}](./${path}/${README})\n\r`
+          } else {
+            content += `${'#'.repeat(item.level)} [${name}](./${path}/${README})\n\r`
+          }
         } else {
           content += `${'#'.repeat(item.level)} ${name}\n\r`
         }
         getConent(item.children)
       } else {
-        content += `${'#'.repeat(item.level)} [${name}](./${path})\n\r`
+        content += `[${name}](./${path})\n\r`
       }
     }
   }
