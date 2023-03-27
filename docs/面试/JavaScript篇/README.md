@@ -163,8 +163,72 @@ camelToUpperCase("classNameType");
 - 设置响应头cache-control和last-modified
 - 代码压缩（去空格、去回车、去注释、替换较长变量名称等等）；
 - 函数防抖节流应用，减少短时间内高频请求接口，降低api访问次数；
-## 分别用 es5 和 es6 的方式解决一个继承问题
 
+## Property与attribute的区别
+
+在 `JavaScript` 中，`property`和 `attribute`是两个不同的概念，它们的区别如下：
+
+- 属性是 `JavaScript` 对象中的一个键值对，其中键是一个字符串，值可以是任何类型的值，包括其他对象、函数、字符串、数字等。例如，对于一个对象 `obj`，`obj.name` 是一个属性，它的键是 `"name"`，它的值可以是字符串、数字或其他对象等。
+- 特性是`HTML`元素的一种附加信息，它是为了描述 `HTML` 元素的状态或特征而添加的。`HTML` 元素的特性可以在标签中使用，也可以在 `JavaScript` 中使用。例如，在 `HTML` 中，`img` 元素有一个 `"src"` 特性，它指定了要显示的图像的 `URL`。在 `JavaScript` 中，可以使用元素的 `"getAttribute" `方法来获取特性的值，例如，`img.getAttribute("src")`。
+- `property`和`attribute`之间存在一定的关联，但它们并不总是相等的。在 `HTML` 中，一些特性与属性有相同的名称，例如 `"id"`，`"name"`，`"value"` 等。在这种情况下，它们的值通常是相同的。但是，其他特性和属性之间可能存在差异，例如 `"class"` 特性在 `JavaScript` 中对应的是 `"className"` 属性。
+- 在修改 `HTML` 元素的`attribute`时，可能会影响到其对应的`property`，反之亦然。例如，在 `JavaScript` 中使用元素的 `"setAttribute"` 方法可以修改其`attribute`的值，而在 HTML 中修改某些`attribute`的值可能会导致对应的`property`也发生变化。
+
+总之，`property`和`attribute`是两个不同的概念，`property`是 `JavaScript` 对象中的键值对，而`attribute`是 HTML 元素的一种附加信息，它们之间有些关联，但并不总是相等的。
+
+
+## 分别用es5和es6的方式解决一个继承问题
+
+在 ES5 中，可以使用原型链继承来解决继承问题。代码如下：
+```js
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.speak = function() {
+  console.log(this.name + " makes a noise.");
+}
+
+function Dog(name) {
+  Animal.call(this, name);
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.speak = function() {
+  console.log(this.name + " barks.");
+}
+
+var dog = new Dog("Fido");
+dog.speak(); // 输出 "Fido barks."
+
+```
+在 ES6 中，可以使用 class 和 extends 关键字来定义子类，并使用 super 来调用父类的构造函数和方法。代码如下：
+```js
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  
+  speak() {
+    console.log(this.name + " makes a noise.");
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+  }
+  
+  speak() {
+    console.log(this.name + " barks.");
+  }
+}
+
+let dog = new Dog("Fido");
+dog.speak(); // 输出 "Fido barks."
+```
+在这个例子中，Dog 类继承了 Animal 类，并重写了 speak 方法。使用 super 调用了父类的构造函数和方法。
 ## 用递归的思路实现 1 - 100 求和
 
 ## 三十个数字（自然数）每三个 return 出去，最后只剩下一个，求剩下的这个是几？
