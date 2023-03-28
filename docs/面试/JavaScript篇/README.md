@@ -176,59 +176,6 @@ camelToUpperCase("classNameType");
 总之，`property`和`attribute`是两个不同的概念，`property`是 `JavaScript` 对象中的键值对，而`attribute`是 HTML 元素的一种附加信息，它们之间有些关联，但并不总是相等的。
 
 
-## 分别用es5和es6的方式解决一个继承问题
-
-在 ES5 中，可以使用原型链继承来解决继承问题。代码如下：
-```js
-function Animal(name) {
-  this.name = name;
-}
-
-Animal.prototype.speak = function() {
-  console.log(this.name + " makes a noise.");
-}
-
-function Dog(name) {
-  Animal.call(this, name);
-}
-
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.constructor = Dog;
-
-Dog.prototype.speak = function() {
-  console.log(this.name + " barks.");
-}
-
-var dog = new Dog("Fido");
-dog.speak(); // 输出 "Fido barks."
-
-```
-在 ES6 中，可以使用 class 和 extends 关键字来定义子类，并使用 super 来调用父类的构造函数和方法。代码如下：
-```js
-class Animal {
-  constructor(name) {
-    this.name = name;
-  }
-  
-  speak() {
-    console.log(this.name + " makes a noise.");
-  }
-}
-
-class Dog extends Animal {
-  constructor(name) {
-    super(name);
-  }
-  
-  speak() {
-    console.log(this.name + " barks.");
-  }
-}
-
-let dog = new Dog("Fido");
-dog.speak(); // 输出 "Fido barks."
-```
-在这个例子中，Dog 类继承了 Animal 类，并重写了 speak 方法。使用 super 调用了父类的构造函数和方法。
 ## 用递归的思路实现 1 - 100 求和
 
 ## 三十个数字（自然数）每三个 return 出去，最后只剩下一个，求剩下的这个是几？

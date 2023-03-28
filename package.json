@@ -10,7 +10,7 @@
     "dev": "node ./docs/.vuepress/getSidebar.js && vuepress dev docs",
     "build": "node createReadme.js && vuepress build docs",
     "side": "node ./docs/.vuepress/getSidebar.js",
-    "md": "node createReadme.js",
+    "mkmd": "node createReadme.js",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
