@@ -1,11 +1,11 @@
-## JavaScript的事件循环
+# JavaScript的事件循环
 `JavaScript`语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。那么，为什么`JavaScript`不能有多个线程呢？这样能提高效率啊。这也与它的用途有关。作为浏览器脚本语言，`JavaScript`的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题
 
 `JavaScript`是一门单线程执行语言。这句话直接定义了`JavaScript`程序执行顺序的核心，单线程意味着代码需要一行一行按照顺序执行，如果遇到一个大的循环语句或者远程加载图片资源等等语句，整个程序都会出现假死现象，直到当前的任务执行完毕，才会继续执行下面的程序。为了解决上面的问题，于是出现了同步执行、异步执行（宏任务与微任务）。
 
 同步任务非常常见：比如上面描述的`JavaScript`按序执行、页面渲染、远程加载`JavaScript`资源等等都是同步任务。
 
-### JavaScript的执行机制
+## JavaScript的执行机制
 
 在介绍`JavaScript`的异步任务前，我们先来了解一下`JavaScript`的执行机制。
 
@@ -30,7 +30,7 @@ console.log(3); // 用d代表
 整个循环的过程就是`Event Loop（事件循环）`。
 
 
-### 宏任务与微任务
+## 宏任务与微任务
 
 任务队列（`Event Queue`）有的也叫（消息队列），里面的任务可分为宏任务（`Macro-task`）和微任务( `Micro-task` ) 。
 
@@ -47,7 +47,7 @@ console.log(3); // 用d代表
 - `MutationObserver`
 
 
-#### setTimeout和setInterval
+## setTimeout和setInterval
 
 首先我们先来看`setTimeout`，这个api我们一般是在执行异步任务时使用，比如想在3秒后执行一个`console`；
 ```js
@@ -78,7 +78,7 @@ for (let index = 0; index < 10000000; index++) {
 
 所以作为异步的setTimeout和setInterval的问题是，它们都不精确。它们的内在运行机制决定了实际的时间间隔，参数实际上只是指定了把要执行的代码添加到`JavaScript（浏览器UI）`线程队列中以等待执行的时间。如果队列前面已经加入了其他任务，那要执行的代码就要等前面的任务完成后再执行。
 
-#### requestAnimationFrame
+## requestAnimationFrame
 
 `requestAnimationFrame`是`window`的方法，告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。
 
@@ -86,7 +86,7 @@ for (let index = 0; index < 10000000; index++) {
 
 `requestAnimationFrame`的执行通常与浏览器屏幕刷新次数相匹配，保持最佳绘制效率，不会因为间隔时间过短，造成过度绘制，增加开销；也不会因为间隔时间太长，使用动画卡顿不流畅，让各种网页动画效果能够有一个统一的刷新机制，从而节省系统资源，提高系统性能，改善视觉效果。
 
-#### Promise
+## Promise
 
 先要说明的是`new Promise()`是同步任务，而`.then`则是异步微任务；
 
