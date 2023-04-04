@@ -78,4 +78,4 @@ function wirteJs(data, filePath) {
   fs.writeFile(file, content, { encoding: 'utf8' }, err => {})
 }
 
-// console.log(nodes)
+console.log('README updated')

@@ -121,3 +121,4 @@ function wirteJs(data, filePath) {
 }
 
 // console.log(nodes)
+console.log('sidebar updated')
