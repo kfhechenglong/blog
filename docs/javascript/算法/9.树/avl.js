@@ -1,4 +1,4 @@
-import BinarySearchTree from './index.mjs'
+import BinarySearchTree from './index.js'
 import {compareDefault, Compare, Node} from './util'
 const BalanceFactor = {
   UNBALANCED_RIGHT: 1,

@@ -9,9 +9,11 @@
 
  ## 实现一个搜索二叉树
 
-<<< ./docs/javascript/算法/9.树/index.mjs
+<<< ./docs/javascript/算法/9.树/index.js
 
 ## 自平衡二叉树
 
 自平衡二叉树（Adelson-Velskii-Landi）(AVL树)：意思是任何一个节点左右两侧子树的高度之差最多为1；添加或移除节点时，AVL树会尽量尝试转换为完全树；
 
+
+<<< ./docs/javascript/算法/9.树/avl.js
