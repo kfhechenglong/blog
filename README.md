@@ -5,13 +5,13 @@
 ## javascript
 ### JavaScript基础
 [call和apply的用途](./docs/javascript/JavaScript基础/call和apply的用途.md)
+[forEach遍历访问set造成的无限循环问题](./docs/javascript/JavaScript基础/forEach遍历访问set造成的无限循环问题.md)
 [JavaScript中的继承](./docs/javascript/JavaScript基础/JavaScript中的继承.md)
 [JavaScript的原型链](./docs/javascript/JavaScript基础/JavaScript的原型链.md)
 [new的理解](./docs/javascript/JavaScript基础/new的理解.md)
 [this指向](./docs/javascript/JavaScript基础/this指向.md)
 [var-let-const变量声明](./docs/javascript/JavaScript基础/var-let-const变量声明.md)
 [理解JavaScript的执行上下文](./docs/javascript/JavaScript基础/理解JavaScript的执行上下文.md)
-[鸭子类型](./docs/javascript/JavaScript基础/鸭子类型.md)
 ### 算法
 [1.stack](./docs/javascript/算法/1.stack/README.md)
 [4.字典](./docs/javascript/算法/4.字典/README.md)
