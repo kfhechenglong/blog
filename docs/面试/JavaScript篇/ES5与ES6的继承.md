@@ -1,4 +1,16 @@
-
+---
+title: 分别用ES5和ES6的方式解决一个继承问题
+date: '2023-03-28'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 面试
+tags:
+ - JavaScript
+describe: '前端面试题，分别用ES5和ES6的方式解决一个继承问题'
+img: './interview.png'
+publish: true
+---
 # 分别用es5和es6的方式解决一个继承问题
 
 在 ES5 中，可以使用原型链继承来解决继承问题。代码如下：

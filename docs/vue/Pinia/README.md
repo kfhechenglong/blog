@@ -1,3 +1,16 @@
+---
+title: Pinia操作学习概览
+date: '2022-03-15'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - Pinia
+describe: 'Pinia开发文档'
+img: './Pinia.png'
+publish: true
+---
 # Pinia
 
 ## Why Pinia

@@ -12,8 +12,5 @@ features:
   details: Vue知识类集合，包含Vue2版本、Vue3版本，Vue配套的Pinia等.
 - title: 杂项
   details: 前端工作中的总结或遇到的问题笔记，例如：前端安全、微信调试等工具使用.
+footer: footer
 ---
-
-::: slot footer
-  Copyright © 2020-present [绝对零度](https://github.com/kfhechenglong)
-:::

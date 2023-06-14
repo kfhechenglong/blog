@@ -1,3 +1,16 @@
+---
+title: Pinia操作指引
+date: '2022-04-14'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - Pinia
+describe: 'Pinia操作指引'
+img: './Pinia.png'
+publish: true
+---
 # 从Vuex≤4版本迁移
 虽然`Vuex`和`Pinia`结构是不同的，但是大多数逻辑是可以被复用的。本指南将帮助您完成整个过程，并指出可能出现的一些常见陷阱。
 ## 准备工作

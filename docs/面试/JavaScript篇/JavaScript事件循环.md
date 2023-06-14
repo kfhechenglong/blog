@@ -1,3 +1,16 @@
+---
+title: 理解JavaScript的事件循环
+date: '2023-04-4'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 面试
+tags:
+ - JavaScript
+describe: '前端面试题，JavaScript的事件循环详解'
+img: './interview.png'
+publish: true
+---
 # JavaScript的事件循环
 `JavaScript`语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。那么，为什么`JavaScript`不能有多个线程呢？这样能提高效率啊。这也与它的用途有关。作为浏览器脚本语言，`JavaScript`的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题
 

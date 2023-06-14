@@ -1,3 +1,16 @@
+---
+title: call和apply的用途
+date: '2021-08-17 08:00:00'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - JavaScript
+describe: ''
+img: './JavaScript.png'
+publish: true
+---
 # call和apply的用途
 ## 1.改变this指向
 call和apply最常见的用途是改变函数内部的this指向，如下代码：

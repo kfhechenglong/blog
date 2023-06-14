@@ -1,4 +1,16 @@
-
+---
+title: Pinia Getters--中文文档
+date: '2022-03-18'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - Pinia
+describe: 'Pinia Api核心概念 文档翻译'
+img: './Pinia.png'
+publish: true
+---
 # Getters
 
 `getter`与`Store`状态的计算值完全相同。它们可以用`defineStore()`中的`getters`属性来定义。它们接收`state`作为第一个参数，以**鼓励**使用箭头函数:

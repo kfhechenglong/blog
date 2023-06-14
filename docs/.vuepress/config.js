@@ -1,8 +1,12 @@
 const sidebarItem = require('./sidebar')
 module.exports = {
-  title: '绝对零度随笔',
+  chainWebpack: config => {
+    config.resolve.alias.set('core-js/library/fn', 'core-js/features')
+  },
+  title: '绝对零度',
   description: 'JavaScript html css Vue 前端开发 知识库',
   base: '/blog/',
+  "dest": "public",
   head: [
     // 添加百度统计
     [
@@ -58,7 +62,26 @@ module.exports = {
     // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
     // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
     repoLabel: '查看源码',
-
+    startYear: '2020',
+    "type": "blog",
+    author: '绝对零度',
+    authorAvatar: '/avatar.png',
+    logo: '/logo.png',
+    noFoundPageByTencent: false,
+    // blogConfig: {
+    //   category: {
+    //     location: 2,     // 在导航栏菜单中所占的位置，默认2
+    //     text: 'Category' // 默认文案 “分类”
+    //   },
+    //   tag: {
+    //     location: 3,     // 在导航栏菜单中所占的位置，默认3
+    //     text: 'Tag'      // 默认文案 “标签”
+    //   },
+    //   socialLinks: [     // 信息栏展示社交信息
+    //     { icon: 'reco-github', link: 'https://github.com/recoluan' },
+    //     { icon: 'reco-npm', link: 'https://www.npmjs.com/~reco_luan' }
+    //   ]
+    // },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Vue', link: '/vue/Pinia/操作指引/' },

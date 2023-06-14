@@ -1,3 +1,16 @@
+---
+title: 理解JavaScript的执行上下文
+date: '2022-12-22'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - JavaScript
+describe: ''
+img: './JavaScript.png'
+publish: true
+---
 # 理解JavaScript的执行上下文
 
 作为一个前端开发者，你必须知道`JavaScript`程序内部是如何执行的，尤其是理解`JavaScript`的执行上下文和执行栈，这对后面理解`JavaScript`中的闭包、作用域链等等有着至关的作用；
@@ -38,7 +51,29 @@
 
 理解如下示例代码：
 
-<<< ./docs/javascript/JavaScript基础/examples/js-stack.js
+```js
+let a = 'Hello World!';
+
+function first() {
+  console.log('first 函数上下文');
+  second();
+  console.log('再次进入 first 函数上下文');
+}
+
+function second() {
+  console.log('second 函数上下文');
+}
+
+first();
+console.log('全局上下文');
+
+
+// first 函数上下文
+// second 函数上下文
+// 再次进入 first 函数上下文
+// 全局上下文
+
+```
 
 上述代码在浏览器引擎执行时
 

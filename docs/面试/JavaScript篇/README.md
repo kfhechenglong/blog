@@ -1,3 +1,16 @@
+---
+title: 前端JavaScript面试题锦集
+date: '2023-02-28'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 面试
+tags:
+ - JavaScript
+describe: '前端面试锦集'
+img: './interview.png'
+publish: true
+---
 ## 把一个 url 拆解成 origin、文件名、hash 拆解成示例的格式
 
 首先需要明白一个 URL 的组成分为几部分，以这个`http://localhost:8080/article/details/109065450/?id=14d76037-6462-445a-8d64-00c6b517db11&openType=new_blank#/client_info/client_info_page`为例

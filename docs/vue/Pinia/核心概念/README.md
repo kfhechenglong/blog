@@ -1,3 +1,16 @@
+---
+title: Pinia核心概念--中文文档
+date: '2022-03-15'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - Pinia
+describe: 'Pinia Api核心概念 文档翻译'
+img: './Pinia.png'
+publish: true
+---
 # 核心概念
 
 ## 定义Store

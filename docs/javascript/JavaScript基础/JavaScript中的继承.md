@@ -1,3 +1,16 @@
+---
+title: JavaScript中的继承
+date: '2021-06-17 08:02:00'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - JavaScript
+describe: ''
+img: './JavaScript.png'
+publish: true
+---
 # JavaScript中的继承
 通过ECMAScript5提供的Object.create方法，来创建克隆对象
 ```javascript
