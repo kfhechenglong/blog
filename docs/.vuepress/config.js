@@ -1,5 +1,4 @@
 const sidebarItem = require('./sidebar')
-window.global = window;
 module.exports = {
   chainWebpack: config => {
     config.resolve.alias.set('core-js/library/fn', 'core-js/features')
