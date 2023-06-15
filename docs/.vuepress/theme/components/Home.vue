@@ -6,50 +6,43 @@
     <!-- 最近更新 -->
     <div class="content-list">
       <template v-for="item in currentPageData">
-        <el-card class="box-card" v-if="item.title">
-          <div class="list-item">
-            <div class="item-img">
-              <img v-if="item.frontmatter && item.frontmatter.img" :src="item.frontmatter.img" alt="">
-              
+        <div class="list-item" v-if="item.title">
+          <div class="item-img">
+            <img v-if="item.frontmatter && item.frontmatter.img" :src="item.frontmatter.img" alt="">
+            
+          </div>
+          <div class="item-des">
+            <div class="item-title">
+              <template v-if="item.frontmatter && item.frontmatter.title">
+                <a :href="`/blog${item.path}`">{{ item.frontmatter.title }}</a>
+              </template>
+              <a v-else :href="`/blog${item.path}`">{{ item.title }}</a>
             </div>
-            <div class="item-des">
-              <div class="item-title">
-                <template v-if="item.frontmatter && item.frontmatter.title">
-                  <a :href="`/blog${item.path}`">{{ item.frontmatter.title }}</a>
-                </template>
-                <a v-else :href="`/blog${item.path}`">{{ item.title }}</a>
-              </div>
-              <div class="item-tags">
-                <template  v-if="item.frontmatter && item.frontmatter.categories">
-                <el-tag size="small" class="item-tag" v-for="categoriesText in item.frontmatter.categories">{{ categoriesText }}</el-tag>
-                </template>
-                <template  v-if="item.frontmatter && item.frontmatter.tags">
-                  <el-tag type="warning" class="item-tag" size="small" v-for="tagsText in item.frontmatter.tags">{{ tagsText }}</el-tag>
-                </template>
-              </div>
-              <div>
-                <template v-if="item.frontmatter && item.frontmatter.date">
-                  <i class="el-icon-time"></i>
-                  {{ item.frontmatter.date }}
-                </template>
-                <template v-else>
-                  <i class="el-icon-edit"></i>
-                  {{ item.lastUpdated }}
-                </template>
-              </div>
+            <div class="item-tags">
+              <template  v-if="item.frontmatter && item.frontmatter.categories">
+              <span size="small" class="item-tag" v-for="categoriesText in item.frontmatter.categories">{{ categoriesText }}</span>
+              </template>
+              <template  v-if="item.frontmatter && item.frontmatter.tags">
+                <span type="warning" class="item-tag" size="small" v-for="tagsText in item.frontmatter.tags">{{ tagsText }}</span>
+              </template>
+            </div>
+            <div>
+              <template v-if="item.frontmatter && item.frontmatter.date">
+                <i class="el-icon-time"></i>
+                {{ item.frontmatter.date }}
+              </template>
+              <template v-else>
+                <i class="el-icon-edit"></i>
+                {{ item.lastUpdated }}
+              </template>
             </div>
           </div>
-        </el-card>
+        </div>
       </template>
-      <el-pagination
-        class="pagination"
-        background
-        :page-size="pageSize"
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        layout="prev, pager, next"
-        :total="total">
-      </el-pagination>
+      <div class="pagination">
+        <div @click="prevHandler" :class="{'disabled': disabeldPrev}">上一页</div>
+        <div @click="nextHandler" :class="{'disabled': disabeldNext}">下一页</div>
+      </div>
     </div>
     <div class="right">
       <img src="./../../../imgs/公众号二维码.jpg" alt="公众号二维码">
@@ -74,6 +67,7 @@
 
 <script>
 import NavLink from '@theme/components/NavLink.vue'
+import { TimeSelect } from 'element-ui'
 import Vue from 'vue'
 export default {
   name: 'Home',
@@ -104,6 +98,12 @@ export default {
       // console.log(data)
       return data
     },
+    disabeldPrev () {
+      return this.currentPage === 1
+    },
+    disabeldNext() {
+      return Math.ceil(this.total / this.pageSize) === this.currentPage
+    },
     total () {
       return this.pagesList.length
     },
@@ -118,9 +118,19 @@ export default {
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
     },
-    handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
-      this.currentPage = val;
+    // 上一页
+    prevHandler () {
+      if (this.disabeldPrev) {
+        return false
+      }
+      this.currentPage--;
+    },
+    // 下一页
+    nextHandler () {
+      if (this.disabeldNext) {
+        return false
+      }
+      this.currentPage++;
     }
   },
 }
@@ -138,8 +148,22 @@ export default {
     .pagination
       text-align center
       margin-bottom 20px
+      display flex
+      justify-content space-between
+      div
+        cursor pointer
+      div:hover
+        color: #2dbe8f
+      .disabled
+        cursor not-allowed
+        color: #ccc
+      .disabled:hover
+        color: #ccc
     .list-item 
       display flex
+      margin: 20px 0;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
     .item-des
       margin-left 20px
       display flex
@@ -158,6 +182,10 @@ export default {
       line-height: 30px;
     .item-tag
       margin-right 10px
+      border: 1px solid #d9ecff;
+      padding: 0px 4px;
+      border-radius: 3px;
+      background-color: #ecf5ff;
   .right
     position fixed;
     right 10px
