@@ -1,7 +1,7 @@
 ---
 title: JavaScript中的继承
 date: '2021-06-17 08:02:00'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

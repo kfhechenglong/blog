@@ -1,7 +1,7 @@
 ---
 title: 分别用ES5和ES6的方式解决一个继承问题
 date: '2023-03-28'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 面试

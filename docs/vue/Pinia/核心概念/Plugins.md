@@ -1,7 +1,7 @@
 ---
 title: Pinia Plugins--中文文档
 date: '2022-04-13'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

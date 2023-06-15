@@ -1,7 +1,7 @@
 ---
 title: 理解JavaScript的事件循环
 date: '2023-04-4'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 面试

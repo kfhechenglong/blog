@@ -1,7 +1,7 @@
 ---
 title: Pinia操作学习概览
 date: '2022-03-15'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

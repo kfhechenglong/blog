@@ -1,7 +1,7 @@
 ---
 title: 前端JavaScript面试题锦集
 date: '2023-02-28'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 面试

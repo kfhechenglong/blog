@@ -1,7 +1,7 @@
 ---
 title: Pinia Getters--中文文档
 date: '2022-03-18'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

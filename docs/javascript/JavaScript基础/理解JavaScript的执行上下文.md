@@ -1,7 +1,7 @@
 ---
 title: 理解JavaScript的执行上下文
 date: '2022-12-22'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

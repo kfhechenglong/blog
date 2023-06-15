@@ -1,7 +1,7 @@
 ---
 title: Pinia核心概念--中文文档
 date: '2022-03-15'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

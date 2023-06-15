@@ -1,7 +1,7 @@
 ---
 title: Pinia操作指引
 date: '2022-04-14'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

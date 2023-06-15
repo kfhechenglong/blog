@@ -1,7 +1,7 @@
 ---
 title: forEach遍历访问set造成的无限循环问题
 date: '2023-06-09'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

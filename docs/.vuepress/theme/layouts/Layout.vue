@@ -50,7 +50,6 @@ import Navbar from './../components/Navbar.vue'
 import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import { resolveSidebarItems } from '../util'
-console.log(Navbar)
 export default {
   name: 'Layout',
 
@@ -95,12 +94,14 @@ export default {
     },
 
     sidebarItems () {
-      return resolveSidebarItems(
+      const a = resolveSidebarItems(
         this.$page,
         this.$page.regularPath,
         this.$site,
         this.$localePath
       )
+      console.log(a)
+      return a
     },
 
     pageClasses () {

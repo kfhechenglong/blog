@@ -1,7 +1,7 @@
 ---
 title: call和apply的用途
 date: '2021-08-17 08:00:00'
-sidebar: 'auto'
+sidebar: true
 categories:
  - 前端
  - 技术

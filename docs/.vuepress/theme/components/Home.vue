@@ -15,9 +15,9 @@
             <div class="item-des">
               <div class="item-title">
                 <template v-if="item.frontmatter && item.frontmatter.title">
-                  <a :href="item.path">{{ item.frontmatter.title }}</a>
+                  <a :href="`/blog${item.path}`">{{ item.frontmatter.title }}</a>
                 </template>
-                <a v-else :href="item.path">{{ item.title }}</a>
+                <a v-else :href="`/blog${item.path}`">{{ item.title }}</a>
               </div>
               <div class="item-tags">
                 <template  v-if="item.frontmatter && item.frontmatter.categories">
@@ -87,19 +87,21 @@ export default {
   },
   computed: {
     data () {
-      console.log(this)
-      console.log(Vue.version)
+      // console.log(this)
+      // console.log(Vue.version)
       return this.$page.frontmatter
     },
     pagesList () {
       // 文章列表
-      return (this.$site.pages || []).sort(function(a, b) {
+      return (this.$site.pages || []).filter(item => {
+        return item.title !== 'Home'
+      }).sort(function(a, b) {
         return b.lastUpdatedTimestamp - a.lastUpdatedTimestamp
       })
     },
     currentPageData () {
       const data = this.pagesList.slice((this.currentPage - 1) * this.pageSize , this.currentPage * this.pageSize)
-      console.log(data)
+      // console.log(data)
       return data
     },
     total () {
