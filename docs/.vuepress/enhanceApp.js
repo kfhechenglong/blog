@@ -1,5 +1,6 @@
 import {Pagination, Card, Tag} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+window.global = window;
 export default ({Vue, options, router }) => {
     Vue.use(Pagination);
     Vue.use(Card);
