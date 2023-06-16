@@ -14,16 +14,12 @@
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
-    "babel-plugin-component": "^1.1.1",
-    "vuepress": "1.9.7",
-    "vuepress-theme-reco": "1.6.17"
+    "vuepress": "^1.8.2",
+    "vuepress-theme-reco": "^1.6.16"
   },
   "dependencies": {
     "@vssue/api-github-v3": "^1.4.7",
     "@vssue/vuepress-plugin-vssue": "^1.4.8",
-    "axios": "^1.4.0",
-    "core-js": "3",
-    "element-ui": "^2.15.13",
     "mddir": "^1.1.1"
   }
 }
