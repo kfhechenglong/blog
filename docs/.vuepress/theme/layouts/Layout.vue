@@ -100,7 +100,6 @@ export default {
         this.$site,
         this.$localePath
       )
-      console.log(a)
       return a
     },
 
