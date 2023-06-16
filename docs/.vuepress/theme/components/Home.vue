@@ -67,8 +67,8 @@
 
 <script>
 import NavLink from '@theme/components/NavLink.vue'
-import { TimeSelect } from 'element-ui'
-import Vue from 'vue'
+// import { TimeSelect } from 'element-ui'
+// import Vue from 'vue'
 export default {
   name: 'Home',
 
