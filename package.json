@@ -4,7 +4,7 @@
   "author": "绝对零度",
   "repository": "https://kfhechenglong.github.io/blog/",
   "scripts": {
-    "dev": "vuepress dev .",
+    "dev": "node ./.vuepress/getSidebar.js && vuepress dev .",
     "build": "vuepress build .",
     "new": "plop",
     "side": "node ./.vuepress/getSidebar.js",

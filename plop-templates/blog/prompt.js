@@ -7,8 +7,16 @@ module.exports = {
     prompts: [
         {
             type: "input",
+            name: "dirName",
+            message: "blog name please",
+            validate: (v) => {
+                return !v || v.trim() === "" ? `${name} is required` : true;
+            },
+        },
+        {
+            type: "input",
             name: "title",
-            message: "bolg title please",
+            message: "blog title please",
             validate: (v) => {
                 return !v || v.trim() === "" ? `${name} is required` : true;
             },
@@ -16,7 +24,7 @@ module.exports = {
         {
             type: "input",
             name: "categories",
-            message: "bolg categories please",
+            message: "blog categories please",
             validate: (v) => {
                 return !v || v.trim() === "" ? `${name} is required` : true;
             },
@@ -24,17 +32,17 @@ module.exports = {
         {
             type: "input",
             name: "tags",
-            message: "bolg tags please",
+            message: "blog tags please",
             validate: (v) => {
                 return !v || v.trim() === "" ? `${name} is required` : true;
             },
         }
     ],
-    actions: ({ title, categories, tags }) => {
+    actions: ({ title, dirName, categories, tags }) => {
         const actions = [
             {
                 type: "add",
-                path: `blogs/${moment().year()}/${uuidv4()}.md`,
+                path: `blogs/${dirName}/README.md`,
                 templateFile: "plop-templates/blog/index.hbs",
                 data: {
                     title,
