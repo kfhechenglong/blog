@@ -1,25 +1,24 @@
 {
-  "name": "blog",
+  "name": "blog-site",
   "version": "1.0.0",
-  "description": "个人笔记",
-  "main": "index.js",
-  "repository": "https://kfhechenglong.github.io/blog/",
   "author": "绝对零度",
-  "license": "MIT",
+  "repository": "https://kfhechenglong.github.io/blog/",
   "scripts": {
-    "dev": "node ./docs/.vuepress/getSidebar.js && vuepress dev docs",
-    "build": "node createReadme.js && vuepress build docs",
-    "side": "node ./docs/.vuepress/getSidebar.js",
-    "mkmd": "node createReadme.js",
-    "deploy": "bash deploy.sh"
+    "dev": "vuepress dev .",
+    "build": "vuepress build .",
+    "new": "plop"
   },
   "devDependencies": {
-    "vuepress": "^1.8.2",
-    "vuepress-theme-reco": "^1.6.16"
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^1.6.13",
+    "@vuepress-reco/vuepress-plugin-rss": "^1.0.2",
+    "moment": "^2.29.4",
+    "plop": "^3.1.1",
+    "uuid": "^9.0.0",
+    "vuepress": "1.8.2",
+    "vuepress-theme-reco": "1.6.15"
   },
+  "description": "绝度零度的个人笔记",
   "dependencies": {
-    "@vssue/api-github-v3": "^1.4.7",
-    "@vssue/vuepress-plugin-vssue": "^1.4.8",
-    "mddir": "^1.1.1"
+    "ali-oss": "^6.17.1"
   }
 }
