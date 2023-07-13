@@ -7,15 +7,20 @@
   "author": "绝对零度",
   "license": "MIT",
   "scripts": {
-    "dev": "node ./docs/.vuepress/getSidebar.js && vuepress dev docs",
+    "dev": "vuepress dev .",
     "build": "node createReadme.js && vuepress build docs",
-    "side": "node ./docs/.vuepress/getSidebar.js",
+    "side": "node ./.vuepress/getSidebar.js",
     "mkmd": "node createReadme.js",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^1.6.13",
+    "@vuepress-reco/vuepress-plugin-rss": "^1.0.2",
+    "moment": "^2.29.4",
+    "plop": "^3.1.1",
+    "uuid": "^9.0.0",
     "vuepress": "^1.8.2",
-    "vuepress-theme-reco": "^1.6.16"
+    "vuepress-theme-reco": "^1.6.15"
   },
   "dependencies": {
     "@vssue/api-github-v3": "^1.4.7",

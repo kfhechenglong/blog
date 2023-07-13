@@ -47,7 +47,8 @@ wirteJs(nodes, './README.md')
 
 function wirteJs(data, filePath) {
   let file = path.resolve(__dirname, filePath)
-  let content = `# 扫码关注支持 \n\r![公众号二维码](./docs/imgs/公众号二维码.jpg) \n\r![公众号二维码](./docs/imgs/扫码_搜索联合传播样式-标准色版.png)\n\r`
+  // let content = `# 扫码关注支持 \n\r![公众号二维码](./docs/imgs/公众号二维码.jpg) \n\r![公众号二维码](./docs/imgs/扫码_搜索联合传播样式-标准色版.png)\n\r`
+  let content = ``
   const getConent = (data) => {
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
