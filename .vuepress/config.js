@@ -5,7 +5,7 @@ module.exports = {
   // },
   "title": '绝对零度',
   "description": 'JavaScript html css Vue 前端开发 知识库',
-  "base": '/blog-site/',
+  "base": '/blog/',
   "dest": "public",
   "head": [
     // 添加百度统计
