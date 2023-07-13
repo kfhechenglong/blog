@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vuepress dev .",
     "build": "vuepress build .",
-    "new": "plop"
+    "new": "plop",
+    "side": "node ./.vuepress/getSidebar.js",
+    "mkmd": "node createReadme.js",
+    "deploy": "bash deploy.sh"
   },
   "devDependencies": {
     "@vuepress-reco/vuepress-plugin-bulletin-popover": "^1.6.13",
