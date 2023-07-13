@@ -22,6 +22,9 @@
   },
   "description": "绝度零度的个人笔记",
   "dependencies": {
+    "@vssue/api-github-v3": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.8",
+    "@vuepress-reco/vuepress-plugin-comments": "^1.6.13",
     "ali-oss": "^6.17.1"
   }
 }

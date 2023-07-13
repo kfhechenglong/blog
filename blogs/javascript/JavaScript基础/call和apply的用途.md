@@ -7,10 +7,14 @@ categories:
  - 技术
 tags:
  - JavaScript
-describe: ''
-img: './JavaScript.png'
 publish: true
+
 ---
+:::tip
+call和apply 都是用来修改函数中this的指向问题。可以用来代替另一个对象调用一个方法,将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象
+:::
+
+<!-- more -->
 # call和apply的用途
 ## 1.改变this指向
 call和apply最常见的用途是改变函数内部的this指向，如下代码：

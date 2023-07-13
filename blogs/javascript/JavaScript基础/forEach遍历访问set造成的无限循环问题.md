@@ -7,10 +7,13 @@ categories:
  - 技术
 tags:
  - JavaScript
-describe: '在`forEach`中遍历`Set`集合时，如果一个值已经被访问过了，但该值被删除并重新添加到集合，如果此时`forEach`遍历没有结束，那么该值会重新被访问，这样就会造成无限循环下去。'
-img: './JavaScript.png'
 publish: true
 ---
+:::tip
+在`forEach`中遍历`Set`集合时，如果一个值已经被访问过了，但该值被删除并重新添加到集合，如果此时`forEach`遍历没有结束，那么该值会重新被访问，这样就会造成无限循环下去。
+:::
+
+<!-- more -->
 ## forEach遍历访问set造成的无限循环问题
 
 ### 抛出问题

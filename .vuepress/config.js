@@ -44,18 +44,18 @@ module.exports = {
     }
   },
   "plugins": {
-    '@vssue/vuepress-plugin-vssue': {
-      // 设置 `platform` 而不是 `api`
-      platform: 'github',
+    // '@vssue/vuepress-plugin-vssue': {
+    //   // 设置 `platform` 而不是 `api`
+    //   platform: 'github',
 
-      // 其他的 Vssue 配置l
-      locale: 'zh',
-      // autoCreateIssue: true,
-      owner: 'kfhechenglong',
-      repo: 'blog',
-      clientId: 'ec756780613db3fdc14c',
-      clientSecret: 'a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7',
-    },
+    //   // 其他的 Vssue 配置l
+    //   locale: 'zh',
+    //   // autoCreateIssue: true,
+    //   owner: 'kfhechenglong',
+    //   repo: 'blog',
+    //   clientId: 'ec756780613db3fdc14c',
+    //   clientSecret: 'a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7',
+    // },
   },
   "themeConfig": {
     "search": true,
@@ -73,7 +73,18 @@ module.exports = {
     "subSidebar": 'auto',
     "authorAvatar": '/avatar.png',
     "logo": '/logo.png',
-    "noFoundPageByTencent": false,
+    "noFoundPageByTencent": false, 
+    vssueConfig: {
+      platform: 'github',
+
+      // 其他的 Vssue 配置l
+      locale: 'zh',
+      // autoCreateIssue: true,
+      owner: 'kfhechenglong',
+      repo: 'blog',
+      clientId: 'ec756780613db3fdc14c',
+      clientSecret: 'a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7',
+    },
     "blogConfig": {
       category: {
         location: 2,     // 在导航栏菜单中所占的位置，默认2
