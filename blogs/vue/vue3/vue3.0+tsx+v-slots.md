@@ -1,5 +1,20 @@
-# vue3.0 + tsx + ant-design-vue中使用插槽slot+自定义v-model
+---
+title: vue3.0 + tsx + ant-design-vue中使用插槽slot+自定义v-model
+date: '2022-06-22'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - Vue
+ - Vue3
+publish: true
+---
+:::tip
+在Vue3中使用TSX语法，使用插槽和自定义指令。
+:::
 
+<!-- more -->
 # 父组件中使用
 
 ``` tsx

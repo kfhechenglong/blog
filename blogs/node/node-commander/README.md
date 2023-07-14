@@ -1,8 +1,43 @@
-# commander
+---
+title: commander开发工具流程学习
+date: '2022-06-15'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - node
+publish: true
+---
+:::tip
+commander.js是一个工具，用来构建node的命令行程序，使得能够使用自定义指令在全局命令行运行node脚本
+:::
+
+<!-- more -->
+
+
 [[toc]]
 ## 小试牛刀
 
-<!-- <<< ./docs/node/node-commander/examples/first-attqact.js -->
+```js
+#! /usr/bin/env node
+const { program } = require('commander');
+
+program
+.option('-f, --first')
+.option('-s, --separator <char>');
+
+program.parse();
+
+const options = program.opts();
+
+console.log(options)
+console.log(program.args)
+
+// node .\first-attqact.js -f -s / a/b/c
+// { first: true, separator: '/' }
+// [ 'a/b/c' ]
+```
 
 简单使用一下commander的指令
 ```js
@@ -179,5 +214,14 @@ $ node .\command.js rdir dir1 dir2 dir3
 ```
 ### 帮助信息
 
-<!-- <<< ./docs/node/node-commander/examples/help.js -->
+```js
+#! /usr/bin/env node
+const { program } = require('commander');
+program
+.command('help <name>').description('sadasdas')
+.action((arg) => {
+  console.log(arg)
+})
+program.parse()
+```
 帮助信息是 `Commander` 基于你的程序自动生成的，默认的帮助选项是`-h`,`--help`。

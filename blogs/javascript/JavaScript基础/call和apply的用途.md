@@ -15,6 +15,7 @@ call和apply 都是用来修改函数中this的指向问题。可以用来代替
 :::
 
 <!-- more -->
+
 # call和apply的用途
 ## 1.改变this指向
 call和apply最常见的用途是改变函数内部的this指向，如下代码：

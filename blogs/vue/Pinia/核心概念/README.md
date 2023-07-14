@@ -7,15 +7,16 @@ categories:
  - 技术
 tags:
  - Pinia
-describe: 'Pinia Api核心概念 文档翻译'
-img: './Pinia.png'
 publish: true
 ---
-# 核心概念
+:::tip
+在深入核心概念之前，我们需要知道`store`是使用`defineStore()`定义的，它需要一个唯一的名称，作为第一个参数传递
+:::
 
+<!-- more -->
 ## 定义Store
 
-在深入核心概念之前，我们需要知道`store`是使用`defineStore()`定义的，它需要一个唯一的名称，作为第一个参数传递
+
 
 ```js
 import { defineStore } from 'pinia'

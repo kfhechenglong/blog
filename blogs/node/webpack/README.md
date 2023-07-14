@@ -1,4 +1,19 @@
-# webpack5 示例项目
+---
+title: webpack5 示例项目
+date: '2023-03-15'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - webpack
+ - node
+publish: true
+---
+:::tip
+:::
+
+<!-- more -->
 
 ## 初始化项目
 

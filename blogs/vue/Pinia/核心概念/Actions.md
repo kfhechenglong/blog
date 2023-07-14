@@ -7,13 +7,15 @@ categories:
  - 技术
 tags:
  - Pinia
-describe: 'Pinia Api核心概念 文档翻译'
-img: './Pinia.png'
 publish: true
 ---
+:::tip
+`Actions`相当于组件中的方法。他们可以被定义在`defineStore()`的`actions`属性下，它们非常适合定义业务逻辑。
+:::
+
+<!-- more -->
 # Actions
 
-`Actions`相当于组件中的方法。他们可以被定义在`defineStore()`的`actions`属性下，它们非常适合定义业务逻辑。
 ```js
 export const useStore = defineStore('main', {
   state: () => ({

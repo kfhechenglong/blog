@@ -1,5 +1,17 @@
-# 理解Vue中的Tree-Shaking
+---
+title: 理解Vue中的Tree-Shaking
+date: '2023-05-13'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - 核心原理
+ - Vue3
+publish: true
+---
 
+<!-- more -->
 ## 什么是Tree-Shaking
 
 `Tree-Shaking`这个概念在前端领域是因为`rollup.js`而起，后来webpack等也加入支持`Tree-Shaking`的行列中。简单来说就是移除掉项目中永远不会被执行的代码（`dead code`），实际情况中，代码虽然依赖了某个模块，但其实只使用其中的某些功能。通过`Tree-shaking`，将没有使用的模块代码移除掉，这样来达到删除无用代码的目的。

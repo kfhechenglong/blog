@@ -14,9 +14,6 @@ publish: true
 :::
 
 <!-- more -->
-# 理解JavaScript的执行上下文
-
-
 
 ## 什么是执行上下文
 

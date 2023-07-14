@@ -1,3 +1,20 @@
+---
+title: fullCalendar日程表在Vue项目中的应用
+date: '2020-07-28'
+sidebar: true
+categories:
+ - 前端
+ - 技术实现
+tags:
+ - Vue
+ - fullCalendar
+publish: true
+---
+:::tip
+
+:::
+
+<!-- more -->
 # fullCalendar日程表在Vue项目中的应用
 ![在这里插入图片描述](./imgs/lc.gif)
 

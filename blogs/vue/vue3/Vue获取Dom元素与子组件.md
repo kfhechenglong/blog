@@ -1,6 +1,21 @@
-# Vue获取Dom元素与子组件
-
+---
+title: Vue获取Dom元素与子组件
+date: '2023-05-12'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - Vue
+ - Vue3
+publish: true
+---
+:::tip
 在Vue2时我们想获取DOM元素或者组件节点时一般使用`this.$refs.xxx`。现在在Vue3时代，需要稍微改变一点点方法 ，但是还依然使用ref来获取。
+:::
+
+<!-- more -->
+
 ```vue
 <template>
   <!-- 一个dom元素节点 -->

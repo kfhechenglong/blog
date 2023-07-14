@@ -1,5 +1,19 @@
-# 创建 cli
+---
+title: 使用node开发一个CLI脚手架流程
+date: '2022-05-26'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - node
+publish: true
+---
+:::tip
+开发cli脚手架流程。
+:::
 
+<!-- more -->
 ## 创建文件
 
 创建新的项目文件夹

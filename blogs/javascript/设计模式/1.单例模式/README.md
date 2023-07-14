@@ -1,5 +1,20 @@
-# 单例模式
+---
+title: 单例模式
+date: '2021-12-12'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - JavaScript
+ - 设计模式
+publish: true
+---
+:::tip
+在`JavaScript`中，单例模式的定义是：保证一个类仅有一个实例，并提供一个访问它的全局访问点
+:::
 
+<!-- more -->
 ## 简单的单例模式实现
 ```javascript
 const Singletion = function (name) {

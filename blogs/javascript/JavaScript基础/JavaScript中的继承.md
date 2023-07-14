@@ -7,8 +7,6 @@ categories:
  - 技术
 tags:
  - JavaScript
-describe: ''
-img: './JavaScript.png'
 publish: true
 ---
 # JavaScript中的继承

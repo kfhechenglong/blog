@@ -1,5 +1,20 @@
-# vue3.0+antd实现table内容超出自动tooltip
+---
+title: vue3.0+antd实现table内容超出自动tooltip
+date: '2022-07-28'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - Vue
+ - Vue3
+publish: true
+---
+:::tip
+在`Vue3`中使用`ant`库，当文本长度超过表格`td`宽度时，自动实现`tooltip`效果。
+:::
 
+<!-- more -->
 ## Tooltip实现
 ```vue
 <template>

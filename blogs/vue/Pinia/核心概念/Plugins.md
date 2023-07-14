@@ -8,8 +8,6 @@ categories:
 tags:
  - Pinia
 describe: 'Pinia Api核心概念 文档翻译'
-img: './Pinia.png'
-publish: true
 ---
 # Plugins
 多亏了一个低级`API`, `Pinia stores`可以完全扩展。下面是一些你可以做的事情清单:

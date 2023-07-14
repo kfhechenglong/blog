@@ -1,4 +1,20 @@
-# Vue项目文件上传使用`ant-design-vue`上传到腾讯云
+---
+title: Vue项目文件上传使用`ant-design-vue`上传到腾讯云
+date: '2020-07-28'
+sidebar: true
+categories:
+ - 前端
+ - 技术实现
+tags:
+ - Vue
+ - 腾讯云
+publish: true
+---
+:::tip
+腾讯云文件上传
+:::
+
+<!-- more -->
 
 ## `cos-js-sdk-v5`安装使用
 

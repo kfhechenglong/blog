@@ -11,11 +11,11 @@ describe: 'Pinia开发文档'
 img: './Pinia.png'
 publish: true
 ---
-# Pinia
+:::tip
+Pinia (pronounced /piːnjʌ/, like "peenya" in English) is the closest word to piña (pineapple in Spanish) that is a valid package name. A pineapple is in reality a group of individual flowers that join together to create a multiple fruit. Similar to stores, each one is born individually, but they are all connected at the end. It's also a delicious tropical fruit indigenous to South America.
+:::
 
-## Why Pinia
-
->Pinia (pronounced /piːnjʌ/, like "peenya" in English) is the closest word to piña (pineapple in Spanish) that is a valid package name. A pineapple is in reality a group of individual flowers that join together to create a multiple fruit. Similar to stores, each one is born individually, but they are all connected at the end. It's also a delicious tropical fruit indigenous to South America.
+<!-- more -->
 
 ##  Why should I use Pinia?
 

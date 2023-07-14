@@ -1,6 +1,20 @@
-# 变量声明
-
+---
+title: 变量声明
+date: '2023-03-22'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - JavaScript
+publish: true
+---
+:::tip
 在`JavaScript`中，我们一般通过`var`、`let`、`const`三种方式显示的声明变量，其中`let`和`const`是在ES6中新增的命令，现在我们来分别介绍一下这三种声明变量的区别和要点。
+:::
+
+<!-- more -->
+
 ## var关键字
 使用`var`声明变量是`ES6`之前的标准方式，那时候还没有`let`和`const`。使用`var`定义变量，如果没有设置初始值，则变量会保存`undefined`。
 

@@ -1,4 +1,19 @@
-# inquirer命令行交互工具
+---
+title: inquirer命令行交互工具
+date: '2022-05-26'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - node
+publish: true
+---
+:::tip
+Inquirer基于诺言的npm软件包，用于Node项目中，以创建用于基于查询的任务的CLI(命令行界面)工具。 询问用户问题，验证用户输入并根据给定的响应进行操作非常好。
+:::
+
+<!-- more -->
 
 ## 安装
 

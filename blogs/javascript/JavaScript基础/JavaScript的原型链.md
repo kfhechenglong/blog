@@ -1,6 +1,20 @@
-# JavaScript的原型链
+---
+title: JavaScript的原型链
+date: '2023-04-27 14:00:00'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - JavaScript
+publish: true
 
+---
+:::tip
 `JavaScript`的继承主要是通过原型链实现的，所以理解原型链是掌握`JavaScript`继承的关键一环。原型链的继承的基本思想是通过原型链继承多个引用类型的属性和方法。
+:::
+
+<!-- more -->
 
 ## 理解原型链
 

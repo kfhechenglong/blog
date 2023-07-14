@@ -1,4 +1,16 @@
-# this指向
+---
+title: this指向
+date: '2021-08-18'
+sidebar: 'auto'
+categories:
+ - 前端
+ - 技术
+tags:
+ - JavaScript
+publish: true
+---
+
+<!-- more -->
 ## 1.1.作为方法调用
 当函数作为对象的方法被调用时，this指向该对象
 ```javascript
