@@ -1,8 +1,21 @@
-# 指针算法
-
+---
+title: 常见算法-指针算法
+date: '2022-08-24'
+sidebar: true
+categories:
+ - 前端
+ - 技术
+tags:
+ - 算法
+publish: true
+---
+:::tip
 JavaScript中的指针其实就是下标位置，下面以一个例子来使用指针思想。
+:::
 
-[源码详见>>>](./index.js)
+<!-- more -->
+
+参考代码
 ```js
 // 指针思想实现查找字符串
 
