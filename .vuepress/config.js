@@ -43,7 +43,24 @@ module.exports = {
       md.use(require('./plugins/mk-plugin-iframe'))
     }
   },
-  "plugins": {
+  "plugins": [
+    ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
+      "width": '300px', // 默认 260px
+      "title": '消息提示',
+      "body": [
+        {
+          "type": 'title',
+          "content": '前端开发 知识库技术分享',
+          "style": 'text-aligin: center;font-size: 15px;'
+        },
+        {
+          "type": 'image',
+          "src": '/wx_code.jpg'
+        }
+      ]
+    }]
+  ],
+  // "plugins": {
     // '@vssue/vuepress-plugin-vssue': {
     //   // 设置 `platform` 而不是 `api`
     //   platform: 'github',
@@ -56,7 +73,7 @@ module.exports = {
     //   clientId: 'ec756780613db3fdc14c',
     //   clientSecret: 'a15ed8578956c3b5fca0e1b5cf5ef01bd262e5b7',
     // },
-  },
+  // },
   "themeConfig": {
     "search": true,
     "searchMaxSuggestions": 10,
