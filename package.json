@@ -12,7 +12,7 @@
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
-    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^1.6.13",
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^1.6.16",
     "@vuepress-reco/vuepress-plugin-rss": "^1.0.2",
     "moment": "^2.29.4",
     "plop": "^3.1.1",

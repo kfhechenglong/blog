@@ -46,16 +46,23 @@ module.exports = {
   "plugins": [
     ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
       "width": '300px', // 默认 260px
-      "title": '消息提示',
+      "title": '公告',
       "body": [
         {
           "type": 'title',
-          "content": '前端开发 知识库技术分享',
+          "content": '多交流关注公众号@笑果杂谈🎉🎉🎉',
           "style": 'text-aligin: center;font-size: 15px;'
         },
         {
           "type": 'image',
           "src": '/wx_code.jpg'
+        }
+      ],
+      "footer": [
+        {
+          "type": 'button',
+          "content": '打赏',
+          "link": '/blog/npm'
         }
       ]
     }]
