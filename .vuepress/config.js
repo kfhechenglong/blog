@@ -61,8 +61,8 @@ module.exports = {
       "footer": [
         {
           "type": 'button',
-          "content": '打赏',
-          "link": '/blog/donate'
+          "text": '打赏',
+          "link": '/blog/donate.jpg'
         }
       ]
     }]
