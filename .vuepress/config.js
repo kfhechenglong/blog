@@ -55,14 +55,14 @@ module.exports = {
         },
         {
           "type": 'image',
-          "src": '/wx_code.jpg'
+          "src": '/blog/wx_code.jpg'
         }
       ],
       "footer": [
         {
           "type": 'button',
-          "content": '打赏',
-          "link": '/blog/npm'
+          "text": '赞赏',
+          "link": '/blog/donate.jpg'
         }
       ]
     }]
