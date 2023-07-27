@@ -514,3 +514,8 @@ beforeDestory(){
     $('#calendar').fullCalendar( 'destroy' )
 }
 ```
+![在这里插入图片描述](./imgs/d-2.png)
+
+![在这里插入图片描述](./imgs/d-3.png)
+
+![在这里插入图片描述](./imgs/d-4.png)
