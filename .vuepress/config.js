@@ -5,7 +5,7 @@ module.exports = {
   // },
   "title": '绝对零度',
   "description": 'JavaScript html css Vue 前端开发 知识库',
-  "base": '/blog/',
+  // "base": '/blog/',
   "dest": "public",
   "head": [
     // 添加百度统计
@@ -16,7 +16,7 @@ module.exports = {
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?323adbb342c132bcdae1007fda9b6068";
+        hm.src = "https://hm.baidu.com/hm.js?353a82af992f9876b27987597b206e5e";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();
@@ -55,14 +55,14 @@ module.exports = {
         },
         {
           "type": 'image',
-          "src": '/blog/wx_code.jpg'
+          "src": '/wx_code.jpg'
         }
       ],
       "footer": [
         {
           "type": 'button',
           "text": '赞赏',
-          "link": '/blog/donate.jpg'
+          "link": '/donate.jpg'
         }
       ]
     }]
