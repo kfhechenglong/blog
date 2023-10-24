@@ -30,10 +30,13 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: easingthemes/ssh-deploy@v2.1.5
         with:
           # 密匙
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          # The branch the action should deploy to.
-          publish_dir: ./public
+          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+          ARGS: '-rltgoDzvO --delete'
+          SOURCE: "public/ " # 将要复制到云服务器的静态文件夹
+          REMOTE_HOST: "49.232.253.15" # 云服务器公网地址
+          REMOTE_USER: "root" # 服务器用户名
+          TARGET: "/www/wwwroot/holazero.cn/" # 打包后的文件夹将放在目录
 
