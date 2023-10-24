@@ -36,7 +36,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
           ARGS: '-rltgoDzvO --delete'
           SOURCE: "public/ " # 将要复制到云服务器的静态文件夹
-          REMOTE_HOST: "49.232.253.15" # 云服务器公网地址
+          REMOTE_HOST: ${{ secrets.SERVER_SSH_HOST }} # 云服务器公网地址
           REMOTE_USER: "root" # 服务器用户名
-          TARGET: "/www/wwwroot/holazero.cn/" # 打包后的文件夹将放在目录
+          TARGET: ${{ secrets.SERVER_SSH_TARGET }} # 打包后的文件夹将放在目录
 
