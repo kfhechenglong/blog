@@ -28,10 +28,18 @@ jobs:
     
       - name: Build VuePress
         run: npm run build
-
+        
+      - name: Build and Deploy
+        uses: theme-keep/hexo-deploy-github-pages-action@master
+        env:
+          PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          PUBLISH_REPOSITORY: kfhechenglong/blog.github.io
+          BRANCH: gh-pages
+          PUBLISH_DIR: ./public
+          
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.1.5
-        with:
+        env:
           # 密匙
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: '-rltgoDzvO --delete'
