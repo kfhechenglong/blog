@@ -33,7 +33,7 @@ jobs:
         uses: theme-keep/hexo-deploy-github-pages-action@master
         env:
           PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          PUBLISH_REPOSITORY: kfhechenglong/blog.github.io
+          PUBLISH_REPOSITORY: kfhechenglong/kfhechenglong.github.io
           BRANCH: gh-pages
           PUBLISH_DIR: ./public
           
