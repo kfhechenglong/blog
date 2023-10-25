@@ -6,10 +6,8 @@ categories:
  - 技术
 tags:
  - github git
-# img: './interview.png'
 publish: true
 ---
-
 :::tip
 因为某些原因的限制，导致国内直接访问github经常超时或者过慢，包括不能git pull和git push等操作，让广大社区爱好者深恶痛绝！！！！！
 :::
