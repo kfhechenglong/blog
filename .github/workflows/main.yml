@@ -28,15 +28,23 @@ jobs:
     
       - name: Build VuePress
         run: npm run build
-
-      - name: Deploy
-        uses: easingthemes/ssh-deploy@v2.1.5
-        with:
-          # 密匙
-          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          ARGS: '-rltgoDzvO --delete'
-          SOURCE: "public/ " # 将要复制到云服务器的静态文件夹
-          REMOTE_HOST: ${{ secrets.SERVER_SSH_HOST }} # 云服务器公网地址
-          REMOTE_USER: "root" # 服务器用户名
-          TARGET: ${{ secrets.SERVER_SSH_TARGET }} # 打包后的文件夹将放在目录
+        
+      - name: Build and Deploy
+        uses: theme-keep/hexo-deploy-github-pages-action@master
+        env:
+          PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          PUBLISH_REPOSITORY: kfhechenglong/blog
+          BRANCH: gh-pages
+          PUBLISH_DIR: ./public
+          
+      # - name: Deploy
+      #   uses: easingthemes/ssh-deploy@v2.1.5
+      #   env:
+      #     # 密匙
+      #     SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+      #     ARGS: '-rltgoDzvO --delete'
+      #     SOURCE: "public/ " # 将要复制到云服务器的静态文件夹
+      #     REMOTE_HOST: ${{ secrets.SERVER_SSH_HOST }} # 云服务器公网地址
+      #     REMOTE_USER: "root" # 服务器用户名
+      #     TARGET: ${{ secrets.SERVER_SSH_TARGET }} # 打包后的文件夹将放在目录
 
