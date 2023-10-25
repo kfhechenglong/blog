@@ -6,10 +6,12 @@ categories:
  - 技术
 tags:
  - github git
-describe: '因为某些原因的限制，导致国内直接访问github经常超时或者过慢，包括不能git pull和git push等操作，让广大社区爱好者深恶痛绝！！！！！'
 # img: './interview.png'
 publish: true
 ---
+:::tip
+因为某些原因的限制，导致国内直接访问github经常超时或者过慢，包括不能git pull和git push等操作，让广大社区爱好者深恶痛绝！！！！！
+:::
 # 解决打不开github页面的问题
 
 我们可以通过修改本地电脑的host来解决这个问题
