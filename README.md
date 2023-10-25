@@ -1,6 +1,7 @@
 # blogs
 ## javascript
 ### JavaScript基础
+[Blob介绍与使用场景](./blogs/javascript/JavaScript基础/Blob介绍与使用场景.md)
 [call和apply的用途](./blogs/javascript/JavaScript基础/call和apply的用途.md)
 [forEach遍历访问set造成的无限循环问题](./blogs/javascript/JavaScript基础/forEach遍历访问set造成的无限循环问题.md)
 [JavaScript中的继承](./blogs/javascript/JavaScript基础/JavaScript中的继承.md)
@@ -32,6 +33,8 @@
 [webpack](./blogs/node/webpack/README.md)
 ## other
 [fullCalendar日程表](./blogs/other/fullCalendar日程表/README.md)
+### git
+[解决打不开github页面的问题](./blogs/other/git/解决打不开github页面的问题.md)
 [H5](./blogs/other/H5.md)
 [upload-files](./blogs/other/upload-files/README.md)
 ### 前端安全
@@ -71,7 +74,9 @@
 ### [Node篇](./blogs/面试/Node篇/README.md)
 [npm包版本号的理解](./blogs/面试/Node篇/npm包版本号的理解.md)
 ### [vue篇](./blogs/面试/vue篇/README.md)
+[Vue3相比Vue2有哪些优化](./blogs/面试/vue篇/Vue3相比Vue2有哪些优化.md)
 [vue中的diff算法](./blogs/面试/vue篇/vue中的diff算法.md)
 [vue响应式理解](./blogs/面试/vue篇/vue响应式理解.md)
+[原生JS操作DOM所面临的问题](./blogs/面试/vue篇/原生JS操作DOM所面临的问题.md)
 [README22](./README22.md)
 
