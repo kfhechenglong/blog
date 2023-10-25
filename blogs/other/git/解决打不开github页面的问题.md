@@ -1,7 +1,7 @@
 ---
 title: 解决打不开github页面的问题
 date: '2023-10-25'
-sidebar: true
+sidebar: 'auto'
 categories:
  - 技术
 tags:
