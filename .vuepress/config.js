@@ -24,6 +24,7 @@ module.exports = {
     ],
     ['meta', { name: '前端开发', content: '前端开发知识库'}],
     ['meta', { name: 'JavaScript', content: 'JavaScript Vue'}],
+    ['meta', { name: 'baidu_union_verify', content: '0123efac1345734bec3b0d4afdff2816'}],
     [
       'link',
       { rel: 'icon', href: 'logo.png' }
