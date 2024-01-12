@@ -1,5 +1,5 @@
 ---
-title: GitHub自动同步到通讯云
+title: GitHub自动同步到腾讯云
 date: '2024-01-12 15:16'
 sidebar: 'auto'
 categories:
