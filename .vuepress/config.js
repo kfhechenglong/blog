@@ -24,7 +24,6 @@ module.exports = {
     ],
     ['meta', { name: '前端开发', content: '前端开发知识库'}],
     ['meta', { name: 'JavaScript', content: 'JavaScript Vue'}],
-    ['meta', { name: 'baidu_union_verify', content: '0123efac1345734bec3b0d4afdff2816'}],
     [
       'link',
       { rel: 'icon', href: 'logo.png' }
@@ -51,7 +50,7 @@ module.exports = {
       "body": [
         {
           "type": 'title',
-          "content": '多交流关注公众号@笑果杂谈🎉🎉🎉',
+          "content": '多交流关注公众号@零度杂谈🎉🎉🎉',
           "style": 'text-aligin: center;font-size: 15px;'
         },
         {
@@ -112,11 +111,11 @@ module.exports = {
     },
     "blogConfig": {
       category: {
-        location: 2,     // 在导航栏菜单中所占的位置，默认2
+        location: 5,     // 在导航栏菜单中所占的位置，默认2
         text: '分类' // 默认文案 “分类”
       },
       tag: {
-        location: 3,     // 在导航栏菜单中所占的位置，默认3
+        location: 6,     // 在导航栏菜单中所占的位置，默认3
         text: '标签'      // 默认文案 “标签”
       },
       socialLinks: [     // 信息栏展示社交信息
@@ -127,9 +126,9 @@ module.exports = {
     },
     "nav": [
       { text: 'Home', link: '/' },
+      { text: '网站导航', link: '/blogs/navigation/' },
       { text: 'Vue', link: '/blogs/vue/Pinia/操作指引/' },
       { text: 'JavaScript', link: '/blogs/javascript/JavaScript基础/var-let-const变量声明' },
-      { text: '面试', link: '/blogs/面试/JavaScript篇/' },
       {
         text: '更多',
         ariaLabel: '更多内容',
