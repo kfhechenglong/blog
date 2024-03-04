@@ -7,7 +7,7 @@ module.exports = {
   "description": 'JavaScript html css Vue 前端开发 知识库',
   // "base": '/blog/',
   "dest": "public",
-  "head": [
+  "head": process.env.NODE_ENV === 'development' ? [] : [
     // 添加百度统计
     [
       "script",
@@ -128,7 +128,14 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: '网站导航', link: '/blogs/navigation/' },
       { text: 'Vue', link: '/blogs/vue/Pinia/操作指引/' },
-      { text: 'JavaScript', link: '/blogs/javascript/JavaScript基础/var-let-const变量声明' },
+      { text: 'JavaScript', 
+        items: [
+          { text: 'JavaScript基础', link: '/blogs/javascript/JavaScript基础/Blob介绍与使用场景.md' },
+          { text: 'JavaScript算法', link: '/blogs/算法/1.stack/' },
+          { text: 'JavaScript设计模式', link: '/blogs/设计模式/1.单例模式/' }
+        ]
+      },
+      { text: '面试', link: '/blogs/面试/vue篇/Vue3相比Vue2有哪些优化.html' },
       {
         text: '更多',
         ariaLabel: '更多内容',
