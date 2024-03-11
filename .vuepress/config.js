@@ -43,30 +43,30 @@ module.exports = {
       md.use(require('./plugins/mk-plugin-iframe'))
     }
   },
-  "plugins": [
-    ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
-      "width": '300px', // 默认 260px
-      "title": '公告',
-      "body": [
-        {
-          "type": 'title',
-          "content": '多交流关注公众号@零度杂谈🎉🎉🎉',
-          "style": 'text-aligin: center;font-size: 15px;'
-        },
-        {
-          "type": 'image',
-          "src": '/wx_code.jpg'
-        }
-      ],
-      "footer": [
-        {
-          "type": 'button',
-          "text": '赞赏',
-          "link": '/donate.jpg'
-        }
-      ]
-    }]
-  ],
+  // "plugins": [
+  //   ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
+  //     "width": '300px', // 默认 260px
+  //     "title": '公告',
+  //     "body": [
+  //       {
+  //         "type": 'title',
+  //         "content": '多交流关注公众号@零度杂谈🎉🎉🎉',
+  //         "style": 'text-aligin: center;font-size: 15px;'
+  //       },
+  //       {
+  //         "type": 'image',
+  //         "src": '/wx_code.jpg'
+  //       }
+  //     ],
+  //     "footer": [
+  //       {
+  //         "type": 'button',
+  //         "text": '赞赏',
+  //         "link": '/donate.jpg'
+  //       }
+  //     ]
+  //   }]
+  // ],
   // "plugins": {
     // '@vssue/vuepress-plugin-vssue': {
     //   // 设置 `platform` 而不是 `api`
