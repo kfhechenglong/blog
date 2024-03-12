@@ -126,7 +126,7 @@ module.exports = {
     },
     "nav": [
       { text: 'Home', link: '/' },
-      { text: '网站导航', link: '/blogs/navigation/' },
+      // { text: '网站导航', link: '/blogs/navigation/' },
       { text: 'Vue', link: '/blogs/vue/Pinia/操作指引/' },
       { text: 'JavaScript', 
         items: [
