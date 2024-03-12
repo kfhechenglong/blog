@@ -5,7 +5,7 @@
   "repository": "https://kfhechenglong.github.io/blog/",
   "scripts": {
     "dev": "node ./.vuepress/getSidebar.js && vuepress dev .",
-    "build": "vuepress build .",
+    "build": "node ./.vuepress/getSidebar.js && vuepress build .",
     "new": "plop",
     "side": "node ./.vuepress/getSidebar.js",
     "mkmd": "node createReadme.js",
