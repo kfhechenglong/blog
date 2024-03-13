@@ -141,6 +141,7 @@ module.exports = {
         ariaLabel: '更多内容',
         items: [
           { text: 'node', link: '/blogs/node/inquirer/' },
+          { text: 'python', link: '/blogs/Python/使用Python将多个pdf指定页整合到一个pdf文件中.html' },
           { text: '杂项', link: '/blogs/other/fullCalendar日程表/' },
           { text: '2022', link: '/blogs/2022/' }
         ]
