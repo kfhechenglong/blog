@@ -88,8 +88,9 @@ module.exports = {
     "lastUpdated": '上次更新时间', // string | boolean
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
     "repo": 'kfhechenglong/blog',
-    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
-    // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
+    // record: 'ICP 备案文案',
+    // recordLink: 'ICP 备案指向链接',
+    // cyberSecurityRecord: '公安部备案文案',
     "repoLabel": '查看源码',
     "startYear": '2020',
     "type": "blog",

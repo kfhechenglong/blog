@@ -1,0 +1,64 @@
+{
+  "_development": true,
+  "_from": "vuepress-theme-reco@1.6.15",
+  "_id": "vuepress-theme-reco@1.6.15",
+  "_inBundle": false,
+  "_integrity": "sha512-aC9AyOdnGLgnItEjb/eXdO4UKkMqj+Jq6N1xAVbrFhy6UBDIKzL4hhSwOYLI7jOlpJtn5BYZpfwEMlhMk2u0+A==",
+  "_location": "/vuepress-theme-reco",
+  "_phantomChildren": {
+    "smoothscroll-polyfill": "0.4.4"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "vuepress-theme-reco@1.6.15",
+    "name": "vuepress-theme-reco",
+    "escapedName": "vuepress-theme-reco",
+    "rawSpec": "1.6.15",
+    "saveSpec": null,
+    "fetchSpec": "1.6.15"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vuepress-theme-reco/-/vuepress-theme-reco-1.6.15.tgz",
+  "_shasum": "f0d3d3ea7a765845d52a902ef68ede8e9dc5b707",
+  "_spec": "vuepress-theme-reco@1.6.15",
+  "_where": "D:\\hechenglong\\blog-site",
+  "author": {
+    "name": "reco_luan"
+  },
+  "bugs": {
+    "url": "https://github.com/vuepress-reco/vuepress-theme-reco/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@vuepress-reco/core": "^1.6.14-beta.0",
+    "@vuepress-reco/vuepress-plugin-back-to-top": "^1.6.13",
+    "@vuepress-reco/vuepress-plugin-comments": "^1.6.13",
+    "@vuepress-reco/vuepress-plugin-pagation": "^1.6.13",
+    "@vuepress/plugin-blog": "1.9.2",
+    "@vuepress/plugin-medium-zoom": "1.5.0",
+    "docsearch.js": "2.6.3",
+    "md5": "2.2.1",
+    "vue-click-outside": "1.1.0",
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
+  },
+  "deprecated": false,
+  "description": "A simple and beautiful vuepress Blog & Doc theme.",
+  "gitHead": "de72505bc734dddbf833203f65ca8f16f7c276ca",
+  "homepage": "https://vuepress-theme-reco.recoluan.com",
+  "keywords": [
+    "vuepress",
+    "vue",
+    "theme"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "vuepress-theme-reco",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-reco/vuepress-theme-reco.git"
+  },
+  "version": "1.6.15"
+}
