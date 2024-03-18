@@ -37,7 +37,7 @@ async function getBaidu() {
   });
   return num;
 }
-function removeLastStr(str) {
+export function removeLastStr(str) {
   if (str.charAt(str.length - 1) === '/') {
     return str.slice(0, -1); // 删除最后一位字符
   }

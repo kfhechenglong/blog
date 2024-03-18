@@ -37,6 +37,7 @@
 import { defineComponent } from 'vue'
 import { RecoIcon } from '@vuepress-reco/core/lib/components'
 import { useInstance } from '@theme/helpers/composable'
+import { removeLastStr } from './../../tj.js'
 import Vue from 'vue'
 
 export default defineComponent({
@@ -62,7 +63,7 @@ export default defineComponent({
     const instance = useInstance()
     let pv = 0
     if(!Vue.prototype.isServer && Vue.prototype.pv) {
-      pv = Vue.prototype.pv[window.location.origin + props.pageInfo.path]
+      pv = Vue.prototype.pv[removeLastStr(window.location.origin + props.pageInfo.path)]
     }
     console.log('pv',pv)
     const numStyle = {
