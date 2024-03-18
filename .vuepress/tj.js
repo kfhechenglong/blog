@@ -45,7 +45,7 @@ function removeLastStr(str) {
 }
 //计算对应页面的浏览量
 function visiteNum(data) {
-  let pv = 0
+  let pv = {}
   //计算总浏览量
   if (data && data.items) {
     const items = data.items || []
@@ -53,19 +53,24 @@ function visiteNum(data) {
     const page = items[0] || [], vis = items[1] || []
     // 主页统计全部
     if(nowPageUrl == '/') {
+      let total = 0
       page.forEach((value, index) => {
         // 只统计该域名下的，因为开发的时候访问也会被计算这里分开统计
         if(value[0].name.indexOf(window.location.origin) > -1) {
-          pv += vis[index][0]
+          total += vis[index][0]
         }
       })
+      pv['home'] = total
+      for(let i = 0; i < n; i++) {
+        pv[page[i][0].name] = vis[i][0]
+      }
     } else {
       const pathUrl = removeLastStr(window.location.origin + nowPageUrl)
       // const pathUrl = removeLastStr('https://holazero.cn' + nowPageUrl)
       console.log(pathUrl)
       for(let i = 0, n = page.length; i < n; i++) {
         if(page[i][0].name == pathUrl) {
-          pv = vis[i][0]
+          pv[pathUrl] = vis[i][0]
           break
         }
       }

@@ -62,7 +62,7 @@ export default defineComponent({
     const instance = useInstance()
     let pv = 0
     if(!Vue.prototype.isServer && Vue.prototype.pv) {
-      pv = Vue.prototype.pv
+      pv = Vue.prototype.pv[window.location.origin + props.pageInfo.path]
     }
     console.log('pv',pv)
     const numStyle = {

@@ -43,7 +43,7 @@ export default defineComponent({
     
     let pv = 0
     if(!Vue.prototype.isServer && Vue.prototype.pv) {
-      pv = Vue.prototype.pv
+      pv = Vue.prototype.pv['home']
     }
     return { version, pv }
   }
