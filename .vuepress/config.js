@@ -88,8 +88,8 @@ module.exports = {
     "lastUpdated": '上次更新时间', // string | boolean
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
     "repo": 'kfhechenglong/blog',
-    // record: 'ICP 备案文案',
-    // recordLink: 'ICP 备案指向链接',
+    record: '京ICP备2023029781号-1',
+    recordLink: 'https://beian.miit.gov.cn/#/Integrated/index',
     // cyberSecurityRecord: '公安部备案文案',
     "repoLabel": '查看源码',
     "startYear": '2020',
