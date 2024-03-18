@@ -61,7 +61,7 @@ function visiteNum(data) {
         }
       })
       pv['home'] = total
-      for(let i = 0; i < n; i++) {
+      for(let i = 0; i < page.length; i++) {
         pv[page[i][0].name] = vis[i][0]
       }
     } else {
