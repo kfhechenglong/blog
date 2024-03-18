@@ -2,7 +2,7 @@
   <div class="footer-wrapper">
     <span>
       <reco-icon icon="reco-theme" />
-      <a target="blank" href="https://vuepress-theme-reco.recoluan.com">{{`vuepress-theme-reco@${version}`}}</a>
+      <a target="blank" href="https://holazero.cn/wx_code.jpg">零度杂谈</a>
     </span>
     <span v-if="$themeConfig.record">
       <reco-icon icon="reco-beian" />
