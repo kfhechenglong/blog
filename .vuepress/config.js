@@ -136,11 +136,12 @@ module.exports = {
           { text: 'JavaScript设计模式', link: '/blogs/设计模式/1.单例模式/' }
         ]
       },
-      { text: '面试', link: '/blogs/面试/vue篇/Vue3相比Vue2有哪些优化.html' },
+      { text: '杂谈', link: '/blogs/tittleTattle/是否救万科.html' },
       {
         text: '更多',
         ariaLabel: '更多内容',
         items: [
+          { text: '面试', link: '/blogs/面试/vue篇/Vue3相比Vue2有哪些优化.html' },
           { text: 'node', link: '/blogs/node/inquirer/' },
           { text: 'python', link: '/blogs/Python/使用Python将多个pdf指定页整合到一个pdf文件中.html' },
           { text: '杂项', link: '/blogs/other/fullCalendar日程表/' },
