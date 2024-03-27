@@ -141,7 +141,7 @@ module.exports = {
         text: '更多',
         ariaLabel: '更多内容',
         items: [
-          { text: '面试', link: '/blogs/面试/Vue3相比Vue2有哪些优化.html' },
+          { text: '面试', link: '/blogs/面试/vue/Vue3相比Vue2有哪些优化.html' },
           { text: 'node', link: '/blogs/node/inquirer/' },
           { text: 'python', link: '/blogs/Python/使用Python将多个pdf指定页整合到一个pdf文件中.html' },
           { text: '杂项', link: '/blogs/other/fullCalendar日程表/' },
