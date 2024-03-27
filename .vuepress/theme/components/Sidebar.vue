@@ -53,7 +53,7 @@ export default defineComponent({
       line-height 1.7
       font-weight 500
     & > li:not(:first-child)
-      margin-top .75rem
+      // margin-top .75rem
 
 @media (max-width: $MQMobile)
   .sidebar
